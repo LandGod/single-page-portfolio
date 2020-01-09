@@ -14,12 +14,13 @@ code {
 
 .iconBarBar {
   position: relative;
-  width: 100%;
+  /* width: 100%; */
   height: 20px;
   top: 1em;
-  left: 0px;
   z-index: 1;
   background-color: rosybrown;
+  overflow: hidden;
+  border-radius: 25px;
 }
 
 .iconBarIcons {
@@ -32,4 +33,8 @@ code {
   padding-left: 2em;
   padding-right: 2em;
   font-size: xx-large;
+}
+
+img {
+  max-width: 200px !important;
 }

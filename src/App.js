@@ -4,7 +4,6 @@ import "./App.css";
 import About from "./components/About";
 import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
-import IconBar from "./components/IconBar";
 
 function App() {
   return (
