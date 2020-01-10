@@ -30,11 +30,45 @@ code {
 }
 
 .iconBarIcons span {
-  padding-left: 2em;
-  padding-right: 2em;
   font-size: xx-large;
 }
 
-img {
-  max-width: 200px !important;
+/* .profilePic {
+  right: 1em;
+} */
+
+.profilePic img {
+  /* max-width: 200px !important; */
+  border-radius: 5px;
+}
+
+.iconBarComponent {
+  position: absolute;
+  bottom: 15%;
+  right: 100%;
+  width: 100%;
+}
+
+.spacer {
+  clear: both;
+  min-width: 1px;
+  min-height: 1px;
+}
+
+@media only screen and (max-width: 600px) {
+  .iconBarComponent {
+    position: relative;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+  }
+
+  
+
+  .iconBarIcons {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+  }
+  
 }

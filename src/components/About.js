@@ -6,16 +6,17 @@ class About extends React.Component {
     return (
       <div className="container">
         <div className="row justify-content-end">
-          <div className="col-12 col-md-8 mt-auto">
-            <IconBar />
-          </div>
           <div className="col-12 col-md-4">
-            <figure>
+            <figure className="profilePic">
               <img
                 src={process.env.PUBLIC_URL + "/danielgoldphoto.jpg"}
                 className="img-fluid my-3"
               />
             </figure>
+            <div className="spacer"> </div>
+            <div className="iconBarComponent">
+              <IconBar />
+            </div>
           </div>
         </div>
       </div>
