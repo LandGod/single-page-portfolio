@@ -28,12 +28,12 @@ code {
   width: 100%;
 }
 
-/* .textBaloonComponent {
+.textBaloonComponent {
   position: absolute;
-  bottom: 15%;
-  right: 100%;
-  width: 100%;
-} */
+  right: 30%;
+  width: 150%;
+  z-index: 3;
+}
 
 .spacer {
   clear: both;
@@ -42,14 +42,29 @@ code {
 }
 
 @media only screen and (max-width: 600px) {
+
+  .mainContentArea {
+    display: flex;
+  }
+
+  .profilePic {
+    order: 1;
+  }
+
   .iconBarComponent {
     position: relative;
     width: 100%;
     right: 0;
     bottom: 0;
+    order: 3;
   }
 
-  
+  .textBaloonComponent {
+    position: relative;
+    right: 0;
+    width: 100%;
+    order: 2;
+  }
 
   .iconBarIcons {
     position: absolute;
