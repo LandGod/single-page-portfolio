@@ -1,0 +1,5 @@
+.baloonMain {
+    background-color: rgba(212, 104, 104, 0.75);
+    border-radius: 25px;
+    z-index: 5;
+}

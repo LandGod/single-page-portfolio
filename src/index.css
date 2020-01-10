@@ -28,6 +28,13 @@ code {
   width: 100%;
 }
 
+/* .textBaloonComponent {
+  position: absolute;
+  bottom: 15%;
+  right: 100%;
+  width: 100%;
+} */
+
 .spacer {
   clear: both;
   min-width: 1px;

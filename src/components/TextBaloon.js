@@ -1,11 +1,12 @@
 import React from "react";
+import styles from "./styles/TextBaloon.module.css";
 
 class TextBaloon extends React.Component {
   render() {
     return (
-      <div className="container">
-        <div className="row">
-          <div className="col-12">
+      <div className={`${styles.baloonMain} container`}>
+        <div className="row pt-3">
+          <div className="col-12 text-left">
             <h5>Summary</h5>
             <p>
               Web Developer with a background in the arts and theatre
