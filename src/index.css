@@ -18,21 +18,20 @@ code {
 
 .profilePic img {
   /* max-width: 200px !important; */
-  border-radius: 5px;
+  border-radius: 10px;
+}
+
+.overlapContainer {
+  position: absolute;
+  right: 70%;
+  top: 5%;
+  width: 225%;
+  z-index: 3;
 }
 
 .iconBarComponent {
-  position: absolute;
-  bottom: 15%;
-  right: 100%;
+  position: relative;
   width: 100%;
-}
-
-.textBaloonComponent {
-  position: absolute;
-  right: 30%;
-  width: 150%;
-  z-index: 3;
 }
 
 .spacer {
@@ -41,34 +40,14 @@ code {
   min-height: 1px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 767px) {
 
-  .mainContentArea {
-    display: flex;
-  }
-
-  .profilePic {
-    order: 1;
-  }
-
-  .iconBarComponent {
+  .overlapContainer {
     position: relative;
-    width: 100%;
     right: 0;
+    top: 0;
     bottom: 0;
-    order: 3;
-  }
-
-  .textBaloonComponent {
-    position: relative;
-    right: 0;
-    width: 100%;
-    order: 2;
-  }
-
-  .iconBarIcons {
-    position: absolute;
-    z-index: 2;
+    left: 0;
     width: 100%;
   }
   
