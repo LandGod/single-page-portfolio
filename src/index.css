@@ -11,3 +11,44 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* .profilePic {
+  right: 1em;
+} */
+
+.profilePic img {
+  /* max-width: 200px !important; */
+  border-radius: 10px;
+}
+
+.overlapContainer {
+  position: absolute;
+  right: 70%;
+  top: 5%;
+  width: 225%;
+  z-index: 3;
+}
+
+.iconBarComponent {
+  position: relative;
+  width: 100%;
+}
+
+.spacer {
+  clear: both;
+  min-width: 1px;
+  min-height: 1px;
+}
+
+@media only screen and (max-width: 767px) {
+
+  .overlapContainer {
+    position: relative;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+  
+}

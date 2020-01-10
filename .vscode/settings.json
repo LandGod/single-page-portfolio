@@ -1,0 +1,4 @@
+{
+    "workbench.editor.closeOnFileDelete": true,
+    "javascript.implicitProjectConfig.experimentalDecorators": true
+}
