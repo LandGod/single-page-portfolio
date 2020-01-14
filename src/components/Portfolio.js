@@ -8,6 +8,11 @@ class Portfolio extends React.Component {
     return (
       <div className="container">
         <div className="row">
+          <div className='col-12 text-center'>
+            <h1>Portfolio</h1>
+          </div>
+        </div>
+        <div className="row">
           {projects.map((project, i) => {
             return (
               <ProjectCard 
