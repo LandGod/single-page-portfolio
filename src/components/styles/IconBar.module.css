@@ -4,7 +4,7 @@
     height: 20px;
     top: 1em;
     z-index: 1;
-    background-color: rgb(62,76,123);
+    background-color: lightgray;
     overflow: hidden;
     border-radius: 25px;
   }
