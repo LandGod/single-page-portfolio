@@ -8,9 +8,10 @@ class Portfolio extends React.Component {
     return (
       <div className="container">
         <div className="row">
-          {projects.map((project) => {
+          {projects.map((project, i) => {
             return (
               <ProjectCard 
+                key={i}
                 width={project.width}
                 imageName={project.imageName}
                 title={project.title}

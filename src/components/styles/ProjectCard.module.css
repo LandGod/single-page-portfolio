@@ -45,3 +45,7 @@
     padding: 5px;
     text-align: center;
 }
+
+.card_container {
+    max-height: 300px;;
+}

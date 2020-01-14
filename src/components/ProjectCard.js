@@ -16,19 +16,25 @@ class ProjectCard extends React.Component {
         imageName: this.props.imageName
     }
 
+    linkToRepo = () => {
+        window.open(this.props.repoLink)
+    }
+
     render() {
         return (
-            <a className={`col-${this.state.width === 'double' ? '12' : '6'} col-md-${this.state.width === 'double' ? '8' : '4'} p-1 p-md-2`} href={this.props.repoLink} target="_blank">
-                <div className={styles.portfolio_item}>
+            <div className={`col-${this.state.width === 'double' ? '12' : '6'} col-md-${this.state.width === 'double' ? '8' : '4'} p-1 p-md-2 ${styles.card_container}`}>
+                <a href={this.props.repoLink} target="_blank">
+                <div className={styles.portfolio_item} href={this.props.repoLink} target="_blank">
                     <img className={`img-fluid ${styles.portfolio_item_img}`} src={`${process.env.PUBLIC_URL}/${this.state.imageName}`} alt={this.props.title} />
                 </div>
-                <div className={styles.title_overlay}>{this.props.title[0].toUpperCase() + this.props.title.slice(1)}</div>
+                <div className={styles.title_overlay} href={this.props.repoLink} target="_blank">{this.props.title[0].toUpperCase() + this.props.title.slice(1)}</div>
+                </a>
                 {this.props.deployLink ? (
                     <div className={styles.repo_overlay}>
                         <a className={styles.repo_overlay_a} href={this.props.deployLink} target="_blank">Deployed</a>
                     </div>
                 ) : ''}
-            </a>
+            </div>
         );
     }
 }
