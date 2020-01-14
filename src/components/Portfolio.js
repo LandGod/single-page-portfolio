@@ -2,9 +2,13 @@ import React from 'react';
 
 class Portfolio extends React.Component {
   render() {
-    return <div>
-        This is an 'Portfolio' component
-    </div>;
+    return (
+      <div className="container">
+        <div className="row">
+          
+        </div>
+    </div>
+    );
   }
 }
 

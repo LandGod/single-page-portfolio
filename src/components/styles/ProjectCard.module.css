@@ -1,0 +1,47 @@
+.portfolio_item {
+    position: relative;
+    background-color: white;
+    border: 1px solid #33b5e5;
+    overflow: hidden;
+    width:100%;
+    height: 100%;
+}
+
+.portfolio_item_img {
+    display: block;
+    width: auto;
+    height: 100%;
+}
+
+.repo_overlay {
+    position: absolute; 
+    top: 10px; 
+    right: 0px;
+    background: rgb(0, 0, 0);
+    background: rgba(99,198,235, 1);
+    color: #f1f1f1; 
+    width: 40%;
+    color: white;
+    font-size: 15px;
+    padding: 5px;
+    text-align: right;
+}
+
+.repo_overlay_a {
+    color: white;
+}
+
+
+  
+.title_overlay {
+    position: absolute; 
+    bottom: 20px; 
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1; 
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+}
