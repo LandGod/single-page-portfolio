@@ -4,5 +4,34 @@
         "imageName": "futureRetroLandscape.jpg",
         "repoLink": "http://github.com/landgod/Word-Guess-Game",
         "deployLink": "http://landgod.github.io/Word-Guess-Game"
+    },
+    {
+        "title": "Pocket Skirmish",
+        "imageName": "pixel_wizard.png",
+        "repoLink": "http://github.com/landgod/RPG-Game",
+        "deployLink": "http://landgod.github.io/RPG-Game"
+    },
+    {
+        "title": "Overwatch Trivia",
+        "imageName": "owlogo.jpeg",
+        "repoLink": "http://github.com/landgod/TriviaGame",
+        "deployLink": "http://landgod.github.io/TriviaGame"
+    },
+    {
+        "title": "Multiplayer Rock Paper Scisors",
+        "imageName": "rock_hand.png",
+        "repoLink": "http://github.com/landgod/Multiplayer-RPS",
+        "deployLink": "http://landgod.github.io/Multiplayer-RPS"
+    },
+    {
+        "title": "Multiplayer Othello in Python",
+        "imageName": "reversi.jpg",
+        "repoLink": "https://github.com/LandGod/Two-Player-Othello-with-Python"
+    },
+    {
+        "title": "Clue Hunt: QR",
+        "imageName": "githubLandGod.png",
+        "repoLink": "http://github.com/landgod/ClueHunt-QR",
+        "deployLink": "http://landgod.github.io/ClueHunt-QR"
     }
 ]
