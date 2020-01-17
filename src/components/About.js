@@ -12,6 +12,7 @@ class About extends React.Component {
               <img
                 src={process.env.PUBLIC_URL + "/danielgoldphoto.jpg"}
                 className="img-fluid my-3"
+                alt="Daniel Gold"
               />
             </figure>
             <div className="overlapContainer">

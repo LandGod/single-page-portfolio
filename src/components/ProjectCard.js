@@ -23,7 +23,7 @@ class ProjectCard extends React.Component {
     render() {
         return (
             <div className={`col-${this.state.width === 'double' ? '12' : '6'} col-md-${this.state.width === 'double' ? '8' : '4'} p-1 p-md-2 ${styles.card_container}`}>
-                <a href={this.props.repoLink} target="_blank">
+                <a href={this.props.repoLink} target="_blank" rel="noopener noreferrer">
                 <div className={styles.portfolio_item} href={this.props.repoLink} target="_blank">
                     <img className={`img-fluid ${styles.portfolio_item_img}`} src={`${process.env.PUBLIC_URL}/${this.state.imageName}`} alt={this.props.title} />
                 </div>
@@ -31,7 +31,7 @@ class ProjectCard extends React.Component {
                 </a>
                 {this.props.deployLink ? (
                     <div className={styles.repo_overlay}>
-                        <a className={styles.repo_overlay_a} href={this.props.deployLink} target="_blank">Deployed</a>
+                        <a className={styles.repo_overlay_a} href={this.props.deployLink} target="_blank" rel="noopener noreferrer">Deployed</a>
                     </div>
                 ) : ''}
             </div>
