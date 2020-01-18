@@ -6,6 +6,7 @@ class ContactCard extends React.Component {
   // imageName: file name of image to be displayed
   // title: Alt Text
   // link: link to social site or file
+  //rounding: value for boarder radius
 
   linkToRepo = () => {
     window.open(this.props.repoLink);
