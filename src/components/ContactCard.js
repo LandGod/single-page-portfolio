@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./styles/ProjectCard.module.css";
+import styles from "./styles/ContactCard.module.css";
 
 class ContactCard extends React.Component {
   // Props:
@@ -13,20 +13,20 @@ class ContactCard extends React.Component {
 
   render() {
     return (
-      <div className={`col-2 col-md-4 p-1 p-md-2 ${styles.card_container}`}>
-        <a href={this.props.link} target="_blank" rel="noopener noreferrer">
-          <div
-            className={styles.portfolio_item}
-            href={this.props.repoLink}
-            target="_blank"
-          >
+      <div className={`col-6 col-md-4 p-1 p-md-2 ${styles.card_container}`}>
+        <div
+          className={styles.portfolio_item}
+          href={this.props.repoLink}
+          target="_blank"
+        >
+          <a href={this.props.link} target="_blank" rel="noopener noreferrer" className={styles.portfolio_item_link}>
             <img
               className={`img-fluid ${styles.portfolio_item_img}`}
-              src={`${process.env.PUBLIC_URL}/${this.state.imageName}`}
+              src={`${process.env.PUBLIC_URL}/${this.props.imageName}`}
               alt={this.props.title}
             />
-          </div>
-        </a>
+          </a>
+        </div>
       </div>
     );
   }

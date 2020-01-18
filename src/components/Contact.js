@@ -7,14 +7,14 @@ class Contact extends React.Component {
       <div className="container">
         <div className="row">
           <div className="col-12 text-center">
-            <h1>Portfolio</h1>
+            <h1>Contact</h1>
           </div>
         </div>
         <div className="row">
           <ContactCard
-            imageName={'test.jpg'}
-            title={'Lorem Ipsum'}
-            link={'#'}
+            imageName="linkedinlogo.png"
+            title="Daniel Gold on LinkedIn"
+            link="https://www.linkedin.com/in/danjasongold/"
           />
         </div>
       </div>
