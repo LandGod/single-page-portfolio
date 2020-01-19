@@ -16,6 +16,7 @@ class About extends React.Component {
               />
             </figure>
             <div className="overlapContainer">
+              <h1 className="aboutHOne" >About</h1>
               <div className="textBaloonComponent mt-md-5">
                 <TextBaloon />
               </div>

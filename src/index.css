@@ -27,7 +27,7 @@ code {
 .overlapContainer {
   position: absolute;
   right: 70%;
-  top: 5%;
+  top: 0;
   width: 225%;
   z-index: 3;
 }
@@ -41,6 +41,10 @@ code {
   clear: both;
   min-width: 1px;
   min-height: 1px;
+}
+
+.aboutHOne {
+  margin-bottom: -5%;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:700&display=swap');
