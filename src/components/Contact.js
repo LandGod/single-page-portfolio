@@ -7,7 +7,7 @@ class Contact extends React.Component {
       <div className="container">
         <div className="row">
           <div className="col-12 text-center">
-            <h1>Contact</h1>
+            <h1 className="contactHOne" >Contact</h1>
           </div>
         </div>
         <div className="row ">

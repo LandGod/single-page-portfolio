@@ -66,6 +66,10 @@ h1 {
     font-size: calc(20vw);
   }
 
+  .contactHOne {
+    margin-top: 0;
+  }
+
   .overlapContainer {
     position: relative;
     right: 0;
