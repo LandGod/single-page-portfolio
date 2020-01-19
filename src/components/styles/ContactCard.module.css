@@ -1,0 +1,30 @@
+.portfolio_item {
+    position: relative;
+    /* overflow: hidden; */
+    width:100%;
+    height: fit-content;
+    max-height: 300px;
+    
+    
+}
+
+.portfolio_item_img {
+    display: block;
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    object-fit: cover;
+    
+}
+
+.portfolio_item_link {
+    width: fit-content;
+    height: fit-content;
+}
+
+.card_container {
+    max-height: 300px;
+    margin-bottom: 1em;
+}

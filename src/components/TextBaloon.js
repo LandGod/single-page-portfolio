@@ -24,6 +24,14 @@ class TextBaloon extends React.Component {
             </p>
             <h5>Additional Skills</h5>
             <p>Management, MS Office</p>
+            <a
+              href={`${process.env.PUBLIC_URL}/DanielGold.pdf`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-outline-danger btn-sm mb-2"
+            >
+              <h6>Full Resume</h6>
+            </a>
           </div>
         </div>
       </div>

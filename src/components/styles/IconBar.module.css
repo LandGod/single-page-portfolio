@@ -4,15 +4,17 @@
     height: 20px;
     top: 1em;
     z-index: 1;
-    background-color: rgb(62,76,123);
+    background-color: lightgray;
     overflow: hidden;
     border-radius: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.38);
   }
   
   .iconBarIcons {
     position: absolute;
     z-index: 2;
     width: 100%;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
   }
   
   .iconSpan {
