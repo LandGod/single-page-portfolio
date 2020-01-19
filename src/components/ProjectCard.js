@@ -22,7 +22,7 @@ class ProjectCard extends React.Component {
 
     render() {
         return (
-            <div className={`col-${this.state.width === 'double' ? '12' : '6'} col-md-${this.state.width === 'double' ? '8' : '4'} p-1 p-md-2 ${styles.card_container}`}>
+            <div className={`col-${this.state.width === 'double' ? '12' : '6'} col-md-${this.state.width === 'double' ? '6' : '4'} p-1 p-md-2 ${styles.card_container}`}>
                 <a href={this.props.repoLink} target="_blank" rel="noopener noreferrer">
                 <div className={styles.portfolio_item} href={this.props.repoLink} target="_blank">
                     <img className={`img-fluid ${styles.portfolio_item_img}`} src={`${process.env.PUBLIC_URL}/${this.state.imageName}`} alt={this.props.title} />

@@ -1,5 +1,19 @@
 [
     {
+        "title": "Parent Trap",
+        "imageName": "thrift.jpg",
+        "repoLink": "http://github.com/landgod/Parent-Trap",
+        "deployLink": "https://evening-chamber-98293.herokuapp.com/",
+        "width": "double"
+    },
+    {
+        "title": "ThriftBuyer",
+        "imageName": "futureRetroLandscape.jpg",
+        "repoLink": "http://github.com/landgod/ThriftBuyer",
+        "deployLink": "http://thriftbuyer.net",
+        "width": "double"
+    },
+    {
         "title": "Hacking Simulator",
         "imageName": "futureRetroLandscape.jpg",
         "repoLink": "http://github.com/landgod/Word-Guess-Game",
