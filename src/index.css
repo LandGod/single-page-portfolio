@@ -73,11 +73,14 @@ h1 {
   .contactHOne {
     margin-top: 0;
   }
+  /* .aboutHOne {
+    margin-bottom: -10%;
+  } */
 
   .overlapContainer {
     position: relative;
     right: 0;
-    top: -20%;
+    top: -15%;
     width: 100%;
     margin: 0, auto;
   }
