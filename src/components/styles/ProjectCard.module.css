@@ -10,6 +10,20 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.portfolio_item_hover {
+    position: relative;
+    right: 1%;
+    margin-top: -1%;
+    background-color: white;
+    border: 1px solid #33b5e5;
+    overflow: hidden;
+    width:102%;
+    height: calc(1.02 * 50vw);
+    max-height: calc( 1.02 * 300px);
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 .portfolio_item_img {
     display: block;
     width: 100%;
@@ -48,6 +62,20 @@
     background: rgba(0, 0, 0, 0.5);
     color: #f1f1f1; 
     width: calc(100% - 0.8em);
+    color: white;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+}
+
+.title_overlay_hover {
+    position: absolute; 
+    bottom: calc( 1.02 * 20px); 
+    right: 1.5%;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1; 
+    width: calc(1.015 * calc(100% - 0.8em));
     color: white;
     font-size: 20px;
     padding: 5px;
