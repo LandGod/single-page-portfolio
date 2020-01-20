@@ -11,16 +11,16 @@ class ProjectCard extends React.Component {
 
   state = {
     width: this.props.width || "single", // single or double (4 col / 8 col)
-    imageName: this.props.imageName,
-    mouseOver: false
+    imageName: this.props.imageName, // Probably not needed any more
+    mouseOver: false // Tracks mouse over entire component. Used for zoom/scale effect.
   };
 
   mouseOnComponent = () => {
-      this.setState({mouseOver: true})
+    this.setState({ mouseOver: true });
   };
 
   mouseOffComponent = () => {
-      this.setState({mouseOver: false})
+    this.setState({ mouseOver: false });
   };
 
   linkToRepo = () => {
@@ -29,13 +29,19 @@ class ProjectCard extends React.Component {
 
   render() {
     return (
+      // Container with sizing info for overall component. Is transformed during mouseover
       <div
         className={`col-${this.state.width === "double" ? "12" : "6"} col-md-${
           this.state.width === "double" ? "6" : "4"
-        } p-1 p-md-2 ${ this.state.mouseOver ? styles.card_container_hover : styles.card_container}`} 
+        } p-1 p-md-2 ${
+          this.state.mouseOver
+            ? styles.card_container_hover
+            : styles.card_container
+        }`}
         onMouseEnter={this.mouseOnComponent}
         onMouseLeave={this.mouseOffComponent}
       >
+        {/* Link to repo encapsulated entire component except deploy link */}
         <a href={this.props.repoLink} target="_blank" rel="noopener noreferrer">
           <div
             className={styles.portfolio_item}
@@ -56,6 +62,8 @@ class ProjectCard extends React.Component {
             {this.props.title[0].toUpperCase() + this.props.title.slice(1)}
           </div>
         </a>
+
+        {/* Add deploy link flag in upper corner if deploy link was supplied to component (or blank)*/}
         {this.props.deployLink ? (
           <div className={styles.repo_overlay}>
             <a

@@ -56,6 +56,9 @@
     margin-bottom: 1em;
 }
 
+/* Applied insted of .card_container when the mouseOver event is actived.
+Gives a nice zoom/grow effect on the mouse over for portfolio project cards.
+*/
 .card_container_hover {
     max-height: calc(300px * 1.02);
     margin-bottom: 0;
