@@ -32,13 +32,13 @@ class ProjectCard extends React.Component {
       <div
         className={`col-${this.state.width === "double" ? "12" : "6"} col-md-${
           this.state.width === "double" ? "6" : "4"
-        } p-1 p-md-2 ${styles.card_container}`} 
+        } p-1 p-md-2 ${ this.state.mouseOver ? styles.card_container_hover : styles.card_container}`} 
         onMouseEnter={this.mouseOnComponent}
         onMouseLeave={this.mouseOffComponent}
       >
         <a href={this.props.repoLink} target="_blank" rel="noopener noreferrer">
           <div
-            className={ this.state.mouseOver ? styles.portfolio_item_hover : styles.portfolio_item}
+            className={styles.portfolio_item}
             href={this.props.repoLink}
             target="_blank"
           >
@@ -49,7 +49,7 @@ class ProjectCard extends React.Component {
             />
           </div>
           <div
-            className={this.state.mouseOver ? styles.title_overlay_hover : styles.title_overlay}
+            className={styles.title_overlay}
             href={this.props.repoLink}
             target="_blank"
           >
