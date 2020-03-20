@@ -9,7 +9,7 @@ class ProjectCard extends React.Component {
   // repoLink: link to project repo
   // deployLink: link to deployed project
   // highlight: number - 0: tech missing; 1: no techs selected; 2: has all selected techs
-  
+
   state = {
     width: this.props.width || "single", // single or double (4 col / 8 col)
     imageName: this.props.imageName, // Probably not needed any more
@@ -17,7 +17,9 @@ class ProjectCard extends React.Component {
   };
 
   mouseOnComponent = () => {
-    this.setState({ mouseOver: true });
+    if (this.props.highlight) {
+      this.setState({ mouseOver: true });
+    }
   };
 
   mouseOffComponent = () => {
@@ -45,12 +47,20 @@ class ProjectCard extends React.Component {
         {/* Link to repo encapsulated entire component except deploy link */}
         <a href={this.props.repoLink} target="_blank" rel="noopener noreferrer">
           <div
-            className={styles.portfolio_item}
+            className={
+              this.props.highlight
+                ? styles.portfolio_item
+                : styles.portfolio_item_grey
+            }
             href={this.props.repoLink}
             target="_blank"
           >
             <img
-              className={`img-fluid ${styles.portfolio_item_img}`}
+              className={`img-fluid ${
+                this.props.highlight
+                  ? styles.portfolio_item_img
+                  : styles.portfolio_item_img_grey
+              }`}
               src={`${process.env.PUBLIC_URL}/${this.state.imageName}`}
               alt={this.props.title}
             />
@@ -66,7 +76,13 @@ class ProjectCard extends React.Component {
 
         {/* Add deploy link flag in upper corner if deploy link was supplied to component (or blank)*/}
         {this.props.deployLink ? (
-          <div className={styles.repo_overlay}>
+          <div
+            className={
+              this.props.highlight
+                ? styles.repo_overlay
+                : styles.repo_overlay_grey
+            }
+          >
             <a
               className={styles.repo_overlay_a}
               href={this.props.deployLink}
