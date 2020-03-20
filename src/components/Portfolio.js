@@ -8,6 +8,18 @@ class Portfolio extends React.Component {
     selectedTechs: []
   }
 
+  toggleTech = (tech) => {
+    // Adds or removes the tech (string) from the selectedTechs array in the state
+    let updatedTechList;
+    if (this.state.selectedTechs.includes(tech)) {
+      updatedTechList = this.state.selectedTechs.filter((item) => item !== tech);
+    } else {
+      updatedTechList = [tech, ...this.state.selectedTechs];
+    }
+
+    this.setState({selectTech: updatedTechList})
+  }
+
   hasSelectedTechs = (stack) => {
     // If no techs are selected, alwasy return truthy number 1
     // If card has all selected techs, return truthy number 2
