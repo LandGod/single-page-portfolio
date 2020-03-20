@@ -4,48 +4,63 @@
         "imageName": "parenttrap.jpg",
         "repoLink": "http://github.com/landgod/Parent-Trap",
         "deployLink": "https://evening-chamber-98293.herokuapp.com/",
-        "width": "double"
+        "width": "double",
+        "techStack": ["react", "express", "node", "html", "css", "javascript", "mongodb", "authentication"]
     },
     {
         "title": "ThriftBuyer",
         "imageName": "thrift.jpg",
         "repoLink": "http://github.com/landgod/ThriftBuyer",
         "deployLink": "http://thriftbuyer.net",
-        "width": "double"
+        "width": "double",
+        "techStack": ["javascript", "jquery", "html", "css", "bootstrap", "mysql", "express", "node", "handlebars", "authentication"]
     },
     {
         "title": "Hacking Simulator",
         "imageName": "futureRetroLandscape.jpg",
         "repoLink": "http://github.com/landgod/Word-Guess-Game",
-        "deployLink": "http://landgod.github.io/Word-Guess-Game"
+        "deployLink": "http://landgod.github.io/Word-Guess-Game",
+        "techStack": ["javascript", "css", "html"]
+    },
+    {
+        "title": "Don't Match the Socks",
+        "imageName": "sock.png",
+        "repoLink": "https://github.com/LandGod/Dont-Match-the-Socks",
+        "deployLink": "https://landgod.github.io/Dont-Match-the-Socks/",
+        "techStack": ["javascript", "bootstrap", "react", "html", "css"]
     },
     {
         "title": "Pocket Skirmish",
         "imageName": "pixel_wizard.png",
         "repoLink": "http://github.com/landgod/RPG-Game",
-        "deployLink": "http://landgod.github.io/RPG-Game"
+        "deployLink": "http://landgod.github.io/RPG-Game",
+        "techStack": ["javascript", "jquery", "html", "css", "bootstrap"]
     },
     {
         "title": "Overwatch Trivia",
         "imageName": "owlogo.jpeg",
         "repoLink": "http://github.com/landgod/TriviaGame",
-        "deployLink": "http://landgod.github.io/TriviaGame"
+        "deployLink": "http://landgod.github.io/TriviaGame",
+        "techStack": ["html", "css", "javascript", "jquery", "bootstrap"]
     },
     {
         "title": "Multiplayer Rock Paper Scisors",
         "imageName": "rock_hand.png",
         "repoLink": "http://github.com/landgod/Multiplayer-RPS",
-        "deployLink": "http://landgod.github.io/Multiplayer-RPS"
+        "deployLink": "http://landgod.github.io/Multiplayer-RPS",
+        "techStack": ["html", "css", "javascript", "jquery", "bootstrap", "express", "node", "firebase"]
     },
     {
         "title": "Multiplayer Othello in Python",
         "imageName": "reversi.jpg",
-        "repoLink": "https://github.com/LandGod/Two-Player-Othello-with-Python"
+        "repoLink": "https://github.com/LandGod/Two-Player-Othello-with-Python",
+        "techStack": ["python"]
     },
     {
         "title": "Clue Hunt: QR",
         "imageName": "githubLandGod.png",
         "repoLink": "http://github.com/landgod/ClueHunt-QR",
-        "deployLink": "http://landgod.github.io/ClueHunt-QR"
+        "deployLink": "http://landgod.github.io/ClueHunt-QR",
+        "techStack": ["javascript", "html","css", "jquery", "firebase", "bootstrap"]
     }
 ]
