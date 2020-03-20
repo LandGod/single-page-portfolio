@@ -8,7 +8,8 @@ class ProjectCard extends React.Component {
   // title: Name of project/title
   // repoLink: link to project repo
   // deployLink: link to deployed project
-
+  // highlight: number - 0: tech missing; 1: no techs selected; 2: has all selected techs
+  
   state = {
     width: this.props.width || "single", // single or double (4 col / 8 col)
     imageName: this.props.imageName, // Probably not needed any more
