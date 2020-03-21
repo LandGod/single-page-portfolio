@@ -12,11 +12,12 @@
 
 .tooltip {
     position: absolute;
-    left: 25%;
+    left: calc(25% - 1em);
     bottom: -25%;
 	background: #5757f7;
     border-radius: .4em;
     z-index: 100;
+    width: 5em;
 }
 
 .tooltipHidden {
