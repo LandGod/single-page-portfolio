@@ -2,6 +2,7 @@ import React from 'react';
 import ProjectCard from "./ProjectCard";
 import projects from '../assets/projects.json';
 import TechSelect from './TechSelect';
+import Techs from '../assets/techs.json';
 
 class Portfolio extends React.Component {
 
@@ -44,10 +45,18 @@ class Portfolio extends React.Component {
             <h1>Portfolio</h1>
           </div>
         </div>
-        <div className="row">
-          <TechSelect 
+        <div className="row justify-content-center">
+        {Techs.map((tech, i) => {
+          return (
+          <TechSelect
+          key={i} 
+          name={tech.name}
+          image={tech.image}
+          caseSensitiveName={tech.caseSensitiveName}
           toggleTech={this.toggleTech}
+          selectedTechs={this.state.selectedTechs}
           />
+          )})}
         </div>
         <div className="row">
           {projects.map((project, i) => {

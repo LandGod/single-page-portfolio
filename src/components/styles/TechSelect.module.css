@@ -6,5 +6,33 @@
 }
 
 .techLogoContainers {
-    overflow: visible;
+  overflow: visible;
+  position: relative;
+}
+
+.tooltip {
+    position: absolute;
+    left: 25%;
+    bottom: -25%;
+	background: #5757f7;
+    border-radius: .4em;
+    z-index: 100;
+}
+
+.tooltipHidden {
+    visibility: hidden;
+}
+
+.tooltipAfter {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 0.781em solid transparent;
+	border-bottom-color: #5757f7;
+	border-top: 0;
+	margin-left: -0.781em;
+	margin-top: -0.781em;
 }
