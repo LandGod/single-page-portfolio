@@ -37,6 +37,10 @@
     filter: grayscale(100%);
 }
 
+/* 
+This is actually the overlay for the deploy link, not the repo link. Sorry. 
+These got chaged a while ago and fixing the naming isn't at the top of my to-dos
+*/
 .repo_overlay {
     position: absolute; 
     top: 8px; 

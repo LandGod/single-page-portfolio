@@ -1,6 +1,7 @@
 import React from 'react';
 import ProjectCard from "./ProjectCard";
 import projects from '../assets/projects.json';
+import TechSelect from './TechSelect';
 
 class Portfolio extends React.Component {
 
@@ -9,6 +10,7 @@ class Portfolio extends React.Component {
   }
 
   toggleTech = (tech) => {
+    console.log('Activated toggleTech for ' + tech)
     // Adds or removes the tech (string) from the selectedTechs array in the state
     let updatedTechList;
     if (this.state.selectedTechs.includes(tech)) {
@@ -17,7 +19,7 @@ class Portfolio extends React.Component {
       updatedTechList = [tech, ...this.state.selectedTechs];
     }
 
-    this.setState({selectTech: updatedTechList})
+    this.setState({selectedTechs: updatedTechList})
   }
 
   hasSelectedTechs = (stack) => {
@@ -41,6 +43,11 @@ class Portfolio extends React.Component {
           <div className='col-12 text-center portfolioHOne'>
             <h1>Portfolio</h1>
           </div>
+        </div>
+        <div className="row">
+          <TechSelect 
+          toggleTech={this.toggleTech}
+          />
         </div>
         <div className="row">
           {projects.map((project, i) => {
