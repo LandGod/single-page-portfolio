@@ -3,6 +3,7 @@ import ProjectCard from "./ProjectCard";
 import projects from "../assets/projects.json";
 import TechSelect from "./TechSelect";
 import Techs from "../assets/techs.json";
+import ButtonDrawer from "./ButtonDrawer";
 
 class Portfolio extends React.Component {
   state = {
@@ -11,8 +12,8 @@ class Portfolio extends React.Component {
 
   toggleTech = tech => {
     // If tech is 'reset' blank out tech list
-    if (tech === 'reset') {
-      this.setState({selectedTechs: []});
+    if (tech === "reset") {
+      this.setState({ selectedTechs: [] });
       return;
     }
 
@@ -64,29 +65,31 @@ class Portfolio extends React.Component {
             <h1>Portfolio</h1>
           </div>
         </div>
-        <div className="row justify-content-center">
-          {Techs.map((tech, i) => {
-            return (
-              <TechSelect
-                key={i}
-                name={tech.name}
-                image={tech.image}
-                caseSensitiveName={tech.caseSensitiveName}
-                toggleTech={this.toggleTech}
-                highlight={this.isSelectedTech(tech.name)}
-                forceBackground={tech.forceBackground || false}
-                suppressTooltip={this.props.noHover}
-              />
-            );
-          })}
-          <div
-            style={{ paddingTop: "3em", paddingBottom: "3em" }}
-            className="col-md-1 col-3 btn btn-link"
-            onClick={() => this.toggleTech('reset')}
-          >
-            Reset
+        <ButtonDrawer>
+          <div className="row justify-content-center">
+            {Techs.map((tech, i) => {
+              return (
+                <TechSelect
+                  key={i}
+                  name={tech.name}
+                  image={tech.image}
+                  caseSensitiveName={tech.caseSensitiveName}
+                  toggleTech={this.toggleTech}
+                  highlight={this.isSelectedTech(tech.name)}
+                  forceBackground={tech.forceBackground || false}
+                  suppressTooltip={this.props.noHover}
+                />
+              );
+            })}
+            <div
+              style={{ paddingTop: "3em", paddingBottom: "3em" }}
+              className="col-md-1 col-3 btn btn-link"
+              onClick={() => this.toggleTech("reset")}
+            >
+              Reset
+            </div>
           </div>
-        </div>
+        </ButtonDrawer>
         <div className="row">
           {projects.map((project, i) => {
             return (

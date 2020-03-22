@@ -1,0 +1,63 @@
+
+.containingDiv {
+    position: relative;
+}
+
+.hr {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    height: 1px;
+    color: black;
+    background-color: black;
+    /* border-bottom: 1px solid black; */
+}
+
+.box {
+    padding-top: 1em;
+    color: white;
+    position: absolute;
+    left: calc(50% - 2.5em);
+    top: calc(50% - 2.5em);
+    z-index: -1;
+    background-color: #33b5e5;
+    width: 5em;
+    height: 5em;
+
+}
+
+.plusButton {
+    position: absolute;
+    top: calc(50% - 0.34em);
+    left: calc(50% - 1em);
+    background: none;
+    border: none;
+    border-radius: 100%;
+    z-index: 5;
+    font-size: 1.5em;
+}
+
+.plusIcon {
+    color: black;
+}
+
+.iBackground {
+    position: absolute;
+    top: calc(50% - 0.35em);
+    left: calc(50% - 0.35em);
+    width: 0.75em;
+    height: 0.75em;
+    background-color: white;
+    border-radius: 100%;
+    z-index: -1;
+}
+
+.buttonContainer {
+    border: 1px solid #33b5e5;
+    background-color: white;
+    border-radius: 25%;
+}
+
+.hidden {
+    visibility: hidden;
+}
