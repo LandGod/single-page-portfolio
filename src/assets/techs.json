@@ -1,0 +1,58 @@
+[
+    {
+        "name": "javascript",
+        "caseSensitiveName": "JavaScript",
+        "image": "javascript.svg"
+    },
+    {
+        "name": "html",
+        "caseSensitiveName": "HTML",
+        "image": "html.svg"
+    },
+    {
+        "name": "css",
+        "caseSensitiveName": "CSS",
+        "image": "css.svg"
+    },
+    {
+        "name": "jquery",
+        "caseSensitiveName": "jQuery",
+        "image": "jquery.svg"
+    },
+    {
+        "name": "node",
+        "caseSensitiveName": "NodeJS",
+        "image": "node.png"
+    },
+    {
+        "name": "express",
+        "caseSensitiveName": "ExpressJS",
+        "image": "express.png",
+        "forceBackground": "#68A063"
+    },
+    {
+        "name": "mysql",
+        "caseSensitiveName": "MySQL",
+        "image": "mysql.svg"
+    },
+    {
+        "name": "mongodb",
+        "caseSensitiveName": "MongoDB",
+        "image": "mongodb.svg"
+    },
+    {
+        "name": "handlebars",
+        "caseSensitiveName": "Handlebars",
+        "image": "handlebars.svg"
+    },
+    {
+        "name": "react",
+        "caseSensitiveName": "ReactJS",
+        "image": "react.svg"
+    },
+    {
+        "name": "firebase",
+        "caseSensitiveName": "FireBase",
+        "image": "firebase.svg"
+    }
+]
