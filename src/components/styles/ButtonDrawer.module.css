@@ -1,6 +1,7 @@
 
 .containingDiv {
     position: relative;
+    height: 15vh;
 }
 
 .hr {
@@ -53,11 +54,19 @@
 }
 
 .buttonContainer {
-    border: 1px solid #33b5e5;
-    background-color: white;
-    border-radius: 25%;
+    position: relative;
+    height: 0vh;
+    transition: height 2s, transform 2s;
+    overflow: hidden;
 }
 
-.hidden {
-    visibility: hidden;
+.spacer {
+    height: 15vh;
+    width: 100%;
+    transition: height 2s;
+}
+
+.spacerOpen {
+    height: 5vh;
+    width: 100%;
 }
