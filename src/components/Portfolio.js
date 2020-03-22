@@ -10,6 +10,12 @@ class Portfolio extends React.Component {
   };
 
   toggleTech = tech => {
+    // If tech is 'reset' blank out tech list
+    if (tech === 'reset') {
+      this.setState({selectedTechs: []});
+      return;
+    }
+
     // Adds or removes the tech (string) from the selectedTechs array in the state
     let updatedTechList;
     if (this.state.selectedTechs.includes(tech)) {
@@ -73,6 +79,13 @@ class Portfolio extends React.Component {
               />
             );
           })}
+          <div
+            style={{ paddingTop: "3em", paddingBottom: "3em" }}
+            className="col-md-1 col-3 btn btn-link"
+            onClick={() => this.toggleTech('reset')}
+          >
+            Reset
+          </div>
         </div>
         <div className="row">
           {projects.map((project, i) => {
