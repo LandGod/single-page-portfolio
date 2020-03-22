@@ -2,18 +2,25 @@
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: contain;;
+}
+
+.imgGrey {
+    filter: grayscale(100)
 }
 
 .techLogoContainers {
   overflow: visible;
   position: relative;
+  border: 0;
+  padding: 0.5em;
+  background: none;
 }
 
 .tooltip {
     position: absolute;
     left: calc(50% - calc(6em / 2));
-    bottom: -25%;
+    bottom: -8%;
     background: #33b5e5;
     color: white;
     border-radius: .4em;
@@ -28,7 +35,7 @@
 .tooltipAfter {
 	content: '';
 	position: absolute;
-	bottom: 0;
+	bottom: 10%;
 	left: 50%;
 	width: 0;
 	height: 0;
