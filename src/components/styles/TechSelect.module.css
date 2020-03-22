@@ -1,0 +1,47 @@
+.techLogos {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;;
+}
+
+.imgGrey {
+    filter: grayscale(100)
+}
+
+.techLogoContainers {
+  overflow: visible;
+  position: relative;
+  border: 0;
+  padding: 0.5em;
+  background: none;
+}
+
+.tooltip {
+    position: absolute;
+    left: calc(50% - calc(6em / 2));
+    bottom: -8%;
+    background: #33b5e5;
+    color: white;
+    border-radius: .4em;
+    z-index: 100;
+    width: 6em;
+}
+
+.tooltipHidden {
+    visibility: hidden;
+}
+
+.tooltipAfter {
+	content: '';
+	position: absolute;
+	bottom: 10%;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 0.781em solid transparent;
+	border-bottom-color: #33b5e5;
+	border-top: 0;
+	margin-left: -0.781em;
+	margin-top: -0.781em;
+}
