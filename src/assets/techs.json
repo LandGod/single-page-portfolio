@@ -6,13 +6,8 @@
     },
     {
         "name": "html",
-        "caseSensitiveName": "HTML",
-        "image": "html.svg"
-    },
-    {
-        "name": "css",
-        "caseSensitiveName": "CSS",
-        "image": "css.svg"
+        "caseSensitiveName": "HTML5+CSS3",
+        "image": "htmlcss.svg"
     },
     {
         "name": "jquery",
