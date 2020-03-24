@@ -7,7 +7,8 @@ import ButtonDrawer from "./ButtonDrawer";
 
 class Portfolio extends React.Component {
   state = {
-    selectedTechs: []
+    selectedTechs: [],
+    drawerOpen: false
   };
 
   toggleTech = tech => {
@@ -57,6 +58,15 @@ class Portfolio extends React.Component {
     return 0;
   };
 
+  toggleDawer = () => {
+    // For tech drawer (ButtonDrawer) open/close
+    // If closing drawer, also reset techs
+    if (this.state.drawerOpen) {
+      this.toggleTech("reset");
+    }
+    this.setState({ drawerOpen: !this.state.drawerOpen });
+  };
+
   render() {
     return (
       <div className="container">
@@ -65,7 +75,7 @@ class Portfolio extends React.Component {
             <h1>Portfolio</h1>
           </div>
         </div>
-        <ButtonDrawer>
+        <ButtonDrawer open={this.state.drawerOpen} toggle={this.toggleDawer}>
           <div className="row justify-content-center">
             {Techs.map((tech, i) => {
               return (
