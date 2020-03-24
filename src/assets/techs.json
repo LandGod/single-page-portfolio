@@ -6,13 +6,8 @@
     },
     {
         "name": "html",
-        "caseSensitiveName": "HTML",
-        "image": "html.svg"
-    },
-    {
-        "name": "css",
-        "caseSensitiveName": "CSS",
-        "image": "css.svg"
+        "caseSensitiveName": "HTML5+CSS3",
+        "image": "htmlcss.svg"
     },
     {
         "name": "jquery",
@@ -27,8 +22,7 @@
     {
         "name": "express",
         "caseSensitiveName": "ExpressJS",
-        "image": "express.png",
-        "forceBackground": "#68A063"
+        "image": "express.png"
     },
     {
         "name": "mysql",

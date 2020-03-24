@@ -40,6 +40,8 @@
 
 .plusIcon {
     color: black;
+    transform: rotate(0deg);
+    transition: transform 2s;
 }
 
 .iBackground {
@@ -56,6 +58,7 @@
 .buttonContainer {
     position: relative;
     height: 0vh;
+    max-height: 28vh;
     transition: height 2s, transform 2s;
     overflow: hidden;
 }

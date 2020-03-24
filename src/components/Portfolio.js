@@ -7,7 +7,8 @@ import ButtonDrawer from "./ButtonDrawer";
 
 class Portfolio extends React.Component {
   state = {
-    selectedTechs: []
+    selectedTechs: [],
+    drawerOpen: false
   };
 
   toggleTech = tech => {
@@ -57,6 +58,15 @@ class Portfolio extends React.Component {
     return 0;
   };
 
+  toggleDawer = () => {
+    // For tech drawer (ButtonDrawer) open/close
+    // If closing drawer, also reset techs
+    if (this.state.drawerOpen) {
+      this.toggleTech("reset");
+    }
+    this.setState({ drawerOpen: !this.state.drawerOpen });
+  };
+
   render() {
     return (
       <div className="container">
@@ -65,7 +75,11 @@ class Portfolio extends React.Component {
             <h1>Portfolio</h1>
           </div>
         </div>
-        <ButtonDrawer>
+        <ButtonDrawer
+          open={this.state.drawerOpen}
+          toggle={this.toggleDawer}
+          mobileSize={this.props.mobileSize}
+        >
           <div className="row justify-content-center">
             {Techs.map((tech, i) => {
               return (
@@ -76,14 +90,13 @@ class Portfolio extends React.Component {
                   caseSensitiveName={tech.caseSensitiveName}
                   toggleTech={this.toggleTech}
                   highlight={this.isSelectedTech(tech.name)}
-                  forceBackground={tech.forceBackground || false}
                   suppressTooltip={this.props.noHover}
                 />
               );
             })}
             <div
-              style={{ paddingTop: "3em", paddingBottom: "3em" }}
-              className="col-md-1 col-3 btn btn-link"
+              style={{ paddingTop: "6vh", paddingBottom: "6vh" }}
+              className="col-2 col-md-1 btn btn-link"
               onClick={() => this.toggleTech("reset")}
             >
               Reset
