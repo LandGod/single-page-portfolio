@@ -6,21 +6,24 @@
 }
 
 .imgGrey {
-    filter: grayscale(100)
+    filter: grayscale(100);
+}
+
+.selectedHighlight {
+  border-bottom:  3px solid #33b6e5bd;
 }
 
 .techLogoContainers {
   overflow: visible;
   position: relative;
-  border: 0;
-  padding: 0.5em;
+  padding: 0.1em;
   background: none;
 }
 
 .tooltip {
     position: absolute;
     left: calc(50% - calc(6em / 2));
-    bottom: -8%;
+    bottom: -1%;
     background: #33b5e5;
     color: white;
     border-radius: .4em;
@@ -35,7 +38,7 @@
 .tooltipAfter {
 	content: '';
 	position: absolute;
-	bottom: 10%;
+	bottom: 17%;
 	left: 50%;
 	width: 0;
 	height: 0;

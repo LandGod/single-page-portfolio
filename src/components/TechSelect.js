@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import techs from "../assets/techs.json";
 import styles from "./styles/TechSelect.module.css";
 
 function TechSelect(props) {
@@ -13,27 +12,32 @@ function TechSelect(props) {
   };
 
   return (
-    <button
+    // Note: This has to be a div, not a button, since the default styling from pseudo classes for buttons, such as :active and :hover
+    // will interfer
+
+    // Begin main continer (basically a button)
+    <div
       onMouseEnter={toolTipShow}
       onMouseLeave={toolTipHide}
       onClick={() => {
         props.toggleTech(props.name);
       }}
-      className={`${styles.techLogoContainers} col-md-1 col-3 btn btn-link`}
+      className={`${styles.techLogoContainers} col-2 col-md-1 btn btn-link 
+      ${props.highlight === 2 ? styles.selectedHighlight : ""}
+      `}
     >
+      {/* Begin image */}
       <img
         alt={props.caseSensitiveName}
         className={`img-fluid ${styles.techLogos} ${
           props.highlight ? "" : styles.imgGrey
-        }`}
+        } `}
         src={`${process.env.PUBLIC_URL}/techs/${props.image}`}
-        style={
-          props.forceBackground
-            ? { backgroundColor: props.forceBackground }
-            : {}
-        }
       />
-      {/* Don't render anything to do with the tooltip on devices that don't have hover capability */}
+      {/* End image */}
+
+      {/* Begin tooltip */}
+      {/* Logic to stop render of anything to do with the tooltip on devices that don't have hover capability */}
       {props.suppressTooltip ? (
         ""
       ) : (
@@ -52,7 +56,9 @@ function TechSelect(props) {
           ></div>
         </>
       )}
-    </button>
+      {/* End tooltip */}
+    </div>
+    // End main container
   );
 }
 
