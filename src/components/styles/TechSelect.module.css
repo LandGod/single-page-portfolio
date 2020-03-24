@@ -6,7 +6,11 @@
 }
 
 .imgGrey {
-    filter: grayscale(100)
+    filter: grayscale(100);
+}
+
+.selectedHighlight {
+  border-bottom:  3px solid #33b6e5bd;
 }
 
 .techLogoContainers {
