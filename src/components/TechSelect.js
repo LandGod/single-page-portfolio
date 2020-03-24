@@ -22,7 +22,7 @@ function TechSelect(props) {
       onClick={() => {
         props.toggleTech(props.name);
       }}
-      className={`${styles.techLogoContainers} col-md-1 col-3 btn btn-link 
+      className={`${styles.techLogoContainers} col-2 col-md-1 btn btn-link 
       ${props.highlight === 2 ? styles.selectedHighlight : ""}
       `}
     >

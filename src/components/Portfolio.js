@@ -75,7 +75,11 @@ class Portfolio extends React.Component {
             <h1>Portfolio</h1>
           </div>
         </div>
-        <ButtonDrawer open={this.state.drawerOpen} toggle={this.toggleDawer}>
+        <ButtonDrawer
+          open={this.state.drawerOpen}
+          toggle={this.toggleDawer}
+          mobileSize={this.props.mobileSize}
+        >
           <div className="row justify-content-center">
             {Techs.map((tech, i) => {
               return (
@@ -91,8 +95,8 @@ class Portfolio extends React.Component {
               );
             })}
             <div
-              style={{ paddingTop: "3em", paddingBottom: "3em" }}
-              className="col-md-1 col-3 btn btn-link"
+              style={{ paddingTop: "6vh", paddingBottom: "6vh" }}
+              className="col-2 col-md-1 btn btn-link"
               onClick={() => this.toggleTech("reset")}
             >
               Reset

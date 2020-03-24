@@ -56,6 +56,7 @@
 .buttonContainer {
     position: relative;
     height: 0vh;
+    max-height: 28vh;
     transition: height 2s, transform 2s;
     overflow: hidden;
 }

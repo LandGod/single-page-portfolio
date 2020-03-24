@@ -36,12 +36,13 @@ function useMedia(query) {
 
 function App() {
 
-  let cantHover = useMedia('(hover:none)')
+  let cantHover = useMedia('(hover:none)');
+  let smBreakPoint = useMedia("(max-width: 767px)") // 540px = max breakpoint for small in boostrap 
 
   return (
     <div className="App">
       <About />
-      <Portfolio noHover={cantHover} />
+      <Portfolio noHover={cantHover} mobileSize={smBreakPoint}/>
       <Contact />
     </div>
   );

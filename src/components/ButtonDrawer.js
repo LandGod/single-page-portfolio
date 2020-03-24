@@ -21,7 +21,7 @@ function ButtonDrawer(props) {
         </button>
         <div className={styles.spacer} style={{height:`${props.open ? "5vh" : "15vh"}`}}> </div>
       </div>
-        <div className={`${styles.buttonContainer} container`} style={{height:`${props.open ? "18vh" : "0"}`}}>
+        <div className={`${styles.buttonContainer} container`} style={{height:`${props.open ? props.mobileSize ? "36vh" : "18vh" : "0"}`}}>
           {props.children}
         </div>
     </>
