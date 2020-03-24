@@ -40,6 +40,8 @@
 
 .plusIcon {
     color: black;
+    transform: rotate(0deg);
+    transition: transform 2s;
 }
 
 .iBackground {

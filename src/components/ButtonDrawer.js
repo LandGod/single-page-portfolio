@@ -15,6 +15,7 @@ function ButtonDrawer(props) {
         <button
           className={`${styles.plusButton} btn btn-link `}
           onClick={props.toggle}
+          style={{transform:`${ props.open ? "rotate(45deg) translateX(1.9%)" : "rotate(0deg)"}`}}
         >
           <i className={` ${styles.plusIcon} fas fa-plus-circle`}></i>
           <div className={styles.iBackground}></div>
