@@ -76,7 +76,6 @@ class Portfolio extends React.Component {
                   caseSensitiveName={tech.caseSensitiveName}
                   toggleTech={this.toggleTech}
                   highlight={this.isSelectedTech(tech.name)}
-                  forceBackground={tech.forceBackground || false}
                   suppressTooltip={this.props.noHover}
                 />
               );

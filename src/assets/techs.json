@@ -27,8 +27,7 @@
     {
         "name": "express",
         "caseSensitiveName": "ExpressJS",
-        "image": "express.png",
-        "forceBackground": "#68A063"
+        "image": "express.png"
     },
     {
         "name": "mysql",

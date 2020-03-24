@@ -33,11 +33,6 @@ function TechSelect(props) {
           props.highlight ? "" : styles.imgGrey
         } `}
         src={`${process.env.PUBLIC_URL}/techs/${props.image}`}
-        style={
-          props.forceBackground
-            ? { backgroundColor: props.forceBackground }
-            : {}
-        }
       />
       {/* End image */}
 
