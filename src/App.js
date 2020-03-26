@@ -35,16 +35,15 @@ function useMedia(query) {
 }
 
 function App() {
-
   // Media queries
-  let cantHover = useMedia('(hover:none)'); // Return true if device is touch-screen only (no mouse pointer)
-  let smBreakPoint = useMedia("(max-width: 767px)") // 540px is the sm breakpoint, but 768px is where things go off the rails for this app.
+  let cantHover = useMedia("(hover:none)"); // Return true if device is touch-screen only (no mouse pointer)
+  let smBreakPoint = useMedia("(max-width: 767px)"); // 540px is the sm breakpoint, but 768px is where things go off the rails for this app.
 
   return (
     <div className="App">
       <NavBar />
-      <About mobileSize={smBreakPoint}/>
-      <Portfolio noHover={cantHover} mobileSize={smBreakPoint}/>
+      <About mobileSize={smBreakPoint} />
+      <Portfolio noHover={cantHover} mobileSize={smBreakPoint} />
       <Contact />
     </div>
   );
