@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+.background-blue {
+  background-color: #4b6cc1;
+}
+
 /* .spacer {
   clear: both;
   min-width: 1px;

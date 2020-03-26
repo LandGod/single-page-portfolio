@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import About from "./components/About";
 import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
+import NavBar from "./components/NavBar";
 
 // General prupose reuseable media queries
 function useMedia(query) {
@@ -41,6 +42,7 @@ function App() {
 
   return (
     <div className="App">
+      <NavBar />
       <About mobileSize={smBreakPoint}/>
       <Portfolio noHover={cantHover} mobileSize={smBreakPoint}/>
       <Contact />

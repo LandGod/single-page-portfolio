@@ -69,7 +69,7 @@ class Portfolio extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container" id="portfolioSection">
         <div className="row">
           <div className="col-12 portfolioHOne">
             <h1>Portfolio</h1>

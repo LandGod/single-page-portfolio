@@ -1,0 +1,5 @@
+.animateOpen {
+    height: 54px;
+    transition: height 2s;
+    overflow: hidden;
+}

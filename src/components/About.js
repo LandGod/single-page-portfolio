@@ -4,7 +4,7 @@ import styles from "./styles/About.module.css";
 class About extends React.Component {
   render() {
     return (
-      <div className={` ${styles.mainContentArea} container`}>
+      <div className={` ${styles.mainContentArea} container`} id="aboutSection">
         <div className="row justify-content-around">
           {/* Column containing text (with media query) */}
           <div
