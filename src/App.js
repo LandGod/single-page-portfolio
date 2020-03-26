@@ -35,8 +35,9 @@ function useMedia(query) {
 
 function App() {
 
-  let cantHover = useMedia('(hover:none)');
-  let smBreakPoint = useMedia("(max-width: 767px)") // 540px = max breakpoint for small in boostrap 
+  // Media queries
+  let cantHover = useMedia('(hover:none)'); // Return true if device is touch-screen only (no mouse pointer)
+  let smBreakPoint = useMedia("(max-width: 767px)") // 540px is the sm breakpoint, but 768px is where things go off the rails for this app.
 
   return (
     <div className="App">
