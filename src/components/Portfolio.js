@@ -71,7 +71,7 @@ class Portfolio extends React.Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-12 text-center portfolioHOne">
+          <div className="col-12 portfolioHOne">
             <h1>Portfolio</h1>
           </div>
         </div>
