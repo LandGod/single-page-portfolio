@@ -1,0 +1,26 @@
+.mainContentArea {
+    /* background-color: #191a1d; */
+}
+
+.aboutTextContainer {
+    padding-top: 25vh;
+    padding-bottom: 25vh;
+}
+
+.aboutTextContainerMobile {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.introHeader {
+    font-size: 5em;
+
+}
+
+.introText {
+    font-size: 2em;
+}
+
+.profilePic {
+    border-radius: 0.5em;
+}

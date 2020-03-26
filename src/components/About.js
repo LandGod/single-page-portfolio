@@ -1,29 +1,25 @@
 import React from "react";
-import IconBar from "./IconBar";
-import TextBaloon from "./TextBaloon";
+import styles from "./styles/About.module.css";
 
 class About extends React.Component {
   render() {
     return (
-      <div className="container">
-        <div className="row justify-content-end">
-          <div className="col-12 col-md-4 mainContentArea">
+      <div className={` ${styles.mainContentArea} container`}>
+        <div className="row justify-content-around">
+          <div className={`${ this.props.mobileSize ? styles.aboutTextContainerMobile :styles.aboutTextContainer} col-12 col-md-8`}>
+            <div className={styles.introHeader}>Hi, I'm Dan!</div>
+            <p className={styles.introText}>
+              Web Developer with a background in the arts and theatre technology
+            </p>
+          </div>
+          <div className={`col-12 col-md-4`}>
             <figure className="profilePic">
               <img
                 src={process.env.PUBLIC_URL + "/danielgoldphoto.jpg"}
-                className="img-fluid my-3"
+                className={` ${styles.profilePic} img-fluid my-3`}
                 alt="Daniel Gold"
               />
             </figure>
-            <div className="overlapContainer">
-              <h1 className="aboutHOne" >About</h1>
-              <div className="textBaloonComponent mt-md-5">
-                <TextBaloon />
-              </div>
-              <div className="iconBarComponent">
-                <IconBar />
-              </div>
-            </div>
           </div>
         </div>
       </div>
