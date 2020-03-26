@@ -6,6 +6,7 @@ class About extends React.Component {
     return (
       <div className={` ${styles.mainContentArea} container`}>
         <div className="row justify-content-around">
+          {/* Column containing text (with media query) */}
           <div
             className={`${
               this.props.mobileSize
@@ -13,6 +14,7 @@ class About extends React.Component {
                 : styles.aboutTextContainer
             } col-12 col-md-8`}
           >
+            {/* Header and paragraph tag must be enclosed or flexbox will put them side-by-side when centering */}
             <div>
               <div className={styles.introHeader}>Hi, I'm Dan!</div>
               <p className={styles.introText}>
@@ -21,6 +23,8 @@ class About extends React.Component {
               </p>
             </div>
           </div>
+
+          {/* Column containing profile picture */}
           <div className={`col-12 col-md-4`}>
             <figure>
               <img
@@ -30,7 +34,9 @@ class About extends React.Component {
               />
             </figure>
           </div>
+          {/* End image column*/}
         </div>
+        {/* End row */}
       </div>
     );
   }
