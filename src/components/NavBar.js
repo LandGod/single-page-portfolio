@@ -4,6 +4,23 @@ import styles from "./styles/NavBar.module.css";
 function NavBar() {
   const [open, setOpen] = useState(false);
 
+  useEffect(() => {
+    let onScroll;
+
+    if (!open) {
+      onscroll = e => {
+        setOpen(true);
+      };
+
+      window.addEventListener("scroll", onscroll);
+    }
+    return () => {
+      if (onScroll) {
+        window.removeEventListener("scroll", onscroll);
+      }
+    };
+  });
+
   return (
     <div
       className={styles.animateOpen}
