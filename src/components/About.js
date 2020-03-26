@@ -25,7 +25,7 @@ class About extends React.Component {
           </div>
 
           {/* Column containing profile picture */}
-          <div className={`col-12 col-md-4`}>
+          <div className={` ${styles.profilePicContainer} col-12 col-md-4`}>
             <figure>
               <img
                 src={process.env.PUBLIC_URL + "/danielgoldphoto.jpg"}
