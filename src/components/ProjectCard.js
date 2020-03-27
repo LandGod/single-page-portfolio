@@ -80,8 +80,8 @@ class ProjectCard extends React.Component {
             </h3>
             <p>{this.props.summary}</p>
             <div className={styles.buttonContainer}>
-              <a className="btn btn-light" href={this.props.deployLink}>View Website</a>{" "}
-              <a className="btn btn-light" href={this.props.repoLink}>See Source Code</a>
+              { this.props.deployLink ? <a className="btn btn-light" href={this.props.deployLink}>View Website</a> : '' }
+              { this.props.repoLink ? <a className="btn btn-light" href={this.props.repoLink}>See Source Code</a> : '' }
             </div>
           </div>
         </div>
