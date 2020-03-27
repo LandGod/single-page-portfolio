@@ -10,6 +10,14 @@ class ProjectCard extends React.Component {
   // deployLink: link to deployed project
   // highlight: number - 0: tech missing; 1: no techs selected; 2: has all selected techs
 
+  //FOR TESTING ONLY!!!!
+  static defaultProps = {
+    summary: `This website is built to promote myself, show off my work, 
+  and provide a central point from which all of my projects, social media handles, 
+  and resume can be viewed. Built by me, for me.`
+  };
+  //FOR TESTING ONLY!!!!
+
   state = {
     width: this.props.width || "single", // single or double (4 col / 8 col)
     imageName: this.props.imageName, // Probably not needed any more
@@ -26,9 +34,9 @@ class ProjectCard extends React.Component {
     this.setState({ mouseOver: false });
   };
 
-  linkToRepo = () => {
-    window.open(this.props.repoLink);
-  };
+  // linkToRepo = () => {
+  //   window.open(this.props.repoLink);
+  // };
 
   render() {
     return (
@@ -46,55 +54,37 @@ class ProjectCard extends React.Component {
       >
         {/* Link to repo encapsulated entire component except deploy link */}
         <a href={this.props.repoLink} target="_blank" rel="noopener noreferrer">
-          <div
-            className={
-              this.props.highlight
-                ? styles.portfolio_item
-                : styles.portfolio_item_grey
-            }
-            href={this.props.repoLink}
-            target="_blank"
-          >
-            <img
-              className={`img-fluid ${
-                this.props.highlight
-                  ? styles.portfolio_item_img
-                  : styles.portfolio_item_img_grey
-              }`}
-              src={`${process.env.PUBLIC_URL}/${this.state.imageName}`}
-              alt={this.props.title}
-            />
-          </div>
-          <div
-            className={styles.title_overlay}
-            href={this.props.repoLink}
-            target="_blank"
-          >
-            {this.props.title[0].toUpperCase() + this.props.title.slice(1)}
-          </div>
+          {" "}
         </a>
-
-        {/* Add deploy link flag in upper corner if deploy link was supplied to component (or blank)*/}
-        {this.props.deployLink ? (
-          <div
-            className={
+        <div
+          className={
+            this.props.highlight
+              ? styles.portfolio_item
+              : styles.portfolio_item_grey
+          }
+          href={this.props.repoLink}
+          target="_blank"
+        >
+          <img
+            className={`img-fluid ${
               this.props.highlight
-                ? styles.repo_overlay
-                : styles.repo_overlay_grey
-            }
-          >
-            <a
-              className={styles.repo_overlay_a}
-              href={this.props.deployLink}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Deployed
-            </a>
+                ? styles.portfolio_item_img
+                : styles.portfolio_item_img_grey
+            }`}
+            src={`${process.env.PUBLIC_URL}/${this.state.imageName}`}
+            alt={this.props.title}
+          />
+          <div className={styles.portfolio_item_hover} style={{visibility: this.state.mouseOver ? 'visible' : 'hidden'}}>
+            <h3>
+              {this.props.title[0].toUpperCase() + this.props.title.slice(1)}
+            </h3>
+            <p>{this.props.summary}</p>
+            <div className={styles.buttonContainer}>
+              <a className="btn btn-light" href={this.props.deployLink}>View Website</a>{" "}
+              <a className="btn btn-light" href={this.props.repoLink}>See Source Code</a>
+            </div>
           </div>
-        ) : (
-          ""
-        )}
+        </div>
       </div>
     );
   }

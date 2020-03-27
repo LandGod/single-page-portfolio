@@ -1,7 +1,6 @@
 .portfolio_item {
     position: relative;
     background-color: white;
-    border: 1px solid #33b5e5;
     overflow: hidden;
     width:100%;
     height: 50vw;
@@ -13,7 +12,7 @@
 .portfolio_item_grey {
     position: relative;
     background-color: white;
-    border: 1px solid grey;
+    border: 1px solid rgba(128, 128, 128, 0.048);
     overflow: hidden;
     width:100%;
     height: 50vw;
@@ -37,11 +36,35 @@
     filter: grayscale(100%);
 }
 
+.portfolio_item_hover {
+    /* visibility: hidden; */
+    position: absolute;
+    top: 0;
+    background-color: #4b6dc1f1;
+    overflow: hidden;
+    width:100%;
+    height: 50vw;
+    max-height: 300px;
+    border-radius: 20px;
+    padding: 2em;
+    color: white;
+}
+
+.buttonContainer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 2em;
+    width: 100%;
+}
+
 /* 
 This is actually the overlay for the deploy link, not the repo link. Sorry. 
 These got chaged a while ago and fixing the naming isn't at the top of my to-dos
 */
-.repo_overlay {
+/* .repo_overlay {
     position: absolute; 
     top: 8px; 
     right: 8px;
@@ -73,13 +96,13 @@ These got chaged a while ago and fixing the naming isn't at the top of my to-dos
     border-top-right-radius: 20px;
     border-bottom-left-radius: 20px;
     text-align: center;
-}
+} */
 
-.repo_overlay_a {
+/* .repo_overlay_a {
     color: white;
-}
+} */
 
-.title_overlay {
+/* .title_overlay {
     position: absolute; 
     bottom: 20px; 
     background: rgb(0, 0, 0);
@@ -90,7 +113,7 @@ These got chaged a while ago and fixing the naming isn't at the top of my to-dos
     font-size: 20px;
     padding: 5px;
     text-align: center;
-}
+} */
 
 .card_container {
     max-height: 300px;
@@ -100,8 +123,8 @@ These got chaged a while ago and fixing the naming isn't at the top of my to-dos
 /* Applied insted of .card_container when the mouseOver event is actived.
 Gives a nice zoom/grow effect on the mouse over for portfolio project cards.
 */
-.card_container_hover {
+/* .card_container_hover {
     max-height: calc(300px * 1.02);
     margin-bottom: 0;
     transform: scale(1.02);
-}
+} */
