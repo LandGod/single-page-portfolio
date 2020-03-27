@@ -3,28 +3,21 @@ import styles from "./styles/ProjectCard.module.css";
 
 class ProjectCard extends React.Component {
   // Props:
-  // width: "single" or "double" - Makes the component 4 or 8 columns in medium view
+  // width?: "single" or "double" - Makes the component 4 or 8 columns in medium view - Default = single
   // imageName: file name of image to be displayed
   // title: Name of project/title
-  // repoLink: link to project repo
-  // deployLink: link to deployed project
+  // repoLink?: link to project repo
+  // deployLink?: link to deployed project
   // highlight: number - 0: tech missing; 1: no techs selected; 2: has all selected techs
   // summary: Short summary of the project
-  // displayTitle: boolean - set to true if the title needs to be displayed as text (not alreayd in the image)
+  // displayTitle?: boolean - set to true if the title needs to be displayed as text (not alreayd in the image)
   // mobileSize: boolean - true mean the media query for mobile size should be activated
 
-  //FOR TESTING ONLY!!!!
   static defaultProps = {
-    summary: `This website is built to promote myself, show off my work, 
-  and provide a central point from which all of my projects, social media handles, 
-  and resume can be viewed. Built by me, for me.`,
-    displayTitle: true
+    width: "single"
   };
-  //FOR TESTING ONLY!!!!
 
   state = {
-    width: this.props.width || "single", // single or double (4 col / 8 col)
-    imageName: this.props.imageName, // Probably not needed any more
     mouseOver: false // Tracks mouse over entire component. Used for zoom/scale effect.
   };
 
@@ -46,8 +39,8 @@ class ProjectCard extends React.Component {
     return (
       // Container with sizing info for overall component. Is transformed during mouseover
       <div
-        className={`col-${this.state.width === "double" ? "12" : "6"} col-md-${
-          this.state.width === "double" ? "6" : "4"
+        className={`col-${this.props.width === "double" ? "12" : "6"} col-md-${
+          this.props.width === "double" ? "6" : "4"
         } p-1 p-md-2 ${
           this.state.mouseOver
             ? styles.card_container_hover
@@ -75,7 +68,7 @@ class ProjectCard extends React.Component {
                 ? styles.portfolio_item_img
                 : styles.portfolio_item_img_grey
             }`}
-            src={`${process.env.PUBLIC_URL}/${this.state.imageName}`}
+            src={`${process.env.PUBLIC_URL}/${this.props.imageName}`}
             alt={this.props.title}
           />
           {this.props.displayTitle ? (
