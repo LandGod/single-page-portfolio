@@ -1,8 +1,8 @@
 ### High Priority
 * Swap in most recent resume pdf
 * Add twitter button
-* Clean up profile section code
-* Fix profile section overlays on mobile
+* Clean up portfolio section code
+* Fix portfolio section overlays on mobile
 
 ### Before Push to Production
 * Add summaries for each project
@@ -13,3 +13,4 @@
 * Make project images look less like ass
 * Optimize all images for efficiency 
 * Update readme?
+* Make technology icons look nicer and more consistent?
