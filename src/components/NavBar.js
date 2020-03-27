@@ -3,13 +3,19 @@ import styles from "./styles/NavBar.module.css";
 
 function NavBar() {
   const [open, setOpen] = useState(false);
+  const [overflow, setOverflow] = useState(false);
 
   useEffect(() => {
+    // Trigger reveal navbar (via making height not 0) as soon as user scrolls page.
+    // Should never do anything after that inital scroll
     let onScroll;
 
     if (!open) {
       onscroll = e => {
+        // Reveal navbar
         setOpen(true);
+        // After reveal is finished, allow overflow permanently so that hamburger menue works
+        setTimeout(() => setOverflow(true), 2000);
       };
 
       window.addEventListener("scroll", onscroll);
@@ -24,10 +30,13 @@ function NavBar() {
   return (
     <div
       className={styles.animateOpen}
-      style={{ height: open ? "54px" : "0px" }}
+      style={{
+        height: open ? "54px" : "0px",
+        overflow: overflow ? "visible" : "hidden"
+      }}
     >
       <nav
-        className={`navbar navbar-expand-lg navbar-light bg-light justify-content-between`}
+        className="navbar navbar-expand-md navbar-light bg-light justify-content-between"
       >
         <a className="navbar-brand" href="#aboutSection">
           Dan Gold
