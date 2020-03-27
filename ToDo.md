@@ -14,3 +14,4 @@
 * Optimize all images for efficiency 
 * Update readme?
 * Make technology icons look nicer and more consistent?
+* Go back to scroll event listener and add `{once: true}` as second argument.

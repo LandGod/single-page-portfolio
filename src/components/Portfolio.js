@@ -114,6 +114,7 @@ class Portfolio extends React.Component {
                 repoLink={project.repoLink}
                 deployLink={project.deployLink}
                 highlight={this.hasSelectedTechs(project.techStack)}
+                mobileSize={this.props.mobileSize}
               />
             );
           })}

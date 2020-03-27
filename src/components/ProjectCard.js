@@ -9,12 +9,16 @@ class ProjectCard extends React.Component {
   // repoLink: link to project repo
   // deployLink: link to deployed project
   // highlight: number - 0: tech missing; 1: no techs selected; 2: has all selected techs
+  // summary: Short summary of the project
+  // displayTitle: boolean - set to true if the title needs to be displayed as text (not alreayd in the image)
+  // mobileSize: boolean - true mean the media query for mobile size should be activated
 
   //FOR TESTING ONLY!!!!
   static defaultProps = {
     summary: `This website is built to promote myself, show off my work, 
   and provide a central point from which all of my projects, social media handles, 
-  and resume can be viewed. Built by me, for me.`
+  and resume can be viewed. Built by me, for me.`,
+    displayTitle: true
   };
   //FOR TESTING ONLY!!!!
 
@@ -74,14 +78,44 @@ class ProjectCard extends React.Component {
             src={`${process.env.PUBLIC_URL}/${this.state.imageName}`}
             alt={this.props.title}
           />
-          <div className={styles.portfolio_item_hover} style={{visibility: this.state.mouseOver ? 'visible' : 'hidden'}}>
+          {this.props.displayTitle ? (
+            <div
+              className={
+                this.props.highlight
+                  ? styles.projectTitle
+                  : styles.projectTitleGrey
+              }
+            >
+              <div className={ this.props.mobileSize ? styles.titleInnerMobile : styles.titleInner}>
+                {this.props.title[0].toUpperCase() + this.props.title.slice(1)}
+              </div>
+            </div>
+          ) : (
+            ""
+          )}
+          <div
+            className={styles.portfolio_item_hover}
+            style={{ visibility: this.state.mouseOver ? "visible" : "hidden" }}
+          >
             <h3>
               {this.props.title[0].toUpperCase() + this.props.title.slice(1)}
             </h3>
             <p>{this.props.summary}</p>
             <div className={styles.buttonContainer}>
-              { this.props.deployLink ? <a className="btn btn-light" href={this.props.deployLink}>View Website</a> : '' }
-              { this.props.repoLink ? <a className="btn btn-light" href={this.props.repoLink}>See Source Code</a> : '' }
+              {this.props.deployLink ? (
+                <a className="btn btn-light" href={this.props.deployLink}>
+                  View Website
+                </a>
+              ) : (
+                ""
+              )}
+              {this.props.repoLink ? (
+                <a className="btn btn-light" href={this.props.repoLink}>
+                  See Source Code
+                </a>
+              ) : (
+                ""
+              )}
             </div>
           </div>
         </div>
