@@ -1,10 +1,6 @@
 ### High Priority
 * Swap in most recent resume pdf
 * Add twitter button
-* Clean up portfolio section code
-* Fix portfolio section overlays on mobile
-
-### Before Push to Production
 * Add summaries for each project
 
 ### Nice to have
@@ -15,3 +11,4 @@
 * Update readme?
 * Make technology icons look nicer and more consistent?
 * Go back to scroll event listener and add `{once: true}` as second argument.
+* Open resume in new tab?

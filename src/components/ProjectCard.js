@@ -31,13 +31,9 @@ class ProjectCard extends React.Component {
     this.setState({ mouseOver: false });
   };
 
-  // linkToRepo = () => {
-  //   window.open(this.props.repoLink);
-  // };
-
   render() {
     return (
-      // Container with sizing info for overall component. Is transformed during mouseover
+      // Container with sizing info for overall component. Has a handler for mouseover attached.
       <div
         className={`col-${this.props.width === "double" ? "12" : "6"} col-md-${
           this.props.width === "double" ? "6" : "4"
@@ -49,10 +45,7 @@ class ProjectCard extends React.Component {
         onMouseEnter={this.mouseOnComponent}
         onMouseLeave={this.mouseOffComponent}
       >
-        {/* Link to repo encapsulated entire component except deploy link */}
-        <a href={this.props.repoLink} target="_blank" rel="noopener noreferrer">
-          {" "}
-        </a>
+        {/* Begin portfolio Item inner container. This container handles styling for highlighted/grey */}
         <div
           className={
             this.props.highlight
@@ -71,6 +64,7 @@ class ProjectCard extends React.Component {
             src={`${process.env.PUBLIC_URL}/${this.props.imageName}`}
             alt={this.props.title}
           />
+          {/* Being project title container. Only appears if props.displayTitle is true */}
           {this.props.displayTitle ? (
             <div
               className={
@@ -79,13 +73,21 @@ class ProjectCard extends React.Component {
                   : styles.projectTitleGrey
               }
             >
-              <div className={ this.props.mobileSize ? styles.titleInnerMobile : styles.titleInner}>
+              {/* Inner text container only exists to handle media query for font size */}
+              <div
+                className={
+                  this.props.mobileSize
+                    ? styles.titleInnerMobile
+                    : styles.titleInner
+                }
+              >
                 {this.props.title[0].toUpperCase() + this.props.title.slice(1)}
               </div>
             </div>
           ) : (
             ""
           )}
+          {/* Begin mouse-over detail overlay for project card */}
           <div
             className={styles.portfolio_item_hover}
             style={{ visibility: this.state.mouseOver ? "visible" : "hidden" }}
@@ -94,24 +96,38 @@ class ProjectCard extends React.Component {
               {this.props.title[0].toUpperCase() + this.props.title.slice(1)}
             </h3>
             <p>{this.props.summary}</p>
+            {/* Button container for deploy and repo links */}
             <div className={styles.buttonContainer}>
               {this.props.deployLink ? (
-                <a className="btn btn-light" href={this.props.deployLink}>
+                <a
+                  className="btn btn-light"
+                  href={this.props.deployLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   View Website
                 </a>
               ) : (
                 ""
               )}
               {this.props.repoLink ? (
-                <a className="btn btn-light" href={this.props.repoLink}>
+                <a
+                  className="btn btn-light"
+                  href={this.props.repoLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   See Source Code
                 </a>
               ) : (
                 ""
               )}
             </div>
+            {/* End link button container */}
           </div>
+          {/* End mouseover detail overlay */}
         </div>
+        {/* End portfolio inner container */}
       </div>
     );
   }
