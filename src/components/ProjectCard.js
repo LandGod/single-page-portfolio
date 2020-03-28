@@ -10,11 +10,12 @@ class ProjectCard extends React.Component {
   // deployLink?: link to deployed project
   // highlight: number - 0: tech missing; 1: no techs selected; 2: has all selected techs
   // summary: Short summary of the project
-  // displayTitle?: boolean - set to true if the title needs to be displayed as text (not alreayd in the image)
+  // displayTitle?: boolean - set to true if the title needs to be displayed as text (not alreayd in the image) - default true
   // mobileSize: boolean - true mean the media query for mobile size should be activated
 
   static defaultProps = {
-    width: "single"
+    width: "single",
+    displayTitle: true
   };
 
   state = {
@@ -88,44 +89,95 @@ class ProjectCard extends React.Component {
             ""
           )}
           {/* Begin mouse-over detail overlay for project card */}
-          <div
-            className={styles.portfolio_item_hover}
-            style={{ visibility: this.state.mouseOver ? "visible" : "hidden" }}
-          >
-            <h3>
-              {this.props.title[0].toUpperCase() + this.props.title.slice(1)}
-            </h3>
-            <p>{this.props.summary}</p>
-            {/* Button container for deploy and repo links */}
-            <div className={styles.buttonContainer}>
-              {this.props.deployLink ? (
-                <a
-                  className="btn btn-light"
-                  href={this.props.deployLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View Website
-                </a>
-              ) : (
-                ""
-              )}
-              {this.props.repoLink ? (
-                <a
-                  className="btn btn-light"
-                  href={this.props.repoLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  See Source Code
-                </a>
-              ) : (
-                ""
-              )}
+
+          {this.props.mobileSize ? (
+            // BEGIN MOBILE ONLY VERSION OF DETAIL OVERALY
+            <div
+              className={styles.portfolio_item_hover}
+              style={{
+                visibility: this.state.mouseOver ? "visible" : "hidden",
+                padding: "1em", overflow:"scroll"
+              }}
+            >
+              <h3 className="mb-sm-4 mb-xs-1" style={{ fontSize: "1em" }}>
+                {this.props.title[0].toUpperCase() + this.props.title.slice(1)}
+              </h3>
+              {/* Button container for deploy and repo links (MOBILE)*/}
+              <div className={`row justify-content-around mb-xs-1 mb-sm-3`}>
+                {this.props.deployLink ? (
+                  <a
+                    className={` col-5 btn btn-light btn-sm`}
+                    href={this.props.deployLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Site
+                  </a>
+                ) : (
+                  ""
+                )}
+                {this.props.repoLink ? (
+                  <a
+                    className={` col-5 btn btn-light btn-sm`}
+                    href={this.props.repoLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Code
+                  </a>
+                ) : (
+                  ""
+                )}
+              </div>
+              {/* End button container (MOBILE) */}
+              <p>{this.props.summary}</p>
             </div>
-            {/* End link button container */}
-          </div>
-          {/* End mouseover detail overlay */}
+          ) : (
+            // END MOBILE ONLY VERSION OF OVERLAY
+            // ******************************************************************* \\
+            // BEGIN NON-MOBILE VERSION OF OVERLAY
+            <div
+              className={styles.portfolio_item_hover}
+              style={{
+                visibility: this.state.mouseOver ? "visible" : "hidden"
+              }}
+            >
+              <h3>
+                {this.props.title[0].toUpperCase() + this.props.title.slice(1)}
+              </h3>
+              <p>{this.props.summary}</p>
+              {/* Button container for deploy and repo links */}
+              <div className={`${styles.buttonContainer}`}>
+                {this.props.deployLink ? (
+                  <a
+                    className={`btn btn-light`}
+                    href={this.props.deployLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View Website
+                  </a>
+                ) : (
+                  ""
+                )}
+                {this.props.repoLink ? (
+                  <a
+                    className={`btn btn-light`}
+                    href={this.props.repoLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Source Code
+                  </a>
+                ) : (
+                  ""
+                )}
+              </div>
+              {/* End link button container */}
+            </div>
+            //* End mouseover detail overlay */
+          )}
+          {/* End mobile vs desktop conditional html */}
         </div>
         {/* End portfolio inner container */}
       </div>
