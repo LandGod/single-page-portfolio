@@ -10,7 +10,7 @@
 }
 
 .selectedHighlight {
-  border-bottom:  3px solid #33b6e5bd;
+  border-bottom:  3px solid #4b6cc1;
 }
 
 .techLogoContainers {
@@ -24,7 +24,7 @@
     position: absolute;
     left: calc(50% - calc(6em / 2));
     bottom: -1%;
-    background: #33b5e5;
+    background: #4b6cc1;
     color: white;
     border-radius: .4em;
     z-index: 100;
@@ -43,7 +43,7 @@
 	width: 0;
 	height: 0;
 	border: 0.781em solid transparent;
-	border-bottom-color: #33b5e5;
+	border-bottom-color: #4b6cc1;
 	border-top: 0;
 	margin-left: -0.781em;
 	margin-top: -0.781em;
