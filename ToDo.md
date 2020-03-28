@@ -1,7 +1,7 @@
 ### High Priority
 * Swap in most recent resume pdf
 * Add twitter button
-* Add summaries for each project
+* Make tech underlines the standard blue color
 
 ### Nice to have
 * Animated arrows prompting the user to scroll down from the about section, if they don't, after 3 seconds or so
