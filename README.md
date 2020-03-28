@@ -1,68 +1,14 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Single Page Personal Portfolio
 
-## Available Scripts
+This website is built to promote myself, show off my work, and provide a central point from which all of my projects, social media handles, and resume can be viewed. Built by me, for me.
 
-In the project directory, you can run:
+### Technology
+This website was built using React.js and Boostrap. Besides bootstrap, all css is writen as modularized vanilla css. Media queries and pseudoclass selection (eg: `:hover`) is handled using js to swap css classes on the fly. The website has no backend, since a) there is no reason to have one, and b) that lets me host it on GitHub pages, which is real nice.
 
-### `npm start`
+From philosophy perspective, I should note that if I were building this website for a client, I would very likely forgo using React, since the overhead that this incures is not really worth it for a website this small and lacking in dynamic content. However, my secondary aim in creating this website, besides simply re-vamping my portfolio, was to practice using React, so I feel justified in using it here.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Design
+I do not consider myself a designer, so the goal here was never to show off my design chops, but nobody likes a crappy looking website, so I did my best. I always intended to do this as a single page website since that's very in right now and the rest I just figured out as I went along. Many thanks go to my great friend Rachel Bennick for tons of helpful input on the design. I'd also like to give a shoutout to Seb Kay, who does not know me, but from whose own website I drew a lot of inspiration. 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### Planned Developement
+While performance is just not really an issue so far, since the website is so small, I do intend to use it as practice for optimization eventually, so I will be looking into doing that, probably primarily focusing on lazy-loading.

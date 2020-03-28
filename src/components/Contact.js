@@ -4,7 +4,7 @@ import ContactCard from "./ContactCard";
 class Contact extends React.Component {
   render() {
     return (
-      <div className="container">
+      <div className="container" id="contactSection">
         <div className="row">
           <div className="col-12 text-center">
             <h1 className="contactHOne" >Contact</h1>

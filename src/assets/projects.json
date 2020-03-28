@@ -5,7 +5,8 @@
         "repoLink": "http://github.com/landgod/Parent-Trap",
         "deployLink": "https://evening-chamber-98293.herokuapp.com/",
         "width": "double",
-        "techStack": ["react", "express", "node", "html", "css", "javascript", "mongodb", "authentication"]
+        "techStack": ["react", "express", "node", "html", "css", "javascript", "mongodb", "authentication"],
+        "summary": "A shared to-do list and errand tracking app to help parents keep track of the needs of their kids."
     },
     {
         "title": "ThriftBuyer",
@@ -13,54 +14,62 @@
         "repoLink": "http://github.com/landgod/ThriftBuyer",
         "deployLink": "http://thriftbuyer.net",
         "width": "double",
-        "techStack": ["javascript", "jquery", "html", "css", "bootstrap", "mysql", "express", "node", "handlebars", "authentication"]
+        "techStack": ["javascript", "jquery", "html", "css", "bootstrap", "mysql", "express", "node", "handlebars", "authentication"],
+        "summary": "A website to help professional shoppers keep track of the best places to buy thrift and niche items offline."
     },
     {
         "title": "Hacking Simulator",
         "imageName": "futureRetroLandscape.jpg",
         "repoLink": "http://github.com/landgod/Word-Guess-Game",
         "deployLink": "http://landgod.github.io/Word-Guess-Game",
-        "techStack": ["javascript", "css", "html"]
+        "techStack": ["javascript", "css", "html"],
+        "summary": "A futuristic take on the classic Hangman created with vanilla JS."
     },
     {
         "title": "Don't Match the Socks",
         "imageName": "sock.png",
         "repoLink": "https://github.com/LandGod/Dont-Match-the-Socks",
         "deployLink": "https://landgod.github.io/Dont-Match-the-Socks/",
-        "techStack": ["javascript", "bootstrap", "react", "html", "css"]
+        "techStack": ["javascript", "bootstrap", "react", "html", "css"],
+        "summary": "A game built with React in which you avoid matching your socks."
     },
     {
         "title": "Pocket Skirmish",
         "imageName": "pixel_wizard.png",
         "repoLink": "http://github.com/landgod/RPG-Game",
         "deployLink": "http://landgod.github.io/RPG-Game",
-        "techStack": ["javascript", "jquery", "html", "css", "bootstrap"]
+        "techStack": ["javascript", "jquery", "html", "css", "bootstrap"],
+        "summary": "A deconstructed RPG, focusing purely on a few rounds of combat, made with jQuery."
     },
     {
         "title": "Overwatch Trivia",
         "imageName": "owlogo.jpeg",
         "repoLink": "http://github.com/landgod/TriviaGame",
         "deployLink": "http://landgod.github.io/TriviaGame",
-        "techStack": ["html", "css", "javascript", "jquery", "bootstrap"]
+        "techStack": ["html", "css", "javascript", "jquery", "bootstrap"],
+        "summary": "A timed trivia game, which quizes users about the popular game Overwatch."
     },
     {
         "title": "Multiplayer Rock Paper Scisors",
         "imageName": "rock_hand.png",
         "repoLink": "http://github.com/landgod/Multiplayer-RPS",
         "deployLink": "http://landgod.github.io/Multiplayer-RPS",
-        "techStack": ["html", "css", "javascript", "jquery", "bootstrap", "express", "node", "firebase"]
+        "techStack": ["html", "css", "javascript", "jquery", "bootstrap", "express", "node", "firebase"],
+        "summary": "A multiplayer Rock/Paper/Scissors game with real time chat."
     },
     {
         "title": "Multiplayer Othello in Python",
         "imageName": "reversi.jpg",
         "repoLink": "https://github.com/LandGod/Two-Player-Othello-with-Python",
-        "techStack": ["python"]
+        "techStack": ["python"],
+        "summary": "It's a recreation of the popular game Othello (aka: reversi) implemented in Python."
     },
     {
         "title": "Clue Hunt: QR",
         "imageName": "githubLandGod.png",
         "repoLink": "http://github.com/landgod/ClueHunt-QR",
         "deployLink": "http://landgod.github.io/ClueHunt-QR",
-        "techStack": ["javascript", "html","css", "jquery", "firebase", "bootstrap"]
+        "techStack": ["javascript", "html","css", "jquery", "firebase", "bootstrap"],
+        "summary": "Create and mange real life clue hunt games with this interactive platform."
     }
 ]
