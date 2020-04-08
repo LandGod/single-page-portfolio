@@ -28,7 +28,7 @@ class About extends React.Component {
           <div className={` ${styles.profilePicContainer} col-12 col-md-4`}>
             <figure>
               <img
-                src={process.env.PUBLIC_URL + "/danielgoldphoto.jpg"}
+                src={process.env.PUBLIC_URL + "/misc_images/danielgoldphoto.jpg"}
                 className={`${styles.profilePic} img-fluid my-3`}
                 alt="Daniel Gold"
               />
