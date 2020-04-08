@@ -1,7 +1,10 @@
 ### High Priority
 * Swap in most recent resume pdf
 * Add twitter button
-* Make tech underlines the standard blue color
+
+### Fixes:
+* Change project card overlay from overflow:scroll to overflow:auto (to hide scrollbar when not needed)
+* Go back to scroll event listener and add `{once: true}` as second argument.
 
 ### Nice to have
 * Animated arrows prompting the user to scroll down from the about section, if they don't, after 3 seconds or so
@@ -10,5 +13,4 @@
 * Optimize all images for efficiency 
 * Update readme?
 * Make technology icons look nicer and more consistent?
-* Go back to scroll event listener and add `{once: true}` as second argument.
 * Open resume in new tab?
