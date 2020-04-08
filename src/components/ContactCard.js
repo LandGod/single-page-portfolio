@@ -23,7 +23,7 @@ class ContactCard extends React.Component {
           <a href={this.props.link} target="_blank" rel="noopener noreferrer" className={styles.portfolio_item_link}>
             <img
               className={`img-fluid ${styles.portfolio_item_img}`}
-              src={`${process.env.PUBLIC_URL}/${this.props.imageName}`}
+              src={`${process.env.PUBLIC_URL}/social_images/${this.props.imageName}`}
               alt={this.props.title}
             />
           </a>
