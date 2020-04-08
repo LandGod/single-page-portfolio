@@ -62,7 +62,7 @@ class ProjectCard extends React.Component {
                 ? styles.portfolio_item_img
                 : styles.portfolio_item_img_grey
             }`}
-            src={`${process.env.PUBLIC_URL}/${this.props.imageName}`}
+            src={`${process.env.PUBLIC_URL}/project_images/${this.props.imageName}`}
             alt={this.props.title}
           />
           {/* Being project title container. Only appears if props.displayTitle is true */}
