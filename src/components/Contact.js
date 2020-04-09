@@ -29,7 +29,7 @@ class Contact extends React.Component {
           <ContactCard
             imageName="email.svg"
             title="DanielJasonGold@gmail.com"
-            link="mailto:DanielJasonGold@gmail.com"
+            customClickAction={()=>console.log("Log email (test)")}
           />
         </div>
       </div>
