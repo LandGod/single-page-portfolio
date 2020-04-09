@@ -23,7 +23,7 @@ class ContactCard extends React.Component {
           {this.props.customClickAction ? (
             <button
               onClick={this.props.customClickAction}
-              className={styles.portfolio_item_link}
+              className={`${styles.portfolio_item_link} btn btn-link`}
             >
               <img
                 className={`img-fluid ${styles.portfolio_item_img}`}
