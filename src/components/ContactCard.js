@@ -14,7 +14,7 @@ class ContactCard extends React.Component {
 
   render() {
     return (
-      <div className={`col-6 col-md-4 p-1 p-md-2 ${styles.card_container}`}>
+      <div className={`col-6 col-md-3 p-1 p-md-2 ${styles.card_container}`}>
         <div
           className={styles.portfolio_item}
           href={this.props.repoLink}

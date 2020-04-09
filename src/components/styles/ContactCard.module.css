@@ -14,8 +14,9 @@
     height: 50%;
     margin: auto;
     /* border-radius: 50%; */
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
     object-fit: cover;
+    /* filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.2)) drop-shadow(-2px 2px 0px rgba(0, 0, 0, 0.2)) drop-shadow(2px -2px 0px rgba(0, 0, 0, 0.2)) drop-shadow(-2px -2px 0px rgba(0, 0, 0, 0.2)); */
     
 }
 
