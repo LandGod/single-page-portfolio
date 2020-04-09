@@ -66,7 +66,7 @@
     },
     {
         "title": "Clue Hunt: QR",
-        "imageName": "githubLandGod.png",
+        "imageName": "cluehunt.jpg",
         "repoLink": "http://github.com/landgod/ClueHunt-QR",
         "deployLink": "http://landgod.github.io/ClueHunt-QR",
         "techStack": ["javascript", "html","css", "jquery", "firebase", "bootstrap"],
