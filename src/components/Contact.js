@@ -11,18 +11,23 @@ class Contact extends React.Component {
           </div>
         </div>
         <div className="row ">
+        <ContactCard
+            imageName="twitter.svg"
+            title="Daniel Gold on Twitter"
+            link="https://twitter.com/DanGoldLandGod"
+          />
           <ContactCard
-            imageName="linkedinlogo.png"
+            imageName="linkedin.svg"
             title="Daniel Gold on LinkedIn"
             link="https://www.linkedin.com/in/danjasongold/"
           />
           <ContactCard
-            imageName="githublogo.png"
+            imageName="github.svg"
             title="LandGod on GitHub"
             link="https://www.github.com/landgod"
           />
           <ContactCard
-            imageName="gmail.svg"
+            imageName="email.svg"
             title="DanielJasonGold@gmail.com"
             link="mailto:DanielJasonGold@gmail.com"
           />
