@@ -7,11 +7,12 @@ function ToolTip(props) {
         -suppressToolTip: boolean = if true, tooltip is never shown. If false, default behavior.
         -content: any html = content for the tooltip itself. IE: was is displayed in the tooltip.
         -showTooltip: boolean = True shows tooltip, false hides tooltip
+        -flex: boolean = True sets container as a flexbox (useful for vertically centering children)
     */
 
   return (
     // Begin main continer (basically a button)
-    <div className={`${styles.containerDiv} col-2 col-md-1 btn btn-link`}>
+    <div className={`${styles.containerDiv}`} style={props.flex ? {display: 'flex'} : {}}>
       {/* Child element goes here */}
       {props.children}
 

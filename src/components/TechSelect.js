@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ToolTip from "./ToolTip";
 import styles from "./styles/TechSelect.module.css";
 
 function TechSelect(props) {
@@ -22,41 +23,21 @@ function TechSelect(props) {
       onClick={() => {
         props.toggleTech(props.name);
       }}
-      className={`${styles.techLogoContainers} col-2 col-md-1 btn btn-link 
+      className={`${styles.techLogoContainers} col-2 col-md-1 btn btn-link
       ${props.highlight === 2 ? styles.selectedHighlight : ""}
       `}
     >
-      {/* Begin image */}
-      <img
-        alt={props.caseSensitiveName}
-        className={`img-fluid ${styles.techLogos} ${
-          props.highlight ? "" : styles.imgGrey
-        } `}
-        src={`${process.env.PUBLIC_URL}/techs/${props.image}`}
-      />
-      {/* End image */}
-
-      {/* Begin tooltip */}
-      {/* Logic to stop render of anything to do with the tooltip on devices that don't have hover capability */}
-      {props.suppressTooltip ? (
-        ""
-      ) : (
-        <>
-          <div
-            className={`${styles.tooltip} ${
-              showTooltip ? "" : styles.tooltipHidden
-            }`}
-          >
-            {props.caseSensitiveName}
-          </div>
-          <div
-            className={`${styles.tooltipAfter} ${
-              showTooltip ? "" : styles.tooltipHidden
-            }`}
-          ></div>
-        </>
-      )}
-      {/* End tooltip */}
+      <ToolTip content="Lorem Ipsum" showTooltip={showTooltip} flex={true}>
+        {/* Begin image */}
+        <img
+          alt={props.caseSensitiveName}
+          className={` img-fluid align-self-center ${styles.techLogos} ${
+            props.highlight ? "" : styles.imgGrey
+          } `}
+          src={`${process.env.PUBLIC_URL}/techs/${props.image}`}
+        />
+        {/* End image */}
+      </ToolTip>
     </div>
     // End main container
   );

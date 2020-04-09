@@ -1,8 +1,11 @@
 .containerDiv {
   overflow: visible;
   position: relative;
-  padding: 0.1em;
   background: none;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .tooltip {
