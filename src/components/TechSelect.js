@@ -3,6 +3,18 @@ import ToolTip from "./ToolTip";
 import styles from "./styles/TechSelect.module.css";
 
 function TechSelect(props) {
+
+  /*
+  PROPS:
+    -name: string = short lowercase name of this technology
+    -caseSensitiveName: string = How the name of the technology should appear to the user
+    -highlight: 0 | 1 | 2 = For zero, image is made greyscale. 1 is normal appearance. 2 is normal with an underline (bottom border)
+    -image: string = file name with extention of image to be used (path to image - filename is already hardcoded)
+    -toggleTech: function = Function which shows or hides the tooltip when called.
+    -suppressTooltip: boolean = When true, tooltip will never appear
+  */
+
+
   const [showTooltip, setShowTooltip] = useState(false);
 
   const toolTipShow = () => {
@@ -27,7 +39,7 @@ function TechSelect(props) {
       ${props.highlight === 2 ? styles.selectedHighlight : ""}
       `}
     >
-      <ToolTip content="Lorem Ipsum" showTooltip={showTooltip} flex={true}>
+      <ToolTip content={props.caseSensitiveName} showTooltip={showTooltip} flex={true}>
         {/* Begin image */}
         <img
           alt={props.caseSensitiveName}
