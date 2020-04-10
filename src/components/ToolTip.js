@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./styles/ToolTip.module.css";
 
 function ToolTip(props) {
   /* 
