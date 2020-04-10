@@ -16,7 +16,9 @@
   color: white;
   border-radius: 0.4em;
   z-index: 100;
-  width: 6em;
+  width: auto;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 .tooltipHidden {
