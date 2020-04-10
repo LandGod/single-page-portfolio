@@ -90,6 +90,7 @@ code {
   visibility: visible;
 }
 
+/* Show the tooltip text when you select the tooltip container element */
 .tooltipClickable:focus-within .tooltiptext {
   visibility: visible;
 }
