@@ -43,6 +43,7 @@ class Contact extends React.Component {
             <ToolTip
               content={<div>DanielJasonGold@gmail.com</div>}
               showTooltip={this.state.showEmailPopup}
+              flip={true}
             >
               <ContactCard
                 imageName="email.svg"

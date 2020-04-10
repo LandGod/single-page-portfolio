@@ -8,6 +8,7 @@ function ToolTip(props) {
         -content: any html = content for the tooltip itself. IE: was is displayed in the tooltip.
         -showTooltip: boolean = True shows tooltip, false hides tooltip
         -flex: boolean = True sets container as a flexbox (useful for vertically centering children)
+        -flip: boolean = If true, display tooltip above rather than below child component
     */
 
   return (
@@ -26,17 +27,19 @@ function ToolTip(props) {
       ) : (
         <>
           <div
-            className={`${styles.tooltip} ${
-              props.showTooltip ? "" : styles.tooltipHidden
-            }`}
+            className={`${styles.tooltip} 
+            ${props.showTooltip ? "" : styles.tooltipHidden}
+            ${props.flip ? styles.ttTop : ""}
+            `}
           >
             {/* Tootltip text (or arbitrary html) goes here */}
             {props.content}
             {/* End tootlip text/innerhtml */}
             <div
-              className={`${styles.tooltipAfter} ${
-                props.showTooltip ? "" : styles.tooltipHidden
-              }`}
+              className={`${styles.tooltipAfter} 
+              ${props.showTooltip ? "" : styles.tooltipHidden}
+              ${props.flip ? styles.ttaTop : ""}
+              `}
             ></div>
           </div>
         </>

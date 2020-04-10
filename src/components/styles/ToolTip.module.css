@@ -40,11 +40,15 @@
   z-index: -1;
 }
 
+/* For flipping the tooltip to above  */
+
 .ttTop {
-  bottom: -30%;
+  bottom: initial;
+  top: -1%;
 }
 
 .ttaTop {
+  top: initial;
   bottom: -30%;
   transform: rotate(180deg);
 }
