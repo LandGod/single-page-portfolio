@@ -39,7 +39,7 @@ function TechSelect(props) {
       ${props.highlight === 2 ? styles.selectedHighlight : ""}
       `}
     >
-      <ToolTip content={props.caseSensitiveName} showTooltip={showTooltip} flex={true}>
+      <ToolTip content={props.caseSensitiveName} showTooltip={showTooltip} flex={true} activationType='hover'>
         {/* Begin image */}
         <img
           alt={props.caseSensitiveName}

@@ -8,12 +8,27 @@ function ToolTip(props) {
         -showTooltip: boolean = True shows tooltip, false hides tooltip
         -flex: boolean = True sets container as a flexbox (useful for vertically centering children)
         -flip: boolean = If true, display tooltip above rather than below child component
+        -activationType: 'hover' | 'click' = conditions under which tooltip should appear
     */
 
   return (
-    <div className={`tooltip ${props.flex ? 'display-flex' : ''}`}>
+    <div
+      className={`tooltip ${
+        props.activationType === "hover"
+          ? "tooltipHoverable"
+          : props.activationType === "click"
+          ? "tooltipClickable"
+          : ""
+      } ${props.flex ? "display-flex" : ""}`}
+    >
       {props.children}
-  <span className="tooltiptext">{props.content}</span>
+      <span
+        className={`tooltiptext ${
+          props.flip ? "tooltiptextTop" : "tooltiptextBottom"
+        }`}
+      >
+        {props.content}
+      </span>
     </div>
   );
 }

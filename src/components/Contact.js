@@ -55,6 +55,7 @@ class Contact extends React.Component {
               }
               showTooltip={this.state.showEmailPopup}
               flip={true}
+              activationType='click'
             >
               <ContactCard
                 imageName="email.svg"

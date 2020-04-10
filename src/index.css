@@ -1,14 +1,14 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -16,19 +16,19 @@ code {
   background-color: #4b6cc1;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat:700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Montserrat:700&display=swap");
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -36,7 +36,7 @@ code {
   background-color: #4b6cc1;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat:700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Montserrat:700&display=swap");
 
 /* Tooltip Module Styling */
 
@@ -63,24 +63,49 @@ code {
   width: 120px;
   padding: 5px 0;
   border-radius: 6px;
- 
+
   /* Position the tooltip text - see examples below! */
   position: absolute;
   z-index: 1;
+}
 
-  /* Bottom Postion Specific Styling */
+/* Bottom Postion Specific Styling */
+.tooltip .tooltiptextBottom {
   width: 120px;
   top: 100%;
   left: 50%;
   margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
 }
 
-/* Show the tooltip text when you mouse over the tooltip container */
-.tooltip:hover .tooltiptext {
+/* Top Position Specific Styling */
+.tooltip .tooltiptextTop {
+  width: 120px;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
+}
+
+/* Show the tooltip text when you mouse over the tooltip container or click it */
+.tooltipHoverable:hover .tooltiptext {
   visibility: visible;
 }
 
-.tooltip .tooltiptext::after {
+.tooltipClickable:focus-within .tooltiptext {
+  visibility: visible;
+}
+
+.tooltip .tooltiptextTop::after {
+  content: " ";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #4b6cc1 transparent transparent transparent;
+}
+
+.tooltip .tooltiptextBottom::after {
   content: " ";
   position: absolute;
   bottom: 100%;  /* At the top of the tooltip */
