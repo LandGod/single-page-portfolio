@@ -32,11 +32,18 @@ code {
     monospace;
 }
 
+/* Global font for website */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:700&display=swap");
+
+
+/* Some general defaults */
 .background-blue {
   background-color: #4b6cc1;
 }
 
-@import url("https://fonts.googleapis.com/css?family=Montserrat:700&display=swap");
+.display-flex {
+  display: flex;
+}
 
 /* Tooltip Module Styling */
 
@@ -50,10 +57,6 @@ code {
   overflow: visible;
 }
 
-.display-flex {
-  display: flex;
-}
-
 /* Tooltip text */
 .tooltip .tooltiptext {
   visibility: hidden;
@@ -64,25 +67,39 @@ code {
   padding: 5px 0;
   border-radius: 6px;
 
-  /* Position the tooltip text - see examples below! */
+  /* Position the tooltip text */
   position: absolute;
   z-index: 1;
+  margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
+}
+
+/* Tooltip text large */
+.tooltip .tooltiptextResponsive {
+  visibility: hidden;
+  background-color: #4b6cc1;
+  color: #fff;
+  text-align: center;
+  width: 20vw;
+  padding: 1em 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  margin-left: -10vw; /* Use half of the width */
 }
 
 /* Bottom Postion Specific Styling */
 .tooltip .tooltiptextBottom {
-  width: 120px;
   top: 100%;
   left: 50%;
-  margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
+  
 }
 
 /* Top Position Specific Styling */
 .tooltip .tooltiptextTop {
-  width: 120px;
   bottom: 100%;
   left: 50%;
-  margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
 }
 
 /* Show the tooltip text when you mouse over the tooltip container or click it */
@@ -90,7 +107,7 @@ code {
   visibility: visible;
 }
 
-/* Show the tooltip text when you select the tooltip container element */
+/* Show the tooltip text when you select (click or tab to) the tooltip container element */
 .tooltipClickable:focus-within .tooltiptext {
   visibility: visible;
 }
