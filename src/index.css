@@ -16,60 +16,79 @@ code {
   background-color: #4b6cc1;
 }
 
-/* .spacer {
-  clear: both;
-  min-width: 1px;
-  min-height: 1px;
-} */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700&display=swap');
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.background-blue {
+  background-color: #4b6cc1;
+}
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:700&display=swap');
 
-/* h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: bold;
-  font-size: 100pt;
+/* Tooltip Module Styling */
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+  opacity: 1;
+  overflow: visible;
+}
+
+.display-flex {
+  display: flex;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  background-color: #4b6cc1;
+  color: #fff;
   text-align: center;
+  width: 120px;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+
+  /* Bottom Postion Specific Styling */
+  width: 120px;
+  top: 100%;
+  left: 50%;
+  margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
 }
 
-@media only screen and (max-width: 1200px) {
-
-  .portfolioHOne {
-    margin-top: 10%;
-  }
-  
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
 
-@media only screen and (max-width: 992px) {
-
-  .portfolioHOne {
-    margin-top: 40%;
-    font-size: 20vw;
-  }
-  
+.tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%;  /* At the top of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #4b6cc1 transparent;
 }
 
-@media only screen and (max-width: 767px) {
-
-  h1 {
-    margin-top: -40%;
-    font-size: 20vw;
-  }
-
-  .contactHOne {
-    margin-top: 0;
-  }
-  /* .aboutHOne {
-    margin-bottom: -10%;
-  } 
-
-  .overlapContainer {
-    position: relative;
-    right: 0;
-    top: -15%;
-    width: 100%;
-    margin: 0, auto;
-  }
-  
-} 
-
-*/
+/* End Tooltip Module Styling */

@@ -12,41 +12,10 @@ function ToolTip(props) {
     */
 
   return (
-    // Begin main continer (basically a button)
-    <div
-      className={`${styles.containerDiv}`}
-      style={props.flex ? { display: "flex" } : {}}
-    >
-      {/* Child element goes here */}
+    <div className={`tooltip ${props.flex ? 'display-flex' : ''}`}>
       {props.children}
-
-      {/* Begin tooltip */}
-      {/* Logic to stop render of anything to do with the tooltip on devices that don't have hover capability */}
-      {props.suppressTooltip ? (
-        ""
-      ) : (
-        <>
-          <div
-            className={`${styles.tooltip} 
-            ${props.showTooltip ? "" : styles.tooltipHidden}
-            ${props.flip ? styles.ttTop : ""}
-            `}
-          >
-            {/* Tootltip text (or arbitrary html) goes here */}
-            {props.content}
-            {/* End tootlip text/innerhtml */}
-            <div
-              className={`${styles.tooltipAfter} 
-              ${props.showTooltip ? "" : styles.tooltipHidden}
-              ${props.flip ? styles.ttaTop : ""}
-              `}
-            ></div>
-          </div>
-        </>
-      )}
-      {/* End tooltip */}
+  <span className="tooltiptext">{props.content}</span>
     </div>
-    // End main container
   );
 }
 
