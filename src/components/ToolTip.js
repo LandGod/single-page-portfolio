@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./styles/ToolTip.module.css";
 
 function ToolTip(props) {
@@ -12,7 +12,10 @@ function ToolTip(props) {
 
   return (
     // Begin main continer (basically a button)
-    <div className={`${styles.containerDiv}`} style={props.flex ? {display: 'flex'} : {}}>
+    <div
+      className={`${styles.containerDiv}`}
+      style={props.flex ? { display: "flex" } : {}}
+    >
       {/* Child element goes here */}
       {props.children}
 
