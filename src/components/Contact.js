@@ -60,6 +60,7 @@ class Contact extends React.Component {
               flip={true}
               activationType="click"
               responsive="true"
+              offset="-115px"
             >
               <ContactCard
                 imageName="email.svg"

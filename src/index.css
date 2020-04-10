@@ -79,14 +79,13 @@ code {
   background-color: #4b6cc1;
   color: #fff;
   text-align: center;
-  width: 20vw;
-  padding: 1em 0;
+  width: fit-content;
+  padding: 1em;
   border-radius: 6px;
 
   /* Position the tooltip text */
   position: absolute;
   z-index: 1;
-  margin-left: -10vw; /* Use half of the width */
 }
 
 /* Bottom Postion Specific Styling */
