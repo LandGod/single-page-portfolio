@@ -10,7 +10,7 @@
 
 .tooltip {
   position: absolute;
-  left: calc(50% - calc(6em / 2));
+  left: auto;
   bottom: -1%;
   background: #4b6cc1;
   color: white;
@@ -28,7 +28,7 @@
 .tooltipAfter {
   content: "";
   position: absolute;
-  bottom: 17%;
+  top: 17%;
   left: 50%;
   width: 0;
   height: 0;
@@ -37,4 +37,14 @@
   border-top: 0;
   margin-left: -0.781em;
   margin-top: -0.781em;
+  z-index: -1;
+}
+
+.ttTop {
+  bottom: -30%;
+}
+
+.ttaTop {
+  bottom: -30%;
+  transform: rotate(180deg);
 }

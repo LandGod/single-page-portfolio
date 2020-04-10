@@ -33,12 +33,12 @@ function ToolTip(props) {
             {/* Tootltip text (or arbitrary html) goes here */}
             {props.content}
             {/* End tootlip text/innerhtml */}
+            <div
+              className={`${styles.tooltipAfter} ${
+                props.showTooltip ? "" : styles.tooltipHidden
+              }`}
+            ></div>
           </div>
-          <div
-            className={`${styles.tooltipAfter} ${
-              props.showTooltip ? "" : styles.tooltipHidden
-            }`}
-          ></div>
         </>
       )}
       {/* End tooltip */}
