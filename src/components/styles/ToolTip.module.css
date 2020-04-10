@@ -44,11 +44,11 @@
 
 .ttTop {
   bottom: initial;
-  top: -1%;
+  top: -50%;
 }
 
 .ttaTop {
   top: initial;
-  bottom: -30%;
+  bottom: -10%;
   transform: rotate(180deg);
 }

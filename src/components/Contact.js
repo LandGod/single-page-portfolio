@@ -41,7 +41,18 @@ class Contact extends React.Component {
           </div>
           <div className="col-6 col-md-3 p-1 p-md-2">
             <ToolTip
-              content={<div>DanielJasonGold@gmail.com</div>}
+              content={
+                <div className="container p-2">
+                  <div className="row">
+                    <p>DanielJasonGold@gmail.com</p>
+                  </div>
+                  <div className="row">
+                    <button className="btn btn-sm btn-light mx-auto">
+                      Copy
+                    </button>
+                  </div>
+                </div>
+              }
               showTooltip={this.state.showEmailPopup}
               flip={true}
             >
