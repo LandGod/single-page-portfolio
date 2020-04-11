@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState, createContext } from "react";
+import React, { useEffect, useState, createContext } from "react";
 
 function useMedia(query) {
   // Set state hook to track query match status (boolean)
@@ -31,19 +31,17 @@ function useMedia(query) {
 
 export const MediaContext = createContext();
 
-class MediaContextProvider extends Component {
-  cantHover = useMedia("(hover:none)"); // Return true if device is touch-screen only (no mouse pointer)
-  smBreakPoint = useMedia("(max-width: 767px)"); // 540px is the sm breakpoint, but 768px is where things go off the rails for this app.
+function MediaContextProvider(props) {
+  let cantHover = useMedia("(hover:none)"); // Return true if device is touch-screen only (no mouse pointer)
+  let smBreakPoint = useMedia("(max-width: 767px)"); // 540px is the sm breakpoint, but 768px is where things go off the rails for this app.
 
-  render() {
-    return (
-      <MediaContext.Provider
-        value={{ cantHover: this.cantHover, smBreakPoint: this.smBreakPoint }}
-      >
-        {this.props.children}
-      </MediaContext.Provider>
-    );
-  }
+  return (
+    <MediaContext.Provider
+      value={{ cantHover: cantHover, smBreakPoint: smBreakPoint }}
+    >
+      {props.children}
+    </MediaContext.Provider>
+  );
 }
 
 export default MediaContextProvider;

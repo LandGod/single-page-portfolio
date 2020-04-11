@@ -8,6 +8,7 @@
 * Remove unused assets and modules.
 * Stop buttons from being clickable when hidden on mobile
 * Set resume to open in new tab
+* Remove default button styling for tech filter buttons.
 
 ### Nice to have
 * Animated arrows prompting the user to scroll down from the about section, if they don't, after 3 seconds or so
@@ -18,6 +19,7 @@
 * Open resume in new tab?
 * Custom favicon
 * Add a hr/more space between portfolio and contact section
+* Remove unnessessary 'hiding' code from components in favor of just not rendering uneeded html
 
 ### Accessibility 
 * Make site totally navigable with keyboard

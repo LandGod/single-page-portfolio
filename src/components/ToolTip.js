@@ -12,11 +12,17 @@ function ToolTip(props) {
         -activationType: 'hover' | 'click' = conditions under which tooltip should appear
         -responsive: boolean = false uses default sizing via pixels, true fits tooltip to content
         -offset: number = use with responsive to center element since value will need to depend on tooltip size
-        -mobile: boolean = Set to true to activate mobile version of component.
+        -subModal: boolean = Set to true to activate component as modal instead of tooltip.
     */
 
   // If on mobile, use modal instead of tooltip
-  if (props.mobile) {
+  if (props.suppressToolTip) {
+    return (
+      <div style={props.flex ? { display: "flex" } : {}}>{props.children}</div>
+    );
+  }
+
+  if (props.subModal) {
     return (
       <Modal.Dialog>
         <Modal.Header closeButton>

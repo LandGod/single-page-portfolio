@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import styles from "./styles/ButtonDrawer.module.css";
+import { MediaContext } from "../contexts/MediaContext";
 
 function ButtonDrawer(props) {
   // Props:
@@ -7,6 +8,7 @@ function ButtonDrawer(props) {
   // >>open: boolean - is drawer currently open.
 
   const [allowOverflow, setAllowOverflow] = useState(false);
+  const mediaState = useContext(MediaContext);
 
   // In order to achieve a slide-out animated effect, overflow must be hidden while opening and closing (and while closed)
   // however, overflow must be allowed while fully open to allow tooltips to be displayed properly.
@@ -51,7 +53,7 @@ function ButtonDrawer(props) {
       <div
         className={`${styles.buttonContainer} container`}
         style={{
-          height: `${props.open ? (props.mobileSize ? "36vh" : "18vh") : "0"}`,
+          height: `${props.open ? (mediaState.smBreakPoint ? "36vh" : "18vh") : "0"}`,
           overflow: `${allowOverflow && props.open ? "visible" : "hidden"}`,
         }}
       >
