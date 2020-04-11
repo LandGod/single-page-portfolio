@@ -29,10 +29,9 @@ class Contact extends React.Component {
           <textarea
             id="vanillaTextarea"
             className="col-12 text-center"
+            value="DanielJasonGold@gmail.com"
             readOnly
-          >
-            DanielJasonGold@gmail.com
-          </textarea>
+          />
         </div>
         <div className="row">
           <button
@@ -58,8 +57,9 @@ class Contact extends React.Component {
     return (
       <div className="container" id="contactSection">
         <div className="row">
-          <div className="col-12 text-center">
-            <h1 className="contactHOne">Contact</h1>
+          <div className="col-12 mt-5">
+            <h1>Contact</h1>
+            <hr className="sectionBreak" />
           </div>
         </div>
         <div className="row ">

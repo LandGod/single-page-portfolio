@@ -135,6 +135,18 @@ code {
 
 /* End Tooltip Module Styling */
 
+/* ----------------------------------------------------- */
+/* Styling for contact section */
+/* ----------------------------------------------------- */
+
+/* Section hr */
+.sectionBreak {
+  width: 100%;
+  height: 1px;
+  color: black;
+  background-color: black;
+}
+
 /* Special text area for use with the email popup */
 #vanillaTextarea {
   border: none;
