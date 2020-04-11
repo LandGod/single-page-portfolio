@@ -134,3 +134,26 @@ code {
 }
 
 /* End Tooltip Module Styling */
+
+/* Text area with no styling */
+#vanillaTextarea {
+  border: none;
+  overflow: auto;
+  outline: none;
+  background: none;
+  color: inherit;
+  overflow-wrap: break-word;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+
+  resize: none;
+  min-width: 28ch;
+}
+
+#vanillaTextarea:focus {
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: white;
+}

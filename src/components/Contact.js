@@ -9,6 +9,29 @@ class Contact extends React.Component {
     this.setState({ showEmailPopup: !this.state.showEmailPopup });
   };
 
+  emailTooltipInner = () => {
+    return (
+      <div className="container p-2" tabIndex="-1">
+        <div className="row">
+          <textarea id="vanillaTextarea" className="col-12 text-center" readOnly>DanielJasonGold@gmail.com</textarea>
+        </div>
+        <div className="row">
+          <button className="btn btn-sm btn-light mx-auto" onClick={() => {alert('Clicked!')}}>
+            Copy
+          </button>
+          <a
+            className="btn btn-sm btn-light mx-auto"
+            href="mailto:DanielJasonGold@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Compose
+          </a>
+        </div>
+      </div>
+    );
+  };
+
   render() {
     return (
       <div className="container" id="contactSection">
@@ -41,21 +64,7 @@ class Contact extends React.Component {
           </div>
           <div className="col-6 col-md-3 p-1 p-md-2">
             <ToolTip
-              content={
-                <div className="container p-2" tabIndex="-1">
-                  <div className="row">
-                    <p className="col-12 text-center">DanielJasonGold@gmail.com</p>
-                  </div>
-                  <div className="row">
-                    <button className="btn btn-sm btn-light mx-auto">
-                      Copy
-                    </button>
-                    <button className="btn btn-sm btn-light mx-auto">
-                      Compose
-                    </button>
-                  </div>
-                </div>
-              }
+              content={this.emailTooltipInner()}
               showTooltip={this.state.showEmailPopup}
               flip={true}
               activationType="click"
