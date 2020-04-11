@@ -1,4 +1,5 @@
 import React from "react";
+import { Modal, Button } from "react-bootstrap";
 
 function ToolTip(props) {
   /* 
@@ -11,12 +12,28 @@ function ToolTip(props) {
         -activationType: 'hover' | 'click' = conditions under which tooltip should appear
         -responsive: boolean = false uses default sizing via pixels, true fits tooltip to content
         -offset: number = use with responsive to center element since value will need to depend on tooltip size
+        -mobile: boolean = Set to true to activate mobile version of component.
     */
 
-  // Render component only if required too. Otherwise only render children.
-  // if (props.suppressToolTip || !props.showTooltip) {
-  //   return props.children
-  // }
+  // If on mobile, use modal instead of tooltip
+  if (props.mobile) {
+    return (
+      <Modal.Dialog>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal title</Modal.Title>
+        </Modal.Header>
+
+        <Modal.Body>
+          <p>Modal body text goes here.</p>
+        </Modal.Body>
+
+        <Modal.Footer>
+          <Button variant="secondary">Close</Button>
+          <Button variant="primary">Save changes</Button>
+        </Modal.Footer>
+      </Modal.Dialog>
+    );
+  }
 
   return (
     <div
@@ -32,10 +49,10 @@ function ToolTip(props) {
       <span
         className={`
         tooltiptext
-        ${props.responsive ? 'tooltiptextResponsive' : ''}
+        ${props.responsive ? "tooltiptextResponsive" : ""}
         ${props.flip ? "tooltiptextTop" : "tooltiptextBottom"}
         `}
-        style={props.offset ? {marginLeft: props.offset} : {}}
+        style={props.offset ? { marginLeft: props.offset } : {}}
       >
         {props.content}
       </span>
