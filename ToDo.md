@@ -1,5 +1,6 @@
 ### High Priority
 * Swap in most recent resume pdf
+* Make email popup render as modal on mobile.
 
 ### Fixes:
 * Change project card overlay from overflow:scroll to overflow:auto (to hide scrollbar when not needed)
