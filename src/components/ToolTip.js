@@ -13,6 +13,11 @@ function ToolTip(props) {
         -offset: number = use with responsive to center element since value will need to depend on tooltip size
     */
 
+  // Render component only if required too. Otherwise only render children.
+  // if (props.suppressToolTip || !props.showTooltip) {
+  //   return props.children
+  // }
+
   return (
     <div
       className={`tooltip ${
