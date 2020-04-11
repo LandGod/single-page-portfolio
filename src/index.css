@@ -135,7 +135,7 @@ code {
 
 /* End Tooltip Module Styling */
 
-/* Text area with no styling */
+/* Special text area for use with the email popup */
 #vanillaTextarea {
   border: none;
   overflow: auto;

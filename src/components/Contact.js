@@ -9,14 +9,36 @@ class Contact extends React.Component {
     this.setState({ showEmailPopup: !this.state.showEmailPopup });
   };
 
+  copyEmail = () => {
+    // Get the text field
+    const copyText = document.getElementById("vanillaTextarea");
+
+    // Select the text field
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+    // Copy the text inside the text field
+    document.execCommand("copy");
+
+  };
+
   emailTooltipInner = () => {
     return (
       <div className="container p-2" tabIndex="-1">
         <div className="row">
-          <textarea id="vanillaTextarea" className="col-12 text-center" readOnly>DanielJasonGold@gmail.com</textarea>
+          <textarea
+            id="vanillaTextarea"
+            className="col-12 text-center"
+            readOnly
+          >
+            DanielJasonGold@gmail.com
+          </textarea>
         </div>
         <div className="row">
-          <button className="btn btn-sm btn-light mx-auto" onClick={() => {alert('Clicked!')}}>
+          <button
+            className="btn btn-sm btn-light mx-auto"
+            onClick={this.copyEmail}
+          >
             Copy
           </button>
           <a
