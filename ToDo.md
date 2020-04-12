@@ -9,6 +9,7 @@
 * Stop buttons from being clickable when hidden on mobile
 * Set resume to open in new tab
 * Remove default button styling for tech filter buttons.
+* Hide scrollbar for mobile project card overlay (after moving to global css since scrollbars must be selected as pseudoelements)
 
 ### Nice to have
 * Animated arrows prompting the user to scroll down from the about section, if they don't, after 3 seconds or so
