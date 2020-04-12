@@ -1,5 +1,5 @@
-import React from "react";
-import { Modal, Button } from "react-bootstrap";
+import React, { useState } from "react";
+import { Modal } from "react-bootstrap";
 
 function ToolTip(props) {
   /* 
@@ -15,6 +15,9 @@ function ToolTip(props) {
         -subModal: boolean = Set to true to activate component as modal instead of tooltip (ie: substitute modal for tooltip).
     */
 
+  // Only used for modal mode, but can't be called conditionally, so will always be present.
+  const [show, setShow] = useState(false);
+
   // If on mobile, use modal instead of tooltip
   if (props.suppressToolTip) {
     return (
@@ -23,21 +26,24 @@ function ToolTip(props) {
   }
 
   if (props.subModal) {
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     return (
-      <Modal.Dialog>
-        <Modal.Header closeButton>
-          <Modal.Title>Modal title</Modal.Title>
-        </Modal.Header>
-
-        <Modal.Body>
-          <p>Modal body text goes here.</p>
-        </Modal.Body>
-
-        <Modal.Footer>
-          <Button variant="secondary">Close</Button>
-          <Button variant="primary">Save changes</Button>
-        </Modal.Footer>
-      </Modal.Dialog>
+      <>
+        <div onClick={handleShow}>{props.children}</div>
+        <Modal
+          show={show}
+          onHide={handleClose}
+          aria-labelledby="contained-modal-title-vcenter"
+          dialogClassName="customModalSizing"
+          centered
+        >
+          <Modal.Header closeButton>
+          </Modal.Header>
+          <Modal.Body>{props.content}</Modal.Body>
+        </Modal>
+      </>
     );
   }
 
