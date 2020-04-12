@@ -27,7 +27,7 @@ function TechSelect(props) {
     // Note: This has to be a div, not a button, since the default styling from pseudo classes for buttons, such as :active and :hover
     // will interfer
 
-    <MediaContext>
+    <MediaContext.Consumer>
       {(context) => {
         const { cantHover } = context;
         return (
@@ -63,7 +63,7 @@ function TechSelect(props) {
           // End main container
         );
       }}
-    </MediaContext>
+    </MediaContext.Consumer>
   );
 }
 

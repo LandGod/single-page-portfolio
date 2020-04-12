@@ -12,7 +12,7 @@ function ToolTip(props) {
         -activationType: 'hover' | 'click' = conditions under which tooltip should appear
         -responsive: boolean = false uses default sizing via pixels, true fits tooltip to content
         -offset: number = use with responsive to center element since value will need to depend on tooltip size
-        -subModal: boolean = Set to true to activate component as modal instead of tooltip.
+        -subModal: boolean = Set to true to activate component as modal instead of tooltip (ie: substitute modal for tooltip).
     */
 
   // If on mobile, use modal instead of tooltip

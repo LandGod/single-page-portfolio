@@ -41,8 +41,6 @@ function ProjectCard(props) {
     <MediaContext.Consumer>
       {(context) => {
         const { smBreakPoint } = context;
-        console.log(`Mouseover=${mouseOver}`);
-        console.log(`buttonsActive=${buttonsActive}`);
         return (
           // Container with sizing info for overall component. Has a handler for mouseover attached.
           <div
