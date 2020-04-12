@@ -77,6 +77,8 @@ function NavBar() {
               <a
                 className="nav-link"
                 href={`${process.env.PUBLIC_URL}/DanielGold.pdf`}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Resume
               </a>
