@@ -169,3 +169,12 @@ code {
   text-decoration-style: dotted;
   text-decoration-color: white;
 }
+
+
+/* ----------------------------------------------------- */
+/* Styling for tooltip modal */
+/* ----------------------------------------------------- */
+.customModalSizing {
+  max-width: 75vw;
+  margin: auto;
+}
