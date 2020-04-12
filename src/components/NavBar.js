@@ -11,18 +11,26 @@ function NavBar() {
     let onScroll;
 
     if (!open) {
-      onscroll = e => {
+      onscroll = (e) => {
+        // Check for [tab] press
+        if (e.keyCode) {
+          if (e.keyCode !== 9) {
+            return;
+          }
+        }
         // Reveal navbar
         setOpen(true);
         // After reveal is finished, allow overflow permanently so that hamburger menue works
         setTimeout(() => setOverflow(true), 2000);
       };
 
-      window.addEventListener("scroll", onscroll);
+      window.addEventListener("scroll", onscroll, { once: "true" });
+      window.addEventListener("keyup", onscroll, { once: "true" });
     }
     return () => {
       if (onScroll) {
         window.removeEventListener("scroll", onscroll);
+        window.removeEventListener("keyup", onscroll);
       }
     };
   });
@@ -32,12 +40,10 @@ function NavBar() {
       className={styles.animateOpen}
       style={{
         height: open ? "54px" : "0px",
-        overflow: overflow ? "visible" : "hidden"
+        overflow: overflow ? "visible" : "hidden",
       }}
     >
-      <nav
-        className="navbar navbar-expand-md navbar-light bg-light justify-content-between"
-      >
+      <nav className="navbar navbar-expand-md navbar-light bg-light justify-content-between">
         <a className="navbar-brand" href="#aboutSection">
           Dan Gold
         </a>
