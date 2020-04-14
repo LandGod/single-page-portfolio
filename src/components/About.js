@@ -3,14 +3,14 @@ import React from "react";
 class About extends React.Component {
   render() {
     return (
-      <div className="mainContentArea container" id="aboutSection">
+      <div className="container" id="aboutSection">
         <div className="row justify-content-around">
           {/* Column containing text (with media query) */}
-          <div className="aboutTextContainer col-12 col-md-8">
+          <div className="about__text-container col-12 col-md-8">
             {/* Header and paragraph tag must be enclosed or flexbox will put them side-by-side when centering */}
             <div>
-              <div className="introHeader">Hi, I'm Dan!</div>
-              <p className="introText">
+              <div className="about__header">Hi, I'm Dan!</div>
+              <p className="about__text">
                 Web Developer with a background in the arts and theatre
                 technology
               </p>
@@ -18,13 +18,13 @@ class About extends React.Component {
           </div>
 
           {/* Column containing profile picture */}
-          <div className="profilePicContainer col-12 col-md-4">
+          <div className="about__img-container col-12 col-md-4">
             <figure>
               <img
                 src={
                   process.env.PUBLIC_URL + "/misc_images/danielgoldphoto.jpg"
                 }
-                className="profilePic img-fluid my-3"
+                className="about__img img-fluid my-3"
                 alt="Daniel Gold"
               />
             </figure>

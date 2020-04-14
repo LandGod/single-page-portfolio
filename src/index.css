@@ -130,33 +130,33 @@ code {
 /* ----------------------------------------------------- */
 
 /* This class has a Media Query version for mobile size */
-.aboutTextContainer {
+.about__text-container {
   display: flex;
   align-items: center;
   min-height: 100vh;
 }
 
-.introHeader {
+.about__header {
   font-size: 5em;
 }
 
-.introText {
+.about__text {
   font-size: 2em;
 }
 
 /* This class has a Media Query version for mobile size */
-.profilePicContainer {
+.about__img-container {
   min-height: 100vh;
   display: flex;
   align-items: center;
 }
 
-.profilePic {
+.about__img {
   border-radius: 0.5em;
 }
 
 @media only screen and (max-width: 767px) {
-  .aboutTextContainer {
+  .about__text-container {
     display: flex;
     align-items: center;
     min-height: 0;
@@ -164,7 +164,7 @@ code {
     padding-bottom: 0;
   }
 
-  .profilePicContainer {
+  .about__img-container {
     min-height: 0;
     display: flex;
     align-items: center;
