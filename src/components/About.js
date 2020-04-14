@@ -6,7 +6,7 @@ class About extends React.Component {
       <div className="mainContentArea container" id="aboutSection">
         <div className="row justify-content-around">
           {/* Column containing text (with media query) */}
-          <div className="aboutTextContainerMobile">
+          <div className="aboutTextContainer col-12 col-md-8">
             {/* Header and paragraph tag must be enclosed or flexbox will put them side-by-side when centering */}
             <div>
               <div className="introHeader">Hi, I'm Dan!</div>
