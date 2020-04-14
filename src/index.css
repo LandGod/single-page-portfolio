@@ -124,6 +124,39 @@ code {
 }
 
 /* ----------------------------------------------------- */
+/* Styling for About section component */
+/* ----------------------------------------------------- */
+
+.aboutTextContainer {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.aboutTextContainerMobile {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.introHeader {
+  font-size: 5em;
+}
+
+.introText {
+  font-size: 2em;
+}
+
+.profilePicContainer {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.profilePic {
+  border-radius: 0.5em;
+}
+
+/* ----------------------------------------------------- */
 /* Styling for contact section */
 /* ----------------------------------------------------- */
 
