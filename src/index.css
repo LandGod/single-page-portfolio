@@ -129,6 +129,7 @@ code {
 /* Styling for About section component */
 /* ----------------------------------------------------- */
 
+/* This class has a Media Query version for mobile size */
 .aboutTextContainer {
   display: flex;
   align-items: center;
@@ -143,6 +144,7 @@ code {
   font-size: 2em;
 }
 
+/* This class has a Media Query version for mobile size */
 .profilePicContainer {
   min-height: 100vh;
   display: flex;
@@ -157,9 +159,15 @@ code {
   .aboutTextContainer {
     display: flex;
     align-items: center;
-    min-height: 100vh;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    min-height: 0;
+    padding-top: 2em;
+    padding-bottom: 0;
+  }
+
+  .profilePicContainer {
+    min-height: 0;
+    display: flex;
+    align-items: center;
   }
 }
 
