@@ -25,7 +25,10 @@ code {
 /* ----------------------------------------------------- */
 /* ----------------------------------------------------- */
 
+/* NOTES:
+- Current breakpoint for desktop/mobile is 767px
 
+*/
 
 /* ----------------------------------------------------- */
 /* Styling for Tooltip Component */
@@ -54,7 +57,7 @@ code {
   /* Position the tooltip text */
   position: absolute;
   z-index: 1;
-  margin-left: -60px; 
+  margin-left: -60px;
 }
 
 /* Tooltip text large */
@@ -76,7 +79,6 @@ code {
 .tooltip .tooltiptextBottom {
   top: 100%;
   left: 50%;
-  
 }
 
 /* Top Position Specific Styling */
@@ -109,7 +111,7 @@ code {
 .tooltip .tooltiptextBottom::after {
   content: " ";
   position: absolute;
-  bottom: 100%;  /* At the top of the tooltip */
+  bottom: 100%; /* At the top of the tooltip */
   left: 50%;
   margin-left: -5px;
   border-width: 5px;
@@ -133,11 +135,6 @@ code {
   min-height: 100vh;
 }
 
-.aboutTextContainerMobile {
-  padding-top: 1em;
-  padding-bottom: 1em;
-}
-
 .introHeader {
   font-size: 5em;
 }
@@ -154,6 +151,16 @@ code {
 
 .profilePic {
   border-radius: 0.5em;
+}
+
+@media only screen and (max-width: 767px) {
+  .aboutTextContainer {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
 }
 
 /* ----------------------------------------------------- */
