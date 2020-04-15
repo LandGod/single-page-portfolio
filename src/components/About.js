@@ -3,7 +3,7 @@ import React from "react";
 class About extends React.Component {
   render() {
     return (
-      <div className="container" id="aboutSection">
+      <div className="container" id="aboutSection"> {/* Id used for intra-page linking. Not used for css. Do not remove!*/}
         <div className="row justify-content-around">
           {/* Column containing text (with media query) */}
           <div className="about__text-container col-12 col-md-8">
