@@ -188,7 +188,7 @@ code {
 /* Styling for Project Card component */
 /* ----------------------------------------------------- */
 
-.project-container {
+.project__container {
   max-height: 300px;
   margin-bottom: 1em;
 }
@@ -205,6 +205,7 @@ code {
 }
 
 .project__overlay {
+  visibility: hidden; /* Toggled with JS */
   position: absolute;
   top: 0;
   background-color: #4b6dc1f1;

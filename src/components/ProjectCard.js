@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, createRef } from "react";
 import { MediaContext } from "../contexts/MediaContext";
 
 function ProjectCard(props) {
@@ -16,6 +16,9 @@ function ProjectCard(props) {
 
   const [mouseOver, setMouseOver] = useState(false); // Tracks mouse over entire component. Used for zoom/scale effect.
   const [buttonsActive, setButtonsActive] = useState(false);
+  const [blured, setBlured] = useState(false); // Tracks whether or not any blur event has just occured so that we can trigger our useEffect for blur handling
+
+  const thisCard = createRef();
 
   const mouseOnComponent = () => {
     // Update state to reflect mouseover (unless the card is greyed out by filter)
@@ -28,6 +31,26 @@ function ProjectCard(props) {
     setMouseOver(false);
   };
 
+  const handleBlur = () => {
+    setBlured(true);
+  }
+
+  useEffect(() => {
+    if (blured) {
+      // Checks if current element has focus (child with focus counts)
+      if (!(document.activeElement === thisCard)) {
+        setMouseOver(false);
+      }
+      return () => {
+        setBlured(false);
+      }
+    }
+
+    return () => {if (blured){setBlured(false)} };
+    
+  }, [blured,thisCard])
+
+  // Remove buttons when overlay is not visible to prevent being able to click them without even seeing them on mobile
   useEffect(() => {
     if (mouseOver && !buttonsActive) {
       setButtonsActive(true);
@@ -45,9 +68,13 @@ function ProjectCard(props) {
           <div
             className={`col-${props.width === "double" ? "12" : "6"} col-md-${
               props.width === "double" ? "6" : "4"
-            } p-1 p-md-2 project-container`}
+            } p-1 p-md-2 project__container`}
             onMouseEnter={mouseOnComponent}
             onMouseLeave={mouseOffComponent}
+            onFocus={mouseOnComponent}
+            onBlur={handleBlur}
+            tabIndex="0"
+            ref={thisCard}
           >
             {/* Begin portfolio Item inner container. This container handles styling for highlighted/grey */}
             <div className={props.highlight ? "project" : "project--grey"}>
@@ -72,101 +99,95 @@ function ProjectCard(props) {
                   </div>
                 </div>
               ) : (
-                ""
+                null
               )}
               {/* Begin mouse-over detail overlay for project card */}
-              {mouseOver ? (
-                smBreakPoint ? (
-                  // BEGIN MOBILE ONLY VERSION OF DETAIL OVERALY
-                  // *********************************************************************
-                  <div
-                    className="project__overlay"
-                    style={{ visibility: mouseOver ? "visible" : "hidden" }}
-                  >
-                    <h3 className="mb-sm-4 mb-xs-1" style={{ fontSize: "1em" }}>
-                      {props.title[0].toUpperCase() + props.title.slice(1)}
-                    </h3>
-                    {/* Button container for deploy and repo links (MOBILE)*/}
-                    {buttonsActive ? (
-                      <div className="row justify-content-around mb-xs-1 mb-sm-3">
-                        {props.deployLink ? (
-                          <a
-                            className="col-5 btn btn-light btn-sm"
-                            href={props.deployLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            Site
-                          </a>
-                        ) : (
-                          ""
-                        )}
-                        {props.repoLink ? (
-                          <a
-                            className="col-5 btn btn-light btn-sm"
-                            href={props.repoLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            Code
-                          </a>
-                        ) : (
-                          ""
-                        )}
-                      </div>
-                    ) : (
-                      ""
-                    )}
-                    {/* End button container (MOBILE) */}
-                    <p>{props.summary}</p>
-                  </div>
-                ) : (
-                  // END MOBILE ONLY VERSION OF OVERLAY
-                  // ******************************************************************* \\
-                  // BEGIN NON-MOBILE VERSION OF OVERLAY
-                  <div
-                    className="project__overlay"
-                    style={{
-                      visibility: mouseOver ? "visible" : "hidden",
-                    }}
-                  >
-                    <h3>
-                      {props.title[0].toUpperCase() + props.title.slice(1)}
-                    </h3>
-                    <p>{props.summary}</p>
-                    {/* Button container for deploy and repo links */}
-                    <div className="project__button-container">
+              {smBreakPoint ? (
+                // BEGIN MOBILE ONLY VERSION OF DETAIL OVERALY
+                // *********************************************************************
+                <div
+                  className="project__overlay"
+                  style={{ visibility: mouseOver ? "visible" : "hidden" }}
+                >
+                  <h3 className="mb-sm-4 mb-xs-1" style={{ fontSize: "1em" }}>
+                    {props.title[0].toUpperCase() + props.title.slice(1)}
+                  </h3>
+                  {/* Button container for deploy and repo links (MOBILE)*/}
+                  {buttonsActive ? (
+                    <div className="row justify-content-around mb-xs-1 mb-sm-3">
                       {props.deployLink ? (
                         <a
-                          className="btn btn-light"
+                          className="col-5 btn btn-light btn-sm"
                           href={props.deployLink}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          View Website
+                          Site
                         </a>
                       ) : (
-                        ""
+                        null
                       )}
                       {props.repoLink ? (
                         <a
-                          className="btn btn-light"
+                          className="col-5 btn btn-light btn-sm"
                           href={props.repoLink}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          Source Code
+                          Code
                         </a>
                       ) : (
-                        ""
+                        null
                       )}
                     </div>
-                    {/* End link button container */}
-                  </div>
-                  //* End mouseover detail overlay */
-                )
+                  ) : (
+                    null
+                  )}
+                  {/* End button container (MOBILE) */}
+                  <p>{props.summary}</p>
+                </div>
               ) : (
-                ""
+                // END MOBILE ONLY VERSION OF OVERLAY
+                // ******************************************************************* \\
+                // BEGIN NON-MOBILE VERSION OF OVERLAY
+                <div
+                  className="project__overlay"
+                  style={{
+                    visibility: mouseOver ? "visible" : "hidden",
+                  }}
+                >
+                  <h3>{props.title[0].toUpperCase() + props.title.slice(1)}</h3>
+                  <p>{props.summary}</p>
+                  {/* Button container for deploy and repo links */}
+                  <div className="project__button-container">
+                    {props.deployLink ? (
+                      <a
+                        className="btn btn-light"
+                        href={props.deployLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        View Website
+                      </a>
+                    ) : (
+                      ""
+                    )}
+                    {props.repoLink ? (
+                      <a
+                        className="btn btn-light"
+                        href={props.repoLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Source Code
+                      </a>
+                    ) : (
+                      ""
+                    )}
+                  </div>
+                  {/* End link button container */}
+                </div>
+                //* End mouseover detail overlay */
               )}
               {/* End mobile vs desktop conditional html */}
             </div>
