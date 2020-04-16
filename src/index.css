@@ -45,7 +45,7 @@ code {
 }
 
 /* Tooltip text */
-.tooltip .tooltiptext {
+.tooltip .tooltip__text {
   visibility: hidden;
   background-color: #4b6cc1;
   color: #fff;
@@ -61,7 +61,7 @@ code {
 }
 
 /* Tooltip text large */
-.tooltip .tooltiptextResponsive {
+.tooltip .tooltip__text--responsive {
   visibility: hidden;
   background-color: #4b6cc1;
   color: #fff;
@@ -76,28 +76,28 @@ code {
 }
 
 /* Bottom Postion Specific Styling */
-.tooltip .tooltiptextBottom {
+.tooltip .tooltip__text--bottom {
   top: 100%;
   left: 50%;
 }
 
 /* Top Position Specific Styling */
-.tooltip .tooltiptextTop {
+.tooltip .tooltip__text--top {
   bottom: 100%;
   left: 50%;
 }
 
 /* Show the tooltip text when you mouse over the tooltip container or click it */
-.tooltipHoverable:hover .tooltiptext {
+.tooltip--hoverable:hover .tooltip__text {
   visibility: visible;
 }
 
 /* Show the tooltip text when you select (click or tab to) the tooltip container element */
-.tooltipClickable:focus-within .tooltiptext {
+.tooltip--clickable:focus-within .tooltip__text {
   visibility: visible;
 }
 
-.tooltip .tooltiptextTop::after {
+.tooltip .tooltip__text--top::after {
   content: " ";
   position: absolute;
   top: 100%; /* At the bottom of the tooltip */
@@ -108,7 +108,7 @@ code {
   border-color: #4b6cc1 transparent transparent transparent;
 }
 
-.tooltip .tooltiptextBottom::after {
+.tooltip .tooltip__text--bottom::after {
   content: " ";
   position: absolute;
   bottom: 100%; /* At the top of the tooltip */
@@ -120,11 +120,10 @@ code {
 }
 
 /* Styling for tooltip modal */
-.customModalSizing {
+.tooltip__modal {
   max-width: 75vw;
   margin: auto;
 }
-
 /* ----------------------------------------------------- */
 /* Styling for About section component */
 /* ----------------------------------------------------- */

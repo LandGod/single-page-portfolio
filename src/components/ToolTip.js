@@ -42,7 +42,7 @@ function ToolTip(props) {
           show={show}
           onHide={handleClose}
           aria-labelledby="contained-modal-title-vcenter"
-          dialogClassName="customModalSizing"
+          dialogClassName="tooltip__modal"
           centered
         >
           <Modal.Header closeButton></Modal.Header>
@@ -56,9 +56,9 @@ function ToolTip(props) {
     <div
       className={`tooltip ${
         props.activationType === "hover"
-          ? "tooltipHoverable"
+          ? "tooltip--hoverable"
           : props.activationType === "click"
-          ? "tooltipClickable"
+          ? "tooltip--clickable"
           : ""
       } ${props.flex ? "display-flex" : ""}`}
       onKeyDown={handleEscapePress}
@@ -66,9 +66,9 @@ function ToolTip(props) {
       {props.children}
       <span
         className={`
-        tooltiptext
-        ${props.responsive ? "tooltiptextResponsive" : ""}
-        ${props.flip ? "tooltiptextTop" : "tooltiptextBottom"}
+        tooltip__text
+        ${props.responsive ? "tooltip__text--responsive" : ""}
+        ${props.flip ? "tooltip__text--top" : "tooltip__text--bottom"}
         `}
         style={props.offset ? { marginLeft: props.offset } : {}}
       >
