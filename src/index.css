@@ -304,7 +304,6 @@ code {
   .project__overlay::-webkit-scrollbar {
     display: none;
   }
-
 }
 
 /* ----------------------------------------------------- */
@@ -361,6 +360,24 @@ code {
   overflow: hidden;
 }
 
+/* ----------------------------------------------------- */
+/* Styling for technology filter icons */
+
+.tech--highlight {
+  border-bottom: 3px solid #4b6cc1;
+}
+
+.tech__image--grey {
+  filter: grayscale(100);
+}
+
+.tech__container {
+  overflow: visible;
+  position: relative;
+  padding: 0.1em;
+  background: none;
+  max-height: 18vh;
+}
 
 /* ----------------------------------------------------- */
 /* Styling for contact section */

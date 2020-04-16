@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import ToolTip from "./ToolTip";
 import { MediaContext } from "../contexts/MediaContext";
-import styles from "./styles/TechSelect.module.css";
 
 function TechSelect(props) {
   /*
@@ -38,9 +37,9 @@ function TechSelect(props) {
             onClick={() => {
               props.toggleTech(props.name);
             }}
-            className={`${styles.techLogoContainers} col-2 col-md-1 btn btn-link
-      ${props.highlight === 2 ? styles.selectedHighlight : ""}
-      `}
+            className={`tech__container col-2 col-md-1 btn btn-link
+              ${props.highlight === 2 ? "tech--highlight" : ""}
+            `}
           >
             <ToolTip
               suppressToolTip={cantHover}
@@ -52,8 +51,8 @@ function TechSelect(props) {
               {/* Begin image */}
               <img
                 alt={props.caseSensitiveName}
-                className={` img-fluid align-self-center ${styles.techLogos} ${
-                  props.highlight ? "" : styles.imgGrey
+                className={` img-fluid align-self-center ${
+                  props.highlight ? "" : "tech__image--grey"
                 } `}
                 src={`${process.env.PUBLIC_URL}/techs/${props.image}`}
               />
