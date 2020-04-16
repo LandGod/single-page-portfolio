@@ -193,6 +193,10 @@ code {
   margin-bottom: 1em;
 }
 
+.project__container:focus {
+  outline: none;
+}
+
 .project {
   position: relative;
   background-color: white;
