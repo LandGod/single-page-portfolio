@@ -37,7 +37,7 @@ function TechSelect(props) {
             onClick={() => {
               props.toggleTech(props.name);
             }}
-            className={`tech__container col-2 col-md-1 btn btn-link
+            className={`tech col-2 col-md-1
               ${props.highlight === 2 ? "tech--highlight" : ""}
             `}
           >
@@ -45,17 +45,18 @@ function TechSelect(props) {
               suppressToolTip={cantHover}
               content={props.caseSensitiveName}
               showTooltip={showTooltip}
-              flex={true}
               activationType="hover"
             >
               {/* Begin image */}
-              <img
-                alt={props.caseSensitiveName}
-                className={` img-fluid align-self-center ${
-                  props.highlight ? "" : "tech__image--grey"
-                } `}
-                src={`${process.env.PUBLIC_URL}/techs/${props.image}`}
-              />
+              <div className="tech__centerer">
+                <img
+                  alt={props.caseSensitiveName}
+                  className={` img-fluid ${
+                    props.highlight ? "" : "tech__image--grey"
+                  } `}
+                  src={`${process.env.PUBLIC_URL}/techs/${props.image}`}
+                />
+              </div>
               {/* End image */}
             </ToolTip>
           </div>

@@ -363,20 +363,32 @@ code {
 /* ----------------------------------------------------- */
 /* Styling for technology filter icons */
 
+.tech {
+  overflow: visible;
+  position: relative;
+  margin: 0.2em;
+  padding: 0.1em;
+  background: none;
+  max-height: 18vh;
+  border-radius: 5%;
+  margin-bottom: 3px;
+  align-self: stretch;
+}
+
 .tech--highlight {
   border-bottom: 3px solid #4b6cc1;
+  margin-bottom: 0px;
+}
+
+.tech__centerer {
+  height: 100%;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
 }
 
 .tech__image--grey {
   filter: grayscale(100);
-}
-
-.tech__container {
-  overflow: visible;
-  position: relative;
-  padding: 0.1em;
-  background: none;
-  max-height: 18vh;
 }
 
 /* ----------------------------------------------------- */
