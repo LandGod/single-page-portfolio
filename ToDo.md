@@ -1,9 +1,8 @@
 ### High Priority
+* Project cards need to be tab-able 
 
 ### Fixes:
-* Go back to scroll event listener and add `{once: true}` as second argument.
 * Remove unused assets and modules.
-* Remove default button styling for tech filter buttons.
 * Normalize z-index values
 
 ### Nice to have
@@ -16,4 +15,3 @@
 
 ### Accessibility 
 * Make site totally navigable with keyboard
-* Project cards need to be tab-able 
