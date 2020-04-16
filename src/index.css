@@ -396,7 +396,7 @@ code {
 /* ----------------------------------------------------- */
 
 /* Section hr */
-.sectionBreak {
+.contact__hr {
   width: 100%;
   height: 1px;
   color: black;
@@ -404,7 +404,7 @@ code {
 }
 
 /* Special text area for use with the email popup */
-#vanillaTextarea {
+#contact__email {
   border: none;
   overflow: auto;
   outline: none;
@@ -420,7 +420,7 @@ code {
   min-width: 28ch;
 }
 
-#vanillaTextarea:focus {
+#contact__email:focus {
   text-decoration-line: underline;
   text-decoration-style: dotted;
   text-decoration-color: white;
