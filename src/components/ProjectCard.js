@@ -56,8 +56,8 @@ function ProjectCard(props) {
             <div
               className={
                 props.highlight
-                  ? styles.portfolio_item
-                  : styles.portfolio_item_grey
+                  ? "project"
+                  : "project--grey"
               }
               href={props.repoLink}
               target="_blank"
