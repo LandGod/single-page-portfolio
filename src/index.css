@@ -425,3 +425,34 @@ code {
   text-decoration-style: dotted;
   text-decoration-color: white;
 }
+
+/* ----------------------------------------------------- */
+/* Styling for contact cards */
+
+.contact__container {
+  max-height: 300px;
+  margin-bottom: 1em;
+}
+
+.contact__card {
+  position: relative;
+  width:100%;
+  height: fit-content;
+  max-height: 300px;
+  
+}
+
+.contact__image {
+  display: block;
+  width: 50%;
+  height: 50%;
+  margin: auto;
+  object-fit: cover;  
+}
+
+.contact__link {
+  width: 100%;
+  height: 100%;
+  background: none;
+  border: none;
+}

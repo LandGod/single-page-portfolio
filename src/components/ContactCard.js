@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./styles/ContactCard.module.css";
 
 class ContactCard extends React.Component {
   // Props:
@@ -14,19 +13,19 @@ class ContactCard extends React.Component {
 
   render() {
     return (
-      <div className={`${styles.card_container}`}>
+      <div className="contact__container">
         <div
-          className={styles.portfolio_item}
+          className="contact__card"
           href={this.props.repoLink}
           target="_blank"
         >
           {this.props.customClickAction ? (
             <button
               onClick={this.props.customClickAction}
-              className={`${styles.portfolio_item_link} btn btn-link`}
+              className="contact__link btn btn-link"
             >
               <img
-                className={`img-fluid ${styles.portfolio_item_img}`}
+                className="contact__image img-fluid"
                 src={`${process.env.PUBLIC_URL}/social_images/${this.props.imageName}`}
                 alt={this.props.title}
               />
@@ -36,10 +35,10 @@ class ContactCard extends React.Component {
               href={this.props.link}
               target="_blank"
               rel="noopener noreferrer"
-              className={styles.portfolio_item_link}
+              className="contact__link"
             >
               <img
-                className={`img-fluid ${styles.portfolio_item_img}`}
+                className="contact__image img-fluid"
                 src={`${process.env.PUBLIC_URL}/social_images/${this.props.imageName}`}
                 alt={this.props.title}
               />
