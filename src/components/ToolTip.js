@@ -18,6 +18,12 @@ function ToolTip(props) {
   // Only used for modal mode, but can't be called conditionally, so will always be present.
   const [show, setShow] = useState(false);
 
+  const handleEscapePress = (event) => {
+    if (event.key === "Escape") {
+      event.target.blur();
+    }
+  };
+
   // If on mobile, use modal instead of tooltip
   if (props.suppressToolTip) {
     return (
@@ -39,8 +45,7 @@ function ToolTip(props) {
           dialogClassName="customModalSizing"
           centered
         >
-          <Modal.Header closeButton>
-          </Modal.Header>
+          <Modal.Header closeButton></Modal.Header>
           <Modal.Body>{props.content}</Modal.Body>
         </Modal>
       </>
@@ -56,6 +61,7 @@ function ToolTip(props) {
           ? "tooltipClickable"
           : ""
       } ${props.flex ? "display-flex" : ""}`}
+      onKeyDown={handleEscapePress}
     >
       {props.children}
       <span
