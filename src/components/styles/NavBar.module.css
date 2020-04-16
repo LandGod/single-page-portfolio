@@ -1,9 +1,0 @@
-.animateOpen {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 54px;
-    transition: height 2s;
-    overflow: hidden;
-    z-index: 9999;
-}
