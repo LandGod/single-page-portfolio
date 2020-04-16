@@ -76,9 +76,9 @@ class Portfolio extends React.Component {
         {(context) => {
           const { cantHover, smBreakPoint } = context;
           return (
-            <div className="container" id="portfolioSection">
+            <div className="container" id="portfolioSection"> {/* Id used for linking to section, not for css. DO NOT DELETE. */}
               <div className="row">
-                <div className="col-12 portfolioHOne">
+                <div className="col-12">
                   <h1>Portfolio</h1>
                 </div>
               </div>

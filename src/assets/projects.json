@@ -71,5 +71,19 @@
         "deployLink": "http://landgod.github.io/ClueHunt-QR",
         "techStack": ["javascript", "html","css", "jquery", "firebase", "bootstrap"],
         "summary": "Create and mange real life clue hunt games with this interactive platform."
+    },
+    {
+        "title": "Media API Bot",
+        "imageName": "concert.jpg",
+        "repoLink": "https://github.com/LandGod/cli-media-bot",
+        "techStack": ["javascript", "node"],
+        "summary": "Interfaces with Spotify, BandsInTown, and the Open Movie Database in order to give users info about songs, concerts, and movies."
+    },
+    {
+        "title": "Contracted Automation Script",
+        "imageName": "terminal.jpg",
+        "repoLink": "https://github.com/LandGod/afsParse",
+        "techStack": ["python"],
+        "summary": "Written for a web marketing contractor in order to automate a routine task."
     }
 ]
