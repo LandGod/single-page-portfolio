@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import styles from "./styles/NavBar.module.css";
 
 function NavBar() {
   const [open, setOpen] = useState(false);
@@ -37,7 +36,7 @@ function NavBar() {
 
   return (
     <div
-      className={styles.animateOpen}
+      className="nav__opener"
       style={{
         height: open ? "54px" : "0px",
         overflow: overflow ? "visible" : "hidden",
