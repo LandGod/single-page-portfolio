@@ -30,11 +30,10 @@ function ProjectCard(props) {
 
   useEffect(() => {
     if (mouseOver && !buttonsActive) {
-      setButtonsActive(true)
+      setButtonsActive(true);
     } else if (!mouseOver && buttonsActive) {
       setButtonsActive(false);
     }
-
   }, [mouseOver, buttonsActive]);
 
   return (
@@ -46,27 +45,19 @@ function ProjectCard(props) {
           <div
             className={`col-${props.width === "double" ? "12" : "6"} col-md-${
               props.width === "double" ? "6" : "4"
-            } p-1 p-md-2 ${
-              mouseOver ? styles.card_container_hover : styles.card_container
-            }`}
+            } p-1 p-md-2 project-container`}
             onMouseEnter={mouseOnComponent}
             onMouseLeave={mouseOffComponent}
           >
             {/* Begin portfolio Item inner container. This container handles styling for highlighted/grey */}
             <div
-              className={
-                props.highlight
-                  ? "project"
-                  : "project--grey"
-              }
+              className={props.highlight ? "project" : "project--grey"}
               href={props.repoLink}
               target="_blank"
             >
               <img
                 className={`img-fluid ${
-                  props.highlight
-                    ? styles.portfolio_item_img
-                    : styles.portfolio_item_img_grey
+                  props.highlight ? "project__img" : "project__img--grey"
                 }`}
                 src={`${process.env.PUBLIC_URL}/project_images/${props.imageName}`}
                 alt={props.title}
@@ -76,15 +67,13 @@ function ProjectCard(props) {
                 <div
                   className={
                     props.highlight
-                      ? styles.projectTitle
-                      : styles.projectTitleGrey
+                      ? "project__title"
+                      : "project__title--grey"
                   }
                 >
                   {/* Inner text container only exists to handle media query for font size */}
                   <div
-                    className={
-                      smBreakPoint ? styles.titleInnerMobile : styles.titleInner
-                    }
+                    className="project__title-inner"
                   >
                     {props.title[0].toUpperCase() + props.title.slice(1)}
                   </div>
@@ -98,7 +87,7 @@ function ProjectCard(props) {
                   // BEGIN MOBILE ONLY VERSION OF DETAIL OVERALY
                   // *********************************************************************
                   <div
-                    className={styles.portfolio_item_hover}
+                    className="project__overlay"
                     style={{
                       visibility: mouseOver ? "visible" : "hidden",
                       padding: "1em",
@@ -111,11 +100,11 @@ function ProjectCard(props) {
                     {/* Button container for deploy and repo links (MOBILE)*/}
                     {buttonsActive ? (
                       <div
-                        className={`row justify-content-around mb-xs-1 mb-sm-3`}
+                        className="row justify-content-around mb-xs-1 mb-sm-3"
                       >
                         {props.deployLink ? (
                           <a
-                            className={` col-5 btn btn-light btn-sm`}
+                            className="col-5 btn btn-light btn-sm"
                             href={props.deployLink}
                             target="_blank"
                             rel="noopener noreferrer"
@@ -127,7 +116,7 @@ function ProjectCard(props) {
                         )}
                         {props.repoLink ? (
                           <a
-                            className={` col-5 btn btn-light btn-sm`}
+                            className="col-5 btn btn-light btn-sm"
                             href={props.repoLink}
                             target="_blank"
                             rel="noopener noreferrer"
@@ -159,10 +148,10 @@ function ProjectCard(props) {
                     </h3>
                     <p>{props.summary}</p>
                     {/* Button container for deploy and repo links */}
-                    <div className={`${styles.buttonContainer}`}>
+                    <div className="project__button-container">
                       {props.deployLink ? (
                         <a
-                          className={`btn btn-light`}
+                          className="btn btn-light"
                           href={props.deployLink}
                           target="_blank"
                           rel="noopener noreferrer"
@@ -174,7 +163,7 @@ function ProjectCard(props) {
                       )}
                       {props.repoLink ? (
                         <a
-                          className={`btn btn-light`}
+                          className="btn btn-light"
                           href={props.repoLink}
                           target="_blank"
                           rel="noopener noreferrer"

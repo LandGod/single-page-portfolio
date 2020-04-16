@@ -175,6 +175,11 @@ code {
 /* Styling for Project Card component */
 /* ----------------------------------------------------- */
 
+.project-container {
+  max-height: 300px;
+  margin-bottom: 1em;
+}
+
 .project {
   position: relative;
   background-color: white;
@@ -184,6 +189,20 @@ code {
   max-height: 300px;
   border-radius: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.project__overlay {
+  /* visibility: hidden; */
+  position: absolute;
+  top: 0;
+  background-color: #4b6dc1f1;
+  overflow: hidden;
+  width: 100%;
+  height: 50vw;
+  max-height: 300px;
+  border-radius: 20px;
+  padding: 2em;
+  color: white;
 }
 
 .project--grey {
@@ -198,14 +217,14 @@ code {
   /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 
-.portfolio_item_img {
+.project__img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.portfolio_item_img_grey {
+.project__img--grey {
   display: block;
   width: 100%;
   height: 100%;
@@ -213,21 +232,7 @@ code {
   filter: grayscale(100%);
 }
 
-.portfolio_item_hover {
-  /* visibility: hidden; */
-  position: absolute;
-  top: 0;
-  background-color: #4b6dc1f1;
-  overflow: hidden;
-  width: 100%;
-  height: 50vw;
-  max-height: 300px;
-  border-radius: 20px;
-  padding: 2em;
-  color: white;
-}
-
-.buttonContainer {
+.project__button-container {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -237,7 +242,7 @@ code {
   width: 100%;
 }
 
-.projectTitle {
+.project__title {
   position: absolute;
   top: 0;
   overflow: hidden;
@@ -259,7 +264,7 @@ code {
     -1px -1px 0 rgba(255, 255, 255, 0.418);
 }
 
-.projectTitleGrey {
+.project__title--grey {
   position: absolute;
   top: 0;
   overflow: hidden;
@@ -281,17 +286,14 @@ code {
     -1px -1px 0 rgba(255, 255, 255, 0.418);
 }
 
-.titleInner {
+.project__title-inner {
   font-size: 1.25em;
 }
 
-.titleInnerMobile {
-  font-size: 0.5em;
-}
-
-.card_container {
-  max-height: 300px;
-  margin-bottom: 1em;
+@media only screen and (max-width: 767px) {
+  .project__title-inner {
+    font-size: 0.5em;
+  }
 }
 
 
