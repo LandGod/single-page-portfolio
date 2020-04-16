@@ -18,6 +18,12 @@ function ToolTip(props) {
   // Only used for modal mode, but can't be called conditionally, so will always be present.
   const [show, setShow] = useState(false);
 
+  const handleEscapePress = (event) => {
+    if (event.key === "Escape") {
+      event.target.blur();
+    }
+  };
+
   // If on mobile, use modal instead of tooltip
   if (props.suppressToolTip) {
     return (
@@ -36,11 +42,10 @@ function ToolTip(props) {
           show={show}
           onHide={handleClose}
           aria-labelledby="contained-modal-title-vcenter"
-          dialogClassName="customModalSizing"
+          dialogClassName="tooltip__modal"
           centered
         >
-          <Modal.Header closeButton>
-          </Modal.Header>
+          <Modal.Header closeButton></Modal.Header>
           <Modal.Body>{props.content}</Modal.Body>
         </Modal>
       </>
@@ -51,18 +56,19 @@ function ToolTip(props) {
     <div
       className={`tooltip ${
         props.activationType === "hover"
-          ? "tooltipHoverable"
+          ? "tooltip--hoverable"
           : props.activationType === "click"
-          ? "tooltipClickable"
+          ? "tooltip--clickable"
           : ""
       } ${props.flex ? "display-flex" : ""}`}
+      onKeyDown={handleEscapePress}
     >
       {props.children}
       <span
         className={`
-        tooltiptext
-        ${props.responsive ? "tooltiptextResponsive" : ""}
-        ${props.flip ? "tooltiptextTop" : "tooltiptextBottom"}
+        tooltip__text
+        ${props.responsive ? "tooltip__text--responsive" : ""}
+        ${props.flip ? "tooltip__text--top" : "tooltip__text--bottom"}
         `}
         style={props.offset ? { marginLeft: props.offset } : {}}
       >

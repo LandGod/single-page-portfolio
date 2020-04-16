@@ -12,7 +12,7 @@ class Contact extends React.Component {
 
   copyEmail = () => {
     // Get the text field
-    const copyText = document.getElementById("vanillaTextarea");
+    const copyText = document.getElementById("contact__email");
 
     // Select the text field
     copyText.select();
@@ -27,7 +27,7 @@ class Contact extends React.Component {
       <div className="container p-2" tabIndex="-1">
         <div className="row">
           <textarea
-            id="vanillaTextarea"
+            id="contact__email"
             className="col-12 text-center"
             value="DanielJasonGold@gmail.com"
             readOnly
@@ -63,7 +63,7 @@ class Contact extends React.Component {
               <div className="row">
                 <div className="col-12 mt-5">
                   <h1>Contact</h1>
-                  <hr className="sectionBreak" />
+                  <hr className="contact__hr" />
                 </div>
               </div>
               <div className="row ">
