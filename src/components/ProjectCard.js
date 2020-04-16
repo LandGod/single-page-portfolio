@@ -50,9 +50,7 @@ function ProjectCard(props) {
             onMouseLeave={mouseOffComponent}
           >
             {/* Begin portfolio Item inner container. This container handles styling for highlighted/grey */}
-            <div
-              className={props.highlight ? "project" : "project--grey"}
-            >
+            <div className={props.highlight ? "project" : "project--grey"}>
               <img
                 className={`img-fluid ${
                   props.highlight ? "project__img" : "project__img--grey"
@@ -64,15 +62,11 @@ function ProjectCard(props) {
               {props.displayTitle ? (
                 <div
                   className={
-                    props.highlight
-                      ? "project__title"
-                      : "project__title--grey"
+                    props.highlight ? "project__title" : "project__title--grey"
                   }
                 >
                   {/* Inner text container only exists to handle media query for font size */}
-                  <div
-                    className="project__title-inner"
-                  >
+                  <div className="project__title-inner">
                     {/* Capitalized Title */}
                     {props.title[0].toUpperCase() + props.title.slice(1)}
                   </div>
@@ -87,16 +81,14 @@ function ProjectCard(props) {
                   // *********************************************************************
                   <div
                     className="project__overlay"
-                    style={{visibility: mouseOver ? "visible" : "hidden"}}
+                    style={{ visibility: mouseOver ? "visible" : "hidden" }}
                   >
                     <h3 className="mb-sm-4 mb-xs-1" style={{ fontSize: "1em" }}>
                       {props.title[0].toUpperCase() + props.title.slice(1)}
                     </h3>
                     {/* Button container for deploy and repo links (MOBILE)*/}
                     {buttonsActive ? (
-                      <div
-                        className="row justify-content-around mb-xs-1 mb-sm-3"
-                      >
+                      <div className="row justify-content-around mb-xs-1 mb-sm-3">
                         {props.deployLink ? (
                           <a
                             className="col-5 btn btn-light btn-sm"
