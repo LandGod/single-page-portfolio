@@ -308,6 +308,61 @@ code {
 }
 
 /* ----------------------------------------------------- */
+/* Styling for button drawer component */
+
+.drawer__outer {
+  position: relative;
+  /* height: 15vh; */
+}
+
+.drawer__hr {
+  /* position: absolute; */
+  width: 100%;
+  /* top: 0; */
+  height: 1px;
+  color: black;
+  background-color: black;
+  /* border-bottom: 1px solid black; */
+}
+
+.plus__button {
+  position: absolute;
+  top: 0.75em;
+  left: 1.75em;
+  background: none;
+  border: none;
+  border-radius: 100%;
+  z-index: 5;
+  font-size: 1em;
+}
+
+.plus__icon {
+  color: black;
+  transform: rotate(0deg);
+  transition: transform 2s;
+}
+
+.plus__background {
+  position: absolute;
+  top: calc(50% - 0.35em);
+  left: calc(50% - 0.35em);
+  width: 0.75em;
+  height: 0.75em;
+  background-color: white;
+  border-radius: 100%;
+  z-index: -1;
+}
+
+.drawer__inner {
+  position: relative;
+  height: 0vh;
+  max-height: 28vh;
+  transition: height 2s, transform 2s;
+  overflow: hidden;
+}
+
+
+/* ----------------------------------------------------- */
 /* Styling for contact section */
 /* ----------------------------------------------------- */
 

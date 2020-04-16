@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useContext } from "react";
-import styles from "./styles/ButtonDrawer.module.css";
 import { MediaContext } from "../contexts/MediaContext";
 
 function ButtonDrawer(props) {
@@ -34,26 +33,27 @@ function ButtonDrawer(props) {
 
   return (
     <>
-      <div className={styles.containingDiv}>
-        <hr className={styles.hr} />
-        <h6 className={styles.box}>Filter</h6>
-        <button
-          className={`${styles.plusButton} btn btn-link `}
-          onClick={props.toggle}
-          style={{
-            transform: `${
-              props.open ? "rotate(45deg) translateX(1.9%)" : "rotate(0deg)"
-            }`,
-          }}
-        >
-          <i className={` ${styles.plusIcon} fas fa-plus-circle`}></i>
-          <div className={styles.iBackground}></div>
+      <div className="drawer__outer">
+        <hr className="drawer__hr" />
+        <h6>Filter</h6>
+        <button className="plus__button btn btn-link" onClick={props.toggle}>
+          <i
+            className="plus__icon fas fa-plus-circle"
+            style={{
+              transform: `${
+                props.open ? "rotate(45deg) translateX(1.9%)" : "rotate(0deg)"
+              }`,
+            }}
+          ></i>
+          <div className="plus__background"></div>
         </button>
       </div>
       <div
-        className={`${styles.buttonContainer} container`}
+        className="drawer__inner container"
         style={{
-          height: `${props.open ? (mediaState.smBreakPoint ? "36vh" : "18vh") : "0"}`,
+          height: `${
+            props.open ? (mediaState.smBreakPoint ? "36vh" : "18vh") : "0"
+          }`,
           overflow: `${allowOverflow && props.open ? "visible" : "hidden"}`,
         }}
       >
