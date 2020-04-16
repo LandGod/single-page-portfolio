@@ -7,7 +7,6 @@
 * Remove unused assets and modules.
 * Set resume to open in new tab
 * Remove default button styling for tech filter buttons.
-* Hide scrollbar for mobile project card overlay (after moving to global css since scrollbars must be selected as pseudoelements)
 * Normalize z-index values
 
 ### Nice to have

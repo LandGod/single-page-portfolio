@@ -192,7 +192,6 @@ code {
 }
 
 .project__overlay {
-  /* visibility: hidden; */
   position: absolute;
   top: 0;
   background-color: #4b6dc1f1;
@@ -250,7 +249,7 @@ code {
   height: 50vw;
   max-height: 300px;
   border-radius: 20px;
-  padding: 1em;
+  padding-top: 1em;
   color: rgba(0, 0, 0, 0.856);
   -webkit-text-fill-color: rgba(0, 0, 0, 0.856);
   -webkit-text-stroke-width: 0.3px;
@@ -272,13 +271,13 @@ code {
   height: 50vw;
   max-height: 300px;
   border-radius: 20px;
-  padding: 1em;
+  padding-top: 1em;
   color: rgb(139, 139, 139);
   -webkit-text-fill-color: rgb(126, 126, 126);
   -webkit-text-stroke-width: 0.3px;
   -webkit-text-stroke-color: white;
-  /* text-align: center; */
-  /* font-size: 2em; */
+  text-align: center;
+  font-size: 2em;
   font-weight: 800;
   text-shadow: -1px 1px 2px rgba(255, 255, 255, 0.418),
     1px 1px 2px rgba(255, 255, 255, 0.418),
@@ -294,8 +293,19 @@ code {
   .project__title-inner {
     font-size: 0.5em;
   }
-}
 
+  .project__overlay {
+    overflow: auto;
+    padding: 0.75em;
+    -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .project__overlay::-webkit-scrollbar {
+    display: none;
+  }
+
+}
 
 /* ----------------------------------------------------- */
 /* Styling for contact section */

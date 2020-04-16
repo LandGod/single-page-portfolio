@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { MediaContext } from "../contexts/MediaContext";
-import styles from "./styles/ProjectCard.module.css";
 
 function ProjectCard(props) {
   // Props:
@@ -19,6 +18,7 @@ function ProjectCard(props) {
   const [buttonsActive, setButtonsActive] = useState(false);
 
   const mouseOnComponent = () => {
+    // Update state to reflect mouseover (unless the card is greyed out by filter)
     if (props.highlight) {
       setMouseOver(true);
     }
@@ -52,8 +52,6 @@ function ProjectCard(props) {
             {/* Begin portfolio Item inner container. This container handles styling for highlighted/grey */}
             <div
               className={props.highlight ? "project" : "project--grey"}
-              href={props.repoLink}
-              target="_blank"
             >
               <img
                 className={`img-fluid ${
@@ -75,6 +73,7 @@ function ProjectCard(props) {
                   <div
                     className="project__title-inner"
                   >
+                    {/* Capitalized Title */}
                     {props.title[0].toUpperCase() + props.title.slice(1)}
                   </div>
                 </div>
@@ -88,11 +87,7 @@ function ProjectCard(props) {
                   // *********************************************************************
                   <div
                     className="project__overlay"
-                    style={{
-                      visibility: mouseOver ? "visible" : "hidden",
-                      padding: "1em",
-                      overflow: "auto",
-                    }}
+                    style={{visibility: mouseOver ? "visible" : "hidden"}}
                   >
                     <h3 className="mb-sm-4 mb-xs-1" style={{ fontSize: "1em" }}>
                       {props.title[0].toUpperCase() + props.title.slice(1)}
@@ -138,7 +133,7 @@ function ProjectCard(props) {
                   // ******************************************************************* \\
                   // BEGIN NON-MOBILE VERSION OF OVERLAY
                   <div
-                    className={styles.portfolio_item_hover}
+                    className="project__overlay"
                     style={{
                       visibility: mouseOver ? "visible" : "hidden",
                     }}
