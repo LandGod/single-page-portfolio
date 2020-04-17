@@ -79,6 +79,7 @@ function ProjectCard(props) {
             onBlur={handleBlur}
             tabIndex={smBreakPoint ? "" : "0"}
             ref={thisCard}
+            aria-label={`Project: ${props.title}`}
           >
             {/* Begin portfolio Item inner container. This container handles styling for highlighted/grey */}
             <div className={props.highlight ? "project" : "project--grey"}>
@@ -134,6 +135,7 @@ function ProjectCard(props) {
                       href={props.deployLink}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label="Link to website"
                     >
                       { smBreakPoint? "Site" : "View Website"}
                     </a>
@@ -144,6 +146,7 @@ function ProjectCard(props) {
                       href={props.repoLink}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label="Link to source code on github"
                     >
                       { smBreakPoint ? "Code" : "Source Code"}
                     </a>
