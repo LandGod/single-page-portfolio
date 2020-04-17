@@ -35,6 +35,15 @@ function ProjectCard(props) {
     setBlured(true);
   };
 
+  const suppressLinkIf = (event) => {
+    if (!buttonsActive) {
+      event.preventDefault();
+      if (!mouseOver) {
+        setMouseOver(true);
+      }
+    }
+  };
+
   // Translate focus out to do the same thing as mouseout while avoiding loss of focus on child focus
   useEffect(() => {
     if (blured) {
@@ -77,7 +86,7 @@ function ProjectCard(props) {
             onMouseLeave={mouseOffComponent}
             onFocus={mouseOnComponent}
             onBlur={handleBlur}
-            tabIndex="0"
+            tabIndex={smBreakPoint ? "" : "0"}
             ref={thisCard}
           >
             {/* Begin portfolio Item inner container. This container handles styling for highlighted/grey */}
@@ -106,12 +115,10 @@ function ProjectCard(props) {
               {/* Begin mouse-over detail overlay for project card */}
               <div
                 className="project__overlay"
-                style={{
-                  zIndex: mouseOver ? "0" : "-1",
-                }}
+                style={ smBreakPoint ? {visibility: "hidden"} : {visibility: mouseOver ? "visible" : "hidden"}}
               >
-                <h3>{props.title[0].toUpperCase() + props.title.slice(1)}</h3>
-                <p>{props.summary}</p>
+                { smBreakPoint ? null : <h3>{props.title[0].toUpperCase() + props.title.slice(1)}</h3>}
+                { smBreakPoint ? null : <p>{props.summary}</p>}
                 {/* Button container for deploy and repo links */}
                 {/* Some notes on the button container the hack that was apparently neccessary to make it work properly on mobile:
                   Pointer events are explicitly disabled and re-enabled on both the parent element of the anchor tags, and the anchor tags themesleved.
@@ -129,27 +136,25 @@ function ProjectCard(props) {
                   Additional fun fact: Added comments to the line that the style properties are on breaks the functionality. Somehow.
 
                  */}
-                <div className={`project__button-container ${buttonsActive ? 'project__button-container--enabled' : 'project__button-container--disabled' }`}>
+                <div className="project__button-container">
                   {props.deployLink ? (
                     <a
-                      className="btn btn-light mt-1"
+                      className="btn btn-light project__button"
                       href={props.deployLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{pointerEvents: `${buttonsActive ? 'auto' : 'disabled'}`}} 
                     >
-                      View Website
+                      { smBreakPoint? "Site" : "View Website"}
                     </a>
                   ) : null}
                   {props.repoLink ? (
                     <a
-                      className="btn btn-light mt-1"
+                      className="btn btn-light project__button"
                       href={props.repoLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{pointerEvents: `${buttonsActive ? 'auto' : 'disabled'}`}} 
                     >
-                      Source Code
+                      { smBreakPoint ? "Code" : "Source Code"}
                     </a>
                   ) : null}
                 </div>

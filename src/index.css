@@ -314,6 +314,7 @@ code {
   .project__overlay {
     overflow: auto;
     padding: 0.75em;
+    background-color: #4b6dc1c9;
     -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
   }
 
@@ -322,18 +323,27 @@ code {
     display: none;
   }
 
+  .project__overlay h3 {
+    margin: 0;
+  }
+
   .project__button-container {
     position: relative;
+    height: 100%;
     flex-wrap: wrap;
+    align-items: flex-end;
+    z-index: 10;
+    visibility: visible;
   }
 
-  .project__button-container--disabled {
-    pointer-events: none;
+  .project__button {
+    margin-top: 1em;
+    max-width: 20ch;
+    color: white;
+    background-color: #4b6cc1;
+    border: #4b6cc1;
   }
 
-  .project__button-container--enabled {
-    pointer-events: auto;
-  }
 }
 
 /* ----------------------------------------------------- */

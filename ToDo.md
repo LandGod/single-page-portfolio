@@ -1,5 +1,6 @@
 ### High Priority
 * Project cards need to be tab-able 
+* Rewrite navbar using Bootstrap Module and remove boostrap from index.html
 
 ### Fixes:
 * Remove unused assets and modules.
