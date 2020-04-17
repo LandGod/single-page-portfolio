@@ -19,7 +19,6 @@ function ProjectCard(props) {
   const [blured, setBlured] = useState(false); // Tracks whether or not any blur event has just occured so that we can trigger our useEffect for blur handling
 
   const thisCard = createRef();
-  const firstButton = createRef();
 
   const mouseOnComponent = () => {
     // Update state to reflect mouseover (unless the card is greyed out by filter)
@@ -104,92 +103,58 @@ function ProjectCard(props) {
                 </div>
               ) : null}
               {/* Begin mouse-over detail overlay for project card */}
-              {smBreakPoint ? (
-                // BEGIN MOBILE ONLY VERSION OF DETAIL OVERALY
-                // *********************************************************************
-                <div
-                  className="project__overlay"
-                  style={{ visibility: mouseOver ? "visible" : "hidden" }}
-                >
-                  <h3 className="mb-sm-4 mb-xs-1" style={{ fontSize: "1em" }}>
-                    {props.title[0].toUpperCase() + props.title.slice(1)}
-                  </h3>
-                  {/* Button container for deploy and repo links (MOBILE)*/}
-                  {buttonsActive ? (
-                    <div className="row justify-content-around mb-xs-1 mb-sm-3">
-                      {props.deployLink ? (
-                        <a
-                          className="col-5 btn btn-light btn-sm"
-                          href={props.deployLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          tabIndex="0"
-                          ref={firstButton}
-                        >
-                          Site
-                        </a>
-                      ) : null}
-                      {props.repoLink ? (
-                        <a
-                          className="col-5 btn btn-light btn-sm"
-                          href={props.repoLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          tabIndex="0"
-                          ref={firstButton ? null : firstButton}
-                        >
-                          Code
-                        </a>
-                      ) : null}
-                    </div>
+              <div
+                className="project__overlay"
+                style={{
+                  zIndex: mouseOver ? "0" : "-1",
+                }}
+              >
+                <h3>{props.title[0].toUpperCase() + props.title.slice(1)}</h3>
+                <p>{props.summary}</p>
+                {/* Button container for deploy and repo links */}
+                {/* Some notes on the button container the hack that was apparently neccessary to make it work properly on mobile:
+                  Pointer events are explicitly disabled and re-enabled on both the parent element of the anchor tags, and the anchor tags themesleved.
+                  Why? Two reasons:
+                  1. If you only do it on the parent, then they remain disabled when needed, but have to be clicked twice in a row after being enabled to actually work
+                  2. If you only do it on the anchor tags then they just never get disabled.
+
+                  It took me a long time and trying a ton of crap, that in theory should have worked, before I landed on this. My current theory is that the asynchronous 
+                  manner in which React handles events, and/or the way it causes certain things to bubble that otherwise wouldn't, is somehow causing this behavior. 
+
+                  Either that or it's just a glitch in the chrome mobile mocker. If so... ugh. 
+                  
+                  For now though, I am satisfied that it works. Mess with the below code at your own peril.
+
+                  Additional fun fact: Added comments to the line that the style properties are on breaks the functionality. Somehow.
+
+                 */}
+                <div className={`project__button-container ${buttonsActive ? 'project__button-container--enabled' : 'project__button-container--disabled' }`}>
+                  {props.deployLink ? (
+                    <a
+                      className="btn btn-light"
+                      href={props.deployLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{pointerEvents: `${buttonsActive ? 'auto' : 'disabled'}`}} 
+                    >
+                      View Website
+                    </a>
                   ) : null}
-                  {/* End button container (MOBILE) */}
-                  <p>{props.summary}</p>
+                  {props.repoLink ? (
+                    <a
+                      className="btn btn-light"
+                      href={props.repoLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{pointerEvents: `${buttonsActive ? 'auto' : 'disabled'}`}} 
+                    >
+                      Source Code
+                    </a>
+                  ) : null}
                 </div>
-              ) : (
-                // END MOBILE ONLY VERSION OF OVERLAY
-                // ******************************************************************* \\
-                // BEGIN NON-MOBILE VERSION OF OVERLAY
-                <div
-                  className="project__overlay"
-                  style={{
-                    visibility: mouseOver ? "visible" : "hidden",
-                  }}
-                >
-                  <h3>{props.title[0].toUpperCase() + props.title.slice(1)}</h3>
-                  <p>{props.summary}</p>
-                  {/* Button container for deploy and repo links */}
-                  <div className="project__button-container">
-                    {props.deployLink ? (
-                      <a
-                        className="btn btn-light"
-                        href={props.deployLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        View Website
-                      </a>
-                    ) : (
-                      ""
-                    )}
-                    {props.repoLink ? (
-                      <a
-                        className="btn btn-light"
-                        href={props.repoLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Source Code
-                      </a>
-                    ) : (
-                      ""
-                    )}
-                  </div>
-                  {/* End link button container */}
-                </div>
-                //* End mouseover detail overlay */
-              )}
-              {/* End mobile vs desktop conditional html */}
+                {/* End link button container */}
+              </div>
+              {/* End mouseover detail overlay */}
             </div>
             {/* End portfolio inner container */}
           </div>
