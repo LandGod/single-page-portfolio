@@ -19,6 +19,7 @@ function ProjectCard(props) {
   const [blured, setBlured] = useState(false); // Tracks whether or not any blur event has just occured so that we can trigger our useEffect for blur handling
 
   const thisCard = createRef();
+  const firstButton = createRef();
 
   const mouseOnComponent = () => {
     // Update state to reflect mouseover (unless the card is greyed out by filter)
@@ -33,7 +34,7 @@ function ProjectCard(props) {
 
   const handleBlur = () => {
     setBlured(true);
-  }
+  };
 
   useEffect(() => {
     if (blured) {
@@ -43,12 +44,15 @@ function ProjectCard(props) {
       }
       return () => {
         setBlured(false);
-      }
+      };
     }
 
-    return () => {if (blured){setBlured(false)} };
-    
-  }, [blured,thisCard])
+    return () => {
+      if (blured) {
+        setBlured(false);
+      }
+    };
+  }, [blured, thisCard]);
 
   // Remove buttons when overlay is not visible to prevent being able to click them without even seeing them on mobile
   useEffect(() => {
@@ -98,9 +102,7 @@ function ProjectCard(props) {
                     {props.title[0].toUpperCase() + props.title.slice(1)}
                   </div>
                 </div>
-              ) : (
-                null
-              )}
+              ) : null}
               {/* Begin mouse-over detail overlay for project card */}
               {smBreakPoint ? (
                 // BEGIN MOBILE ONLY VERSION OF DETAIL OVERALY
@@ -121,28 +123,26 @@ function ProjectCard(props) {
                           href={props.deployLink}
                           target="_blank"
                           rel="noopener noreferrer"
+                          tabIndex="0"
+                          ref={firstButton}
                         >
                           Site
                         </a>
-                      ) : (
-                        null
-                      )}
+                      ) : null}
                       {props.repoLink ? (
                         <a
                           className="col-5 btn btn-light btn-sm"
                           href={props.repoLink}
                           target="_blank"
                           rel="noopener noreferrer"
+                          tabIndex="0"
+                          ref={firstButton ? null : firstButton}
                         >
                           Code
                         </a>
-                      ) : (
-                        null
-                      )}
+                      ) : null}
                     </div>
-                  ) : (
-                    null
-                  )}
+                  ) : null}
                   {/* End button container (MOBILE) */}
                   <p>{props.summary}</p>
                 </div>
