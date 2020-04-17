@@ -35,6 +35,7 @@ function ProjectCard(props) {
     setBlured(true);
   };
 
+  // Translate focus out to do the same thing as mouseout while avoiding loss of focus on child focus
   useEffect(() => {
     if (blured) {
       // Checks if current element has focus (child with focus counts)
@@ -53,7 +54,7 @@ function ProjectCard(props) {
     };
   }, [blured, thisCard]);
 
-  // Remove buttons when overlay is not visible to prevent being able to click them without even seeing them on mobile
+  // Disable buttons when overlay is not visible to prevent being able to click them without even seeing them on mobile
   useEffect(() => {
     if (mouseOver && !buttonsActive) {
       setButtonsActive(true);
@@ -131,7 +132,7 @@ function ProjectCard(props) {
                 <div className={`project__button-container ${buttonsActive ? 'project__button-container--enabled' : 'project__button-container--disabled' }`}>
                   {props.deployLink ? (
                     <a
-                      className="btn btn-light"
+                      className="btn btn-light mt-1"
                       href={props.deployLink}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -142,7 +143,7 @@ function ProjectCard(props) {
                   ) : null}
                   {props.repoLink ? (
                     <a
-                      className="btn btn-light"
+                      className="btn btn-light mt-1"
                       href={props.repoLink}
                       target="_blank"
                       rel="noopener noreferrer"

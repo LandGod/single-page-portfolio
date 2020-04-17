@@ -322,6 +322,11 @@ code {
     display: none;
   }
 
+  .project__button-container {
+    position: relative;
+    flex-wrap: wrap;
+  }
+
   .project__button-container--disabled {
     pointer-events: none;
   }
