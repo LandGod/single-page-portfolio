@@ -35,15 +35,6 @@ function ProjectCard(props) {
     setBlured(true);
   };
 
-  const suppressLinkIf = (event) => {
-    if (!buttonsActive) {
-      event.preventDefault();
-      if (!mouseOver) {
-        setMouseOver(true);
-      }
-    }
-  };
-
   // Translate focus out to do the same thing as mouseout while avoiding loss of focus on child focus
   useEffect(() => {
     if (blured) {
