@@ -150,6 +150,7 @@ textarea {
   resize: vertical;
 }
 
+/* Headings */
 .h1,
 .h2,
 .h3,
@@ -211,6 +212,7 @@ hr {
   height: auto;
 }
 
+/* Container */
 .container {
   width: 100%;
   padding-right: 15px;
@@ -243,6 +245,7 @@ hr {
   }
 }
 
+/* Rows */
 .row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -252,6 +255,8 @@ hr {
   margin-right: -15px;
   margin-left: -15px;
 }
+
+/* Columns */
 
 .col,
 .col-1,
@@ -515,6 +520,7 @@ hr {
   max-width: 100%;
 }
 
+/* Buttons */
 .btn {
     display: inline-block;
     font-weight: 400;
@@ -573,6 +579,7 @@ hr {
     border-radius: .2rem
 }
 
+/* Fade & Collapse Animation */
 .fade {
     opacity: 0;
     transition: opacity .15s linear
@@ -597,6 +604,7 @@ hr {
     transition: height .35s ease
 }
 
+/* Navbar */
 .navbar {
     position: relative;
     display: -webkit-box;
