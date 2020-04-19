@@ -36,7 +36,7 @@ function ButtonDrawer(props) {
       <div className="drawer__outer">
         <hr className="drawer__hr" />
         <button className="plus__button" onClick={props.toggle}>
-          <h6>Filter</h6>
+          <h6 className="plus__label">Filter</h6>
           <div className="plus__inner btn btn-link">
             <i
               className="plus__icon fas fa-plus-circle"

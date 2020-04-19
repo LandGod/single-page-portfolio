@@ -377,16 +377,24 @@ a {
   text-align: left;
   margin-top: 0;
   padding-top: 0.3em;
+  border: 3px solid white;
+}
+
+.plus__label {
+  margin-top: 0;
+  padding-bottom: 5px;
 }
 
 .plus__button:focus {
-  outline: 3px solid lightblue;
+  border: 3px solid lightblue;
+  border-radius: 1em;
+  outline: none;
 }
 
 .plus__inner {
   position: absolute;
-  top: 0.75em;
-  left: 1.75em;
+  top: 15px;
+  left: 2em;
   background: none;
   border: none;
   border-radius: 100%;
