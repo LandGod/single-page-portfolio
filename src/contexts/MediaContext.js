@@ -34,10 +34,11 @@ export const MediaContext = createContext();
 function MediaContextProvider(props) {
   let cantHover = useMedia("(hover:none)"); // Return true if device is touch-screen only (no mouse pointer)
   let smBreakPoint = useMedia("(max-width: 767px)"); // 540px is the sm breakpoint, but 768px is where things go off the rails for this app.
+  let isIE = useMedia("screen and (min-width:0\0) and (min-resolution: +72dpi)") // Checks if browser is IE 9 or above.
 
   return (
     <MediaContext.Provider
-      value={{ cantHover: cantHover, smBreakPoint: smBreakPoint }}
+      value={{ cantHover: cantHover, smBreakPoint: smBreakPoint, isIE:isIE }}
     >
       {props.children}
     </MediaContext.Provider>

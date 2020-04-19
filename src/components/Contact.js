@@ -57,7 +57,7 @@ class Contact extends React.Component {
     return (
       <MediaContext.Consumer>
         {(context) => {
-          const { smBreakPoint } = context;
+          const { smBreakPoint, isIE } = context;
           return (
             <div className="container" id="contactSection">
               <div className="row">
@@ -96,7 +96,7 @@ class Contact extends React.Component {
                     activationType="click"
                     responsive="true"
                     offset="-115px"
-                    subModal={smBreakPoint ? true : false}
+                    subModal={smBreakPoint || isIE ? true : false}
                   >
                     <ContactCard
                       imageName="email.svg"

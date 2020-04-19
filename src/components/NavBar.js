@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { Navbar, Nav } from "react-bootstrap";
+
+const { Brand, Toggle, Collapse } = Navbar;
 
 function NavBar() {
   const [open, setOpen] = useState(false);
@@ -42,49 +45,26 @@ function NavBar() {
         overflow: overflow ? "visible" : "hidden",
       }}
     >
-      <nav className="navbar navbar-expand-md navbar-light bg-light justify-content-between">
-        <a className="navbar-brand" href="#aboutSection">
-          Dan Gold
-        </a>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
+      <Navbar className="bg-light" expand="md">
+        <Brand href="#aboutSection">Dan Gold</Brand>
+        <Toggle
+          aria-controls="responsive-navbar-nav"
           aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div
-          className="collapse navbar-collapse justify-content-end"
-          id="navbarNav"
-        >
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <a className="nav-link" href="#portfolioSection">
-                Portfolio
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#contactSection">
-                Contact
-              </a>
-            </li>
-            <li className="nav-item">
-              <a
-                className="nav-link"
-                href={`${process.env.PUBLIC_URL}/DanielGold.pdf`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Resume
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+        />
+        <Collapse id="responsive-navbar-nav" className="justify-content-end">
+          <Nav>
+            <Nav.Link href="#portfolioSection">Portfolio</Nav.Link>
+            <Nav.Link href="#contactSection">Contact</Nav.Link>
+            <Nav.Link
+              href={`${process.env.PUBLIC_URL}/DanielGold.pdf`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Resume
+            </Nav.Link>
+          </Nav>
+        </Collapse>
+      </Navbar>
     </div>
   );
 }
