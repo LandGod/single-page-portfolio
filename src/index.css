@@ -375,8 +375,12 @@ a {
   border: none;
   width: 5em;
   text-align: left;
-  background: blue;
   margin-top: 0;
+  padding-top: 0.3em;
+}
+
+.plus__button:focus {
+  outline: 3px solid lightblue;
 }
 
 .plus__inner {
