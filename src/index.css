@@ -407,7 +407,11 @@ a {
 .plus__icon {
   color: black;
   transform: rotate(0deg);
-  transition: transform 2s;
+  transition: transform 0.5s;
+}
+
+.plus__button:hover .plus__icon {
+  transform: rotate(45deg) !important;
 }
 
 .plus__background {
