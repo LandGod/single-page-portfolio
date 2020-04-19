@@ -370,6 +370,16 @@ a {
 }
 
 .plus__button {
+  text-decoration: none;
+  background: none;
+  border: none;
+  width: 5em;
+  text-align: left;
+  background: blue;
+  margin-top: 0;
+}
+
+.plus__inner {
   position: absolute;
   top: 0.75em;
   left: 1.75em;
@@ -378,6 +388,8 @@ a {
   border-radius: 100%;
   z-index: 5;
   font-size: 1em;
+  margin-left: 0.3em;
+  margin-top: 3px
 }
 
 .plus__icon {

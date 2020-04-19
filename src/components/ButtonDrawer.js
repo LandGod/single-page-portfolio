@@ -35,17 +35,19 @@ function ButtonDrawer(props) {
     <>
       <div className="drawer__outer">
         <hr className="drawer__hr" />
-        <h6>Filter</h6>
-        <button className="plus__button btn btn-link" onClick={props.toggle}>
-          <i
-            className="plus__icon fas fa-plus-circle"
-            style={{
-              transform: `${
-                props.open ? "rotate(45deg) translateX(1.9%)" : "rotate(0deg)"
-              }`,
-            }}
-          ></i>
-          <div className="plus__background"></div>
+        <button className="plus__button" onClick={props.toggle}>
+          <h6>Filter</h6>
+          <div className="plus__inner btn btn-link">
+            <i
+              className="plus__icon fas fa-plus-circle"
+              style={{
+                transform: `${
+                  props.open ? "rotate(45deg) translateX(1.9%)" : "rotate(0deg)"
+                }`,
+              }}
+            ></i>
+            <div className="plus__background"></div>
+          </div>
         </button>
       </div>
       <div
