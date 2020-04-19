@@ -1,5 +1,4 @@
 ### High Priority
-* Lots of broken styling on MS Edge.
 
 ### Fixes:
 * Make project images look less like ass
