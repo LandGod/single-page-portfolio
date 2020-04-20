@@ -82,13 +82,14 @@ function ProjectCard(props) {
             aria-label={`Project: ${props.title}`}
           >
             {/* Begin portfolio Item inner container. This container handles styling for highlighted/grey */}
-            <div className={props.highlight ? "project" : "project--grey"}>
+            <div className={props.highlight ? "project" : "project--grey"} aria-label='none'>
               <img
                 className={`img-fluid ${
                   props.highlight ? "project__img" : "project__img--grey"
                 }`}
                 src={`${process.env.PUBLIC_URL}/project_images/${props.imageName}`}
                 alt={props.title}
+                aria-hidden="true"
               />
               {/* Being project title container. Only appears if props.displayTitle is true */}
               {props.displayTitle ? (
@@ -96,9 +97,10 @@ function ProjectCard(props) {
                   className={
                     props.highlight ? "project__title" : "project__title--grey"
                   }
+                  aria-hidden="true"
                 >
                   {/* Inner text container only exists to handle media query for font size */}
-                  <div className="project__title-inner">
+                  <div className="project__title-inner" aria-label="none">
                     {/* Capitalized Title */}
                     {props.title[0].toUpperCase() + props.title.slice(1)}
                   </div>
@@ -109,7 +111,7 @@ function ProjectCard(props) {
                 className="project__overlay"
                 style={ smBreakPoint ? {visibility: "hidden"} : {visibility: mouseOver ? "visible" : "hidden"}}
               >
-                { smBreakPoint ? null : <h3>{props.title[0].toUpperCase() + props.title.slice(1)}</h3>}
+                { smBreakPoint ? <h3 className="sr-only">{props.title[0].toUpperCase() + props.title.slice(1)}</h3> : <h3>{props.title[0].toUpperCase() + props.title.slice(1)}</h3>}
                 { smBreakPoint ? null : <p>{props.summary}</p>}
                 {/* Button container for deploy and repo links */}
                 {/* Some notes on the button container the hack that was apparently neccessary to make it work properly on mobile:
