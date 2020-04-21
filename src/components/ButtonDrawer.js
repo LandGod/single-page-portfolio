@@ -31,11 +31,26 @@ function ButtonDrawer(props) {
     }
   }, [props.open, allowOverflow]);
 
+  const currentTechString = () => {
+    let output = [...props.currentTechs];
+    if (output.length > 1) {
+      let lastTech = output.pop();
+      return [...output, "and", lastTech].join(" ");
+    }
+
+    return output[0];
+  };
+
   return (
     <>
       <div className="drawer__outer">
         <hr className="drawer__hr" />
-        <button className="plus__button" onClick={props.toggle} aria-label="Filter Projects by Technology" aria-expanded={props.open}>
+        <button
+          className="plus__button"
+          onClick={props.toggle}
+          aria-label="Filter Projects by Technology"
+          aria-expanded={props.open}
+        >
           <h6 className="plus__label">Filter</h6>
           <div className="plus__inner btn btn-link">
             <i
@@ -49,6 +64,11 @@ function ButtonDrawer(props) {
             <div className="plus__background"></div>
           </div>
         </button>
+        <span className="" role="alert">
+          {props.currentTechs.length < 1
+            ? "Showing all projects."
+            : `Showing only projects which used: ${currentTechString()}`}
+        </span>
       </div>
       <div
         className="drawer__inner container"
@@ -58,9 +78,8 @@ function ButtonDrawer(props) {
           }`,
           overflow: `${allowOverflow && props.open ? "visible" : "hidden"}`,
         }}
-        aria-label="Highlight projects by technologies used"
-        tabIndex={props.open ? '0' : '-1'}
       >
+        {/* Info about selected tech for screen readers */}
         {props.children}
       </div>
     </>
