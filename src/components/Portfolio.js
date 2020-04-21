@@ -97,6 +97,7 @@ class Portfolio extends React.Component {
                         toggleTech={this.toggleTech}
                         highlight={this.isSelectedTech(tech.name)}
                         suppressTooltip={cantHover}
+                        open={this.state.drawerOpen}
                       />
                     );
                   })}
@@ -104,6 +105,7 @@ class Portfolio extends React.Component {
                     style={{ paddingTop: "6vh", paddingBottom: "6vh" }}
                     className="col-2 col-md-1 btn btn-link"
                     onClick={() => this.toggleTech("reset")}
+                    tabIndex={this.state.drawerOpen ? "0" : "-1"}
                   >
                     Reset
                   </div>

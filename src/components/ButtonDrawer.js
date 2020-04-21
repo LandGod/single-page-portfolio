@@ -58,6 +58,8 @@ function ButtonDrawer(props) {
           }`,
           overflow: `${allowOverflow && props.open ? "visible" : "hidden"}`,
         }}
+        aria-label="Highlight projects by technologies used"
+        tabIndex={props.open ? '0' : '-1'}
       >
         {props.children}
       </div>
