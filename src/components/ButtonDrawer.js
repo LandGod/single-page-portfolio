@@ -48,6 +48,7 @@ function ButtonDrawer(props) {
         <button
           className="plus__button"
           onClick={props.toggle}
+          aria-hidden={!props.open}
           aria-label="Filter Projects by Technology"
           aria-expanded={props.open}
         >

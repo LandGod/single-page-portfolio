@@ -37,6 +37,7 @@ function TechSelect(props) {
               ${props.highlight === 2 ? "tech--highlight" : ""}
             `}
       tabIndex={props.open ? "0" : "-1"}
+      aria-hidden={!props.open}
       role="switch"
       aria-label={`Technology: ${props.caseSensitiveName}`}
       aria-checked={props.highlight ? true : false}
