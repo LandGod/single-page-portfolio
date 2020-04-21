@@ -1,4 +1,5 @@
 ### High Priority
+* Make accessibility actually work --> Note: Perhaps the overlay needs to be the containing div and the cover photo should instead be interior to it. Ie: I should flip them.
 
 ### Fixes:
 * Make project images look less like ass
