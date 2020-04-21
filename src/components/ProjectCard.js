@@ -82,7 +82,7 @@ function ProjectCard(props) {
             aria-label={`Project: ${props.title}`}
           >
             {/* Begin portfolio Item inner container. This container handles styling for highlighted/grey */}
-            <div className={props.highlight ? "project" : "project--grey"} aria-label='none'>
+            <div className={props.highlight ? "project" : "project--grey"} aria-hidden="true">
               <img
                 className={`img-fluid ${
                   props.highlight ? "project__img" : "project__img--grey"
