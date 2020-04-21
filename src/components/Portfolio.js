@@ -111,6 +111,7 @@ class Portfolio extends React.Component {
                     role="button"
                     aria-label={`Reset Filter: Show all projects`}
                     tabIndex={this.state.drawerOpen ? "0" : "-1"}
+                    aria-hidden={!this.state.drawerOpen}
                   >
                     Reset
                   </div>
