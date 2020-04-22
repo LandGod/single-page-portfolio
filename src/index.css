@@ -335,17 +335,8 @@ a {
     flex-wrap: wrap;
     align-items: flex-end;
     z-index: 10;
-    visibility: visible;
+    /* visibility: visible; */
   }
-
-  .project__button {
-    margin-top: 1em;
-    max-width: 20ch;
-    color: white;
-    background-color: rgb(75, 108, 193);
-    border: rgb(75, 108, 193);
-  }
-
 }
 
 /* ----------------------------------------------------- */
@@ -398,7 +389,7 @@ a {
   z-index: 5;
   font-size: 1em;
   margin-left: 0.3em;
-  margin-top: 3px
+  margin-top: 3px;
 }
 
 .plus__icon {
@@ -506,10 +497,9 @@ a {
 
 .contact__card {
   position: relative;
-  width:100%;
+  width: 100%;
   height: fit-content;
   max-height: 300px;
-  
 }
 
 .contact__image {
@@ -517,7 +507,7 @@ a {
   width: 50%;
   height: 50%;
   margin: auto;
-  object-fit: cover;  
+  object-fit: cover;
 }
 
 .contact__link {
