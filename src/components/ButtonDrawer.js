@@ -47,7 +47,6 @@ function ButtonDrawer(props) {
         <button
           className="plus__button"
           onClick={props.toggle}
-          aria-hidden={!props.open}
           aria-label="Filter Projects by Technology"
           aria-expanded={props.open}
         >
@@ -64,7 +63,7 @@ function ButtonDrawer(props) {
             <div className="plus__background"></div>
           </div>
         </button>
-        <span className="" role="alert">
+        <span className="sr-only" role="alert">
           {props.currentTechs.length < 1
             ? "Showing all projects."
             : `Showing only projects which used: ${currentTechString()}`}
