@@ -103,13 +103,8 @@ function ProjectCard(props) {
               </div>
               {/* Begin portfolio Item inner container. This container handles styling for highlighted/grey */}
               <div
-                className={props.highlight ? "project__overlay" : "project__overlay--grey"}
+                className={props.highlight ? mouseOver ? "project__overlay--hidden" : "project__overlay" : "project__overlay--grey"}
                 aria-hidden="true"
-                style={
-                  mouseOver
-                    ? { visibility: "hidden" }
-                    : { visibility: "visible" }
-                }
               >
                 <img
                   className={`img-fluid ${
