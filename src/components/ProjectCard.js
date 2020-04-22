@@ -15,6 +15,7 @@ function ProjectCard(props) {
   // CONTEXT - This component consumes the MediaContext provider in order to be mobile responsive using the smBreakPoint property
 
   const [mouseOver, setMouseOver] = useState(false); // Tracks mouse over entire component. Used for zoom/scale effect.
+  const [detailVisible, setDetailVisible] = useState(false);
   const [blured, setBlured] = useState(false); // Tracks whether or not any blur event has just occured so that we can trigger our useEffect for blur handling
 
   const thisCard = createRef();
@@ -26,32 +27,47 @@ function ProjectCard(props) {
     }
   };
 
-  const mouseOffComponent = () => {
-    setMouseOver(false);
-  };
+  // const mouseOffComponent = () => {
+  //   setMouseOver(false);
+  // };
 
   const handleBlur = () => {
     setBlured(true);
   };
+
+  // useEffect(() => {
+  //   if (mouseOver) {
+  //     // Checks if current element has focus (child with focus counts)
+  //     if (document.activeElement === thisCard) {
+  //       setDetailVisible(true);
+  //     }
+  //   };
+  // }, [mouseOver, thisCard, blured]);
 
   // Translate focus out to do the same thing as mouseout while avoiding loss of focus on child focus
   useEffect(() => {
     if (blured) {
       // Checks if current element has focus (child with focus counts)
       if (!(document.activeElement === thisCard)) {
-        setMouseOver(false);
+        setDetailVisible(false);
       }
       return () => {
         setBlured(false);
+      };
+    } else if (mouseOver) {
+        setDetailVisible(true);
+      return () => {
+        setMouseOver(false);
       };
     }
 
     return () => {
       if (blured) {
         setBlured(false);
+        setMouseOver(false);
       }
     };
-  }, [blured, thisCard]);
+  }, [blured, thisCard, mouseOver]);
 
   return (
     <MediaContext.Consumer>
@@ -65,7 +81,7 @@ function ProjectCard(props) {
               props.width === "double" ? "6" : "4"
             } p-1 p-md-2 project__container`}
             onMouseEnter={mouseOnComponent}
-            onMouseLeave={mouseOffComponent}
+            onMouseLeave={handleBlur}
             onFocus={mouseOnComponent}
             onBlur={handleBlur}
             tabIndex={smBreakPoint ? "" : "0"}
@@ -108,7 +124,7 @@ function ProjectCard(props) {
               {/* Begin portfolio Item inner container. This container handles styling for highlighted/grey */}
               <div
                 className={`project__overlay ${
-                  mouseOver ? "project__overlay--hidden" : ""
+                  detailVisible ? "project__overlay--hidden" : ""
                 }`}
                 aria-hidden="true"
               >
