@@ -92,6 +92,7 @@ function ProjectCard(props) {
               <div className="project__button-container">
                 {props.deployLink ? (
                   <a
+                    tabIndex={props.highlight ? "0" : "-1"}
                     className="btn btn-light project__button"
                     href={props.deployLink}
                     target="_blank"
@@ -103,6 +104,7 @@ function ProjectCard(props) {
                 ) : null}
                 {props.repoLink ? (
                   <a
+                    tabIndex={props.highlight ? "0" : "-1"}
                     className="btn btn-light project__button"
                     href={props.repoLink}
                     target="_blank"
