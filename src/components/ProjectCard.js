@@ -72,8 +72,12 @@ function ProjectCard(props) {
             ref={thisCard}
             aria-label={`Project: ${props.title}`}
           >
-          {/* Project description. Only visible on hover/focus. Contains A title, description, and links.  */}
-            <div className="project__details">
+            {/* Project description. Only visible on hover/focus. Contains A title, description, and links.  */}
+            <div
+              className={`project__details ${
+                props.highlight ? "" : "project__details--grey"
+              }`}
+            >
               <h3>{props.title[0].toUpperCase() + props.title.slice(1)}</h3>
 
               {smBreakPoint ? null : <p>{props.summary}</p>}
@@ -103,12 +107,14 @@ function ProjectCard(props) {
               </div>
               {/* Begin portfolio Item inner container. This container handles styling for highlighted/grey */}
               <div
-                className={props.highlight ? mouseOver ? "project__overlay--hidden" : "project__overlay" : "project__overlay--grey"}
+                className={`project__overlay ${
+                  mouseOver ? "project__overlay--hidden" : ""
+                }`}
                 aria-hidden="true"
               >
                 <img
-                  className={`img-fluid ${
-                    props.highlight ? "project__img" : "project__img--grey"
+                  className={`img-fluid project__img ${
+                    props.highlight ? "" : "project__img--grey"
                   }`}
                   src={`${process.env.PUBLIC_URL}/project_images/${props.imageName}`}
                   alt={props.title}
