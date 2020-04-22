@@ -118,7 +118,7 @@ function ProjectCard(props) {
                     href={props.deployLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="Link to website"
+                    aria-label="Live website"
                   >
                     {smBreakPoint ? "Site" : "View Website"}
                   </a>
@@ -130,7 +130,7 @@ function ProjectCard(props) {
                     href={props.repoLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="Link to source code on github"
+                    aria-label="Source code on GitHub"
                   >
                     {smBreakPoint ? "Code" : "Source Code"}
                   </a>
