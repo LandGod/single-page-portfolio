@@ -35,7 +35,7 @@ function ProjectCard(props) {
   // Reference to highest level element in component, used for tracking if any part of the component has focus using DOM method
   const thisCard = createRef();
 
-  // Called by onMouseEnter & onFocus
+  // Called by onMouseEnter & onFocus. Does nothing if card is "greyed out" by technology filters.
   const mouseOnComponent = () => {
     if (props.highlight) {
       setMouseOver(true);
