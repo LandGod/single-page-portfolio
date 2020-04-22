@@ -15,7 +15,6 @@ function ProjectCard(props) {
   // CONTEXT - This component consumes the MediaContext provider in order to be mobile responsive using the smBreakPoint property
 
   const [mouseOver, setMouseOver] = useState(false); // Tracks mouse over entire component. Used for zoom/scale effect.
-  const [buttonsActive, setButtonsActive] = useState(false);
   const [blured, setBlured] = useState(false); // Tracks whether or not any blur event has just occured so that we can trigger our useEffect for blur handling
 
   const thisCard = createRef();
@@ -54,21 +53,13 @@ function ProjectCard(props) {
     };
   }, [blured, thisCard]);
 
-  // Disable buttons when overlay is not visible to prevent being able to click them without even seeing them on mobile
-  useEffect(() => {
-    if (mouseOver && !buttonsActive) {
-      setButtonsActive(true);
-    } else if (!mouseOver && buttonsActive) {
-      setButtonsActive(false);
-    }
-  }, [mouseOver, buttonsActive]);
-
   return (
     <MediaContext.Consumer>
       {(context) => {
         const { smBreakPoint } = context;
         return (
-          // Container with sizing info for overall component. Has a handler for mouseover attached.
+          // Container with sizing info for overall component. Has handlers for onFocus and Blur attached.
+          // Can't do mouseover handling with css without using focus-within, but that isn't supported by IE/Edge
           <div
             className={`col-${props.width === "double" ? "12" : "6"} col-md-${
               props.width === "double" ? "6" : "4"
@@ -81,27 +72,11 @@ function ProjectCard(props) {
             ref={thisCard}
             aria-label={`Project: ${props.title}`}
           >
-            <div className="project__overlay">
+          {/* Project description. Only visible on hover/focus. Contains A title, description, and links.  */}
+            <div className="project__details">
               <h3>{props.title[0].toUpperCase() + props.title.slice(1)}</h3>
 
               {smBreakPoint ? null : <p>{props.summary}</p>}
-              {/* Button container for deploy and repo links */}
-              {/* Some notes on the button container the hack that was apparently neccessary to make it work properly on mobile:
-                  Pointer events are explicitly disabled and re-enabled on both the parent element of the anchor tags, and the anchor tags themesleved.
-                  Why? Two reasons:
-                  1. If you only do it on the parent, then they remain disabled when needed, but have to be clicked twice in a row after being enabled to actually work
-                  2. If you only do it on the anchor tags then they just never get disabled.
-
-                  It took me a long time and trying a ton of crap, that in theory should have worked, before I landed on this. My current theory is that the asynchronous 
-                  manner in which React handles events, and/or the way it causes certain things to bubble that otherwise wouldn't, is somehow causing this behavior. 
-
-                  Either that or it's just a glitch in the chrome mobile mocker. If so... ugh. 
-                  
-                  For now though, I am satisfied that it works. Mess with the below code at your own peril.
-
-                  Additional fun fact: Added comments to the line that the style properties are on breaks the functionality. Somehow.
-
-                 */}
               <div className="project__button-container">
                 {props.deployLink ? (
                   <a
@@ -128,7 +103,7 @@ function ProjectCard(props) {
               </div>
               {/* Begin portfolio Item inner container. This container handles styling for highlighted/grey */}
               <div
-                className={props.highlight ? "project" : "project--grey"}
+                className={props.highlight ? "project__overlay" : "project__overlay--grey"}
                 aria-hidden="true"
                 style={
                   mouseOver
