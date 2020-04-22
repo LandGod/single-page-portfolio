@@ -43,8 +43,8 @@ function ButtonDrawer(props) {
 
   return (
     <>
+      <hr className="drawer__hr" />
       <div className="drawer__outer">
-        <hr className="drawer__hr" />
         <button
           className="plus__button"
           onClick={props.toggle}
@@ -52,7 +52,7 @@ function ButtonDrawer(props) {
           aria-label="Filter Projects by Technology"
           aria-expanded={props.open}
         >
-          <h6 className="plus__label">Filter</h6>
+          <div className="plus__label">Filter</div>
           <div className="plus__inner btn btn-link">
             <i
               className="plus__icon fas fa-plus-circle"
