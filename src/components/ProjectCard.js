@@ -81,40 +81,12 @@ function ProjectCard(props) {
             ref={thisCard}
             aria-label={`Project: ${props.title}`}
           >
-            {/* Begin portfolio Item inner container. This container handles styling for highlighted/grey */}
-            <div className={props.highlight ? "project" : "project--grey"} aria-hidden="true">
-              <img
-                className={`img-fluid ${
-                  props.highlight ? "project__img" : "project__img--grey"
-                }`}
-                src={`${process.env.PUBLIC_URL}/project_images/${props.imageName}`}
-                alt={props.title}
-                aria-hidden="true"
-              />
-              {/* Being project title container. Only appears if props.displayTitle is true */}
-              {props.displayTitle ? (
-                <div
-                  className={
-                    props.highlight ? "project__title" : "project__title--grey"
-                  }
-                  aria-hidden="true"
-                >
-                  {/* Inner text container only exists to handle media query for font size */}
-                  <div className="project__title-inner" aria-label="none">
-                    {/* Capitalized Title */}
-                    {props.title[0].toUpperCase() + props.title.slice(1)}
-                  </div>
-                </div>
-              ) : null}
-              {/* Begin mouse-over detail overlay for project card */}
-              <div
-                className="project__overlay"
-                style={ smBreakPoint ? {visibility: "hidden"} : {visibility: mouseOver ? "visible" : "hidden"}}
-              >
-                { smBreakPoint ? <h3 className="sr-only">{props.title[0].toUpperCase() + props.title.slice(1)}</h3> : <h3>{props.title[0].toUpperCase() + props.title.slice(1)}</h3>}
-                { smBreakPoint ? null : <p>{props.summary}</p>}
-                {/* Button container for deploy and repo links */}
-                {/* Some notes on the button container the hack that was apparently neccessary to make it work properly on mobile:
+            <div className="project__overlay">
+              <h3>{props.title[0].toUpperCase() + props.title.slice(1)}</h3>
+
+              {smBreakPoint ? null : <p>{props.summary}</p>}
+              {/* Button container for deploy and repo links */}
+              {/* Some notes on the button container the hack that was apparently neccessary to make it work properly on mobile:
                   Pointer events are explicitly disabled and re-enabled on both the parent element of the anchor tags, and the anchor tags themesleved.
                   Why? Two reasons:
                   1. If you only do it on the parent, then they remain disabled when needed, but have to be clicked twice in a row after being enabled to actually work
@@ -130,30 +102,66 @@ function ProjectCard(props) {
                   Additional fun fact: Added comments to the line that the style properties are on breaks the functionality. Somehow.
 
                  */}
-                <div className="project__button-container">
-                  {props.deployLink ? (
-                    <a
-                      className="btn btn-light project__button"
-                      href={props.deployLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="Link to website"
-                    >
-                      { smBreakPoint? "Site" : "View Website"}
-                    </a>
-                  ) : null}
-                  {props.repoLink ? (
-                    <a
-                      className="btn btn-light project__button"
-                      href={props.repoLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="Link to source code on github"
-                    >
-                      { smBreakPoint ? "Code" : "Source Code"}
-                    </a>
-                  ) : null}
-                </div>
+              <div className="project__button-container">
+                {props.deployLink ? (
+                  <a
+                    className="btn btn-light project__button"
+                    href={props.deployLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Link to website"
+                  >
+                    {smBreakPoint ? "Site" : "View Website"}
+                  </a>
+                ) : null}
+                {props.repoLink ? (
+                  <a
+                    className="btn btn-light project__button"
+                    href={props.repoLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Link to source code on github"
+                  >
+                    {smBreakPoint ? "Code" : "Source Code"}
+                  </a>
+                ) : null}
+              </div>
+              {/* Begin portfolio Item inner container. This container handles styling for highlighted/grey */}
+              <div
+                className={props.highlight ? "project" : "project--grey"}
+                aria-hidden="true"
+                style={
+                  mouseOver
+                    ? { visibility: "hidden" }
+                    : { visibility: "visible" }
+                }
+              >
+                <img
+                  className={`img-fluid ${
+                    props.highlight ? "project__img" : "project__img--grey"
+                  }`}
+                  src={`${process.env.PUBLIC_URL}/project_images/${props.imageName}`}
+                  alt={props.title}
+                  aria-hidden="true"
+                />
+                {/* Being project title container. Only appears if props.displayTitle is true */}
+                {props.displayTitle ? (
+                  <div
+                    className={
+                      props.highlight
+                        ? "project__title"
+                        : "project__title--grey"
+                    }
+                    aria-hidden="true"
+                  >
+                    {/* Inner text container only exists to handle media query for font size */}
+                    <div className="project__title-inner" aria-label="none">
+                      {/* Capitalized Title */}
+                      {props.title[0].toUpperCase() + props.title.slice(1)}
+                    </div>
+                  </div>
+                ) : null}
+                {/* Begin mouse-over detail overlay for project card */}
                 {/* End link button container */}
               </div>
               {/* End mouseover detail overlay */}
