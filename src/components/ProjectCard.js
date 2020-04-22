@@ -35,15 +35,6 @@ function ProjectCard(props) {
     setBlured(true);
   };
 
-  // useEffect(() => {
-  //   if (mouseOver) {
-  //     // Checks if current element has focus (child with focus counts)
-  //     if (document.activeElement === thisCard) {
-  //       setDetailVisible(true);
-  //     }
-  //   };
-  // }, [mouseOver, thisCard, blured]);
-
   // Translate focus out to do the same thing as mouseout while avoiding loss of focus on child focus
   useEffect(() => {
     if (blured) {
@@ -55,7 +46,7 @@ function ProjectCard(props) {
         setBlured(false);
       };
     } else if (mouseOver) {
-        setDetailVisible(true);
+      setDetailVisible(true);
       return () => {
         setMouseOver(false);
       };
@@ -84,7 +75,7 @@ function ProjectCard(props) {
             onMouseLeave={handleBlur}
             onFocus={mouseOnComponent}
             onBlur={handleBlur}
-            tabIndex={smBreakPoint ? "" : "0"}
+            tabIndex={props.highlight ? "0" : "-1"}
             ref={thisCard}
             aria-label={`Project: ${props.title}`}
           >
@@ -94,9 +85,10 @@ function ProjectCard(props) {
                 props.highlight ? "" : "project__details--grey"
               }`}
             >
-              <h3>{props.title[0].toUpperCase() + props.title.slice(1)}</h3>
-
-              {smBreakPoint ? null : <p>{props.summary}</p>}
+              {smBreakPoint ? null : (
+                <h3>{props.title[0].toUpperCase() + props.title.slice(1)}</h3>
+              )}
+              <p>{props.summary}</p>
               <div className="project__button-container">
                 {props.deployLink ? (
                   <a
