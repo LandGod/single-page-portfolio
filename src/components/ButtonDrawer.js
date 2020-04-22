@@ -43,7 +43,6 @@ function ButtonDrawer(props) {
 
   return (
     <>
-      <hr className="drawer__hr" />
       <div className="drawer__outer">
         <button
           className="plus__button"

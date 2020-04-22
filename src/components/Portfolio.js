@@ -82,6 +82,7 @@ class Portfolio extends React.Component {
               <div className="row">
                 <div className="col-12">
                   <h1>Portfolio</h1>
+                  <hr className="portfolio__hr" />
                 </div>
               </div>
               <ButtonDrawer
