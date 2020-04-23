@@ -48,5 +48,10 @@
         "name": "firebase",
         "caseSensitiveName": "FireBase",
         "image": "firebase.svg"
+    },
+    {
+        "name": "python",
+        "caseSensitiveName": "Python",
+        "image": "python.svg"
     }
 ]
