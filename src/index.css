@@ -489,6 +489,30 @@ a {
   text-decoration-color: white;
 }
 
+/* Alternate text area styling for use with white background */
+#contact__email--blue {
+  border: none;
+  overflow: auto;
+  outline: none;
+  background: none;
+  color: inherit;
+  overflow-wrap: break-word;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+
+  resize: none;
+
+  padding: 0;
+}
+
+#contact__email--blue:focus {
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: rgb(75, 108, 193);
+}
+
 /* ----------------------------------------------------- */
 /* Styling for contact cards */
 
@@ -517,4 +541,14 @@ a {
   height: 100%;
   background: none;
   border: none;
+}
+
+/* Styling for modal buttons for email modal (only shows up on mobile) */
+.modal__button--blue {
+  background-color: rgb(75, 108, 193);
+  color: white;
+}
+
+.modal__button--blue:focus {
+  border: 3px solid rgba(153, 173, 223, 0.753);
 }

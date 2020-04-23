@@ -22,26 +22,26 @@ class Contact extends React.Component {
     document.execCommand("copy");
   };
 
-  emailTooltipInner = () => {
+  emailTooltipInner = (bgWhite) => {
     return (
-      <div className="container p-2" tabIndex="-1">
+      <div className="container" tabIndex="-1">
         <div className="row">
           <textarea
-            id="contact__email"
-            className="col-12 text-center"
+            id={`${bgWhite ? "contact__email--blue" : "contact__email"}`}
+            className="col-12 text-center p-0 m-0"
             value="DanielJasonGold@gmail.com"
             readOnly
           />
         </div>
         <div className="row">
           <button
-            className="btn btn-sm btn-light mx-auto"
+            className={`btn btn-sm btn-light mx-auto ${ bgWhite ? "modal__button--blue" : ''}`}
             onClick={this.copyEmail}
           >
             Copy
           </button>
           <a
-            className="btn btn-sm btn-light mx-auto"
+            className={`btn btn-sm btn-light mx-auto ${ bgWhite ? "modal__button--blue" : ''}`}
             href="mailto:DanielJasonGold@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -90,7 +90,7 @@ class Contact extends React.Component {
                 </div>
                 <div className="col-6 col-md-3 p-1 p-md-2">
                   <ToolTip
-                    content={this.emailTooltipInner()}
+                    content={this.emailTooltipInner(smBreakPoint ? true : false)}
                     showTooltip={this.state.showEmailPopup}
                     flip={true}
                     activationType="click"
