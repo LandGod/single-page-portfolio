@@ -76,15 +76,19 @@ class Portfolio extends React.Component {
         {(context) => {
           const { cantHover, smBreakPoint } = context;
           return (
-            <div className="container" id="portfolioSection"> {/* Id used for linking to section, not for css. DO NOT DELETE. */}
+            <div className="container" id="portfolioSection">
+              {" "}
+              {/* Id used for linking to section, not for css. DO NOT DELETE. */}
               <div className="row">
                 <div className="col-12">
                   <h1>Portfolio</h1>
+                  <hr className="portfolio__hr" />
                 </div>
               </div>
               <ButtonDrawer
                 open={this.state.drawerOpen}
                 toggle={this.toggleDawer}
+                currentTechs={this.state.selectedTechs}
               >
                 <div className="row justify-content-center">
                   {Techs.map((tech, i) => {
@@ -97,6 +101,7 @@ class Portfolio extends React.Component {
                         toggleTech={this.toggleTech}
                         highlight={this.isSelectedTech(tech.name)}
                         suppressTooltip={cantHover}
+                        open={this.state.drawerOpen}
                       />
                     );
                   })}
@@ -104,6 +109,10 @@ class Portfolio extends React.Component {
                     style={{ paddingTop: "6vh", paddingBottom: "6vh" }}
                     className="col-2 col-md-1 btn btn-link"
                     onClick={() => this.toggleTech("reset")}
+                    role="button"
+                    aria-label={`Reset Filter: Show all projects`}
+                    tabIndex={this.state.drawerOpen ? "0" : "-1"}
+                    aria-hidden={!this.state.drawerOpen}
                   >
                     Reset
                   </div>

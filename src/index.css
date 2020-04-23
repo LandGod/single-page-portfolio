@@ -22,6 +22,11 @@ code {
   display: flex;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* ----------------------------------------------------- */
 /* ----------------------------------------------------- */
 
@@ -185,8 +190,18 @@ code {
 }
 
 /* ----------------------------------------------------- */
-/* Styling for Project Card component */
+/* Styling for Portfolio Section */
 /* ----------------------------------------------------- */
+
+.portfolio__hr {
+  width: 100%;
+  height: 1px;
+  color: black;
+  background-color: black;
+}
+
+/* ----------------------------------------------------- */
+/* Styling for Project Card component */
 
 .project__container {
   max-height: 300px;
@@ -197,21 +212,9 @@ code {
   outline: none;
 }
 
-.project {
+.project__details {
   position: relative;
-  background-color: white;
-  overflow: hidden;
-  width: 100%;
-  height: 50vw;
-  max-height: 300px;
-  border-radius: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.project__overlay {
-  position: absolute;
-  top: 0;
-  background-color: rgba(75, 109, 193, 0.945);
+  background-color: rgb(75, 109, 193);
   overflow: hidden;
   width: 100%;
   height: 50vw;
@@ -219,18 +222,31 @@ code {
   border-radius: 20px;
   padding: 2em;
   color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.project--grey {
-  position: relative;
+.project__details--grey {
+  box-shadow: none;
+}
+
+.project__overlay {
+  position: absolute;
+  visibility: visible;
+  top: 0;
+  left: 0;
   background-color: white;
-  border: 1px solid rgba(128, 128, 128, 0.048);
   overflow: hidden;
   width: 100%;
-  height: 50vw;
-  max-height: 300px;
+  height: 100%;
   border-radius: 20px;
-  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+
+  /* Make overlay slightly larger than what it's covering to avoid weird looking corners */
+  transform: scale(1.1, 1.1);
+  transform-origin: center;
+}
+
+.project__overlay--hidden {
+  visibility: hidden;
 }
 
 .project__img {
@@ -241,10 +257,6 @@ code {
 }
 
 .project__img--grey {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
   filter: grayscale(100%);
 }
 
@@ -307,43 +319,36 @@ code {
 }
 
 @media only screen and (max-width: 767px) {
+  
+  /* Shrink title text on overlay */
   .project__title-inner {
     font-size: 0.5em;
   }
 
-  .project__overlay {
-    overflow: auto;
-    padding: 0.75em;
-    background-color: rgba(75, 109, 193, 0.788);
-    -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
-  }
-
-  /* Hide scrollbar for Chrome, Safari and Opera */
-  .project__overlay::-webkit-scrollbar {
-    display: none;
-  }
-
-  .project__overlay h3 {
+  /* Removed dead space */
+  .project__details {
+    overflow: none;
+    padding-top: 0.75em;
+    padding-left: 5%;
+    padding-right: 5%;
     margin: 0;
   }
 
-  .project__button-container {
-    position: relative;
-    height: 100%;
-    flex-wrap: wrap;
-    align-items: flex-end;
-    z-index: 10;
-    visibility: visible;
+  /* Shrink title text on details */
+  .project__details h3 {
+    font-size: 1em;
+    text-align: center;
+    margin: 0;
   }
 
-  .project__button {
-    margin-top: 1em;
-    max-width: 20ch;
-    color: white;
-    background-color: rgb(75, 108, 193);
-    border: rgb(75, 108, 193);
+  /* On mobile, only the first three lines of description will be show, since that's all that fits. */
+  .project__details p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
-
 }
 
 /* ----------------------------------------------------- */
@@ -354,31 +359,49 @@ code {
   /* height: 15vh; */
 }
 
-.drawer__hr {
-  /* position: absolute; */
-  width: 100%;
-  /* top: 0; */
-  height: 1px;
-  color: black;
-  background-color: black;
-  /* border-bottom: 1px solid black; */
+.plus__button {
+  position: relative;
+  text-decoration: none;
+  background: none;
+  border: none;
+  width: 5em;
+  text-align: left;
+  margin-top: 0;
+  padding-top: 0.3em;
+  border: 3px solid white;
 }
 
-.plus__button {
+.plus__label {
+  margin-top: 0;
+  padding-bottom: 5px;
+}
+
+.plus__button:focus {
+  border: 3px solid lightblue;
+  border-radius: 1em;
+  outline: none;
+}
+
+.plus__inner {
   position: absolute;
-  top: 0.75em;
+  top: 0;
   left: 1.75em;
   background: none;
   border: none;
   border-radius: 100%;
   z-index: 5;
   font-size: 1em;
+  margin-left: 0.3em;
 }
 
 .plus__icon {
   color: black;
   transform: rotate(0deg);
-  transition: transform 2s;
+  transition: transform 0.5s;
+}
+
+.plus__button:hover .plus__icon {
+  transform: rotate(45deg) !important;
 }
 
 .plus__background {
@@ -406,7 +429,6 @@ code {
 .tech {
   overflow: visible;
   position: relative;
-  margin: 0.2em;
   padding: 0.1em;
   background: none;
   max-height: 18vh;
@@ -466,6 +488,30 @@ code {
   text-decoration-color: white;
 }
 
+/* Alternate text area styling for use with white background */
+#contact__email--blue {
+  border: none;
+  overflow: auto;
+  outline: none;
+  background: none;
+  color: inherit;
+  overflow-wrap: break-word;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+
+  resize: none;
+
+  padding: 0;
+}
+
+#contact__email--blue:focus {
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: rgb(75, 108, 193);
+}
+
 /* ----------------------------------------------------- */
 /* Styling for contact cards */
 
@@ -476,10 +522,9 @@ code {
 
 .contact__card {
   position: relative;
-  width:100%;
+  width: 100%;
   height: fit-content;
   max-height: 300px;
-  
 }
 
 .contact__image {
@@ -487,7 +532,7 @@ code {
   width: 50%;
   height: 50%;
   margin: auto;
-  object-fit: cover;  
+  object-fit: cover;
 }
 
 .contact__link {
@@ -495,4 +540,14 @@ code {
   height: 100%;
   background: none;
   border: none;
+}
+
+/* Styling for modal buttons for email modal (only shows up on mobile) */
+.modal__button--blue {
+  background-color: rgb(75, 108, 193);
+  color: white;
+}
+
+.modal__button--blue:focus {
+  border: 3px solid rgba(153, 173, 223, 0.753);
 }

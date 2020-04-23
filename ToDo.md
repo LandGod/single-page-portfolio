@@ -1,16 +1,14 @@
 ### High Priority
+* 
 
 ### Fixes:
-* Make project images look less like ass
-* Optimize all images for efficiency
+* 
 
-### Nice to have
+### Nice to haves:
 * Animated arrows prompting the user to scroll down from the about section, if they don't, after 3 seconds or so
 * Update readme?
 * Make technology icons look nicer and more consistent?
-* Custom favicon
-* Revisit mobile styling for project cards?
 * Normalize z-index values
 
-### Accessibility 
-* Make site totally navigable with keyboard
+### In Progress:
+* Make new nicer project images

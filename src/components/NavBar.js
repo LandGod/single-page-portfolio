@@ -45,8 +45,8 @@ function NavBar() {
         overflow: overflow ? "visible" : "hidden",
       }}
     >
-      <Navbar className="bg-light" expand="md">
-        <Brand href="#aboutSection">Dan Gold</Brand>
+      <Navbar className="bg-light" expand="md" role="navigation">
+        <Brand href="#aboutSection" aria-label="">Dan Gold</Brand>
         <Toggle
           aria-controls="responsive-navbar-nav"
           aria-label="Toggle navigation"

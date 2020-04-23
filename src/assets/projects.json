@@ -47,10 +47,10 @@
         "repoLink": "http://github.com/landgod/TriviaGame",
         "deployLink": "http://landgod.github.io/TriviaGame",
         "techStack": ["html", "css", "javascript", "jquery", "bootstrap"],
-        "summary": "A timed trivia game, which quizes users about the popular game Overwatch."
+        "summary": "A timed trivia game, which quizzes users about the popular game Overwatch."
     },
     {
-        "title": "Multiplayer Rock Paper Scisors",
+        "title": "Multiplayer Rock Paper Scissors",
         "imageName": "rock_hand.png",
         "repoLink": "http://github.com/landgod/Multiplayer-RPS",
         "deployLink": "http://landgod.github.io/Multiplayer-RPS",
@@ -62,7 +62,7 @@
         "imageName": "reversi.jpg",
         "repoLink": "https://github.com/LandGod/Two-Player-Othello-with-Python",
         "techStack": ["python"],
-        "summary": "It's a recreation of the popular game Othello (aka: reversi) implemented in Python."
+        "summary": "A re-creation of the popular game Othello (aka: reversi) implemented in Python."
     },
     {
         "title": "Clue Hunt: QR",
@@ -70,7 +70,7 @@
         "repoLink": "http://github.com/landgod/ClueHunt-QR",
         "deployLink": "http://landgod.github.io/ClueHunt-QR",
         "techStack": ["javascript", "html","css", "jquery", "firebase", "bootstrap"],
-        "summary": "Create and mange real life clue hunt games with this interactive platform."
+        "summary": "Create and manage real life clue hunt games with this interactive platform."
     },
     {
         "title": "Media API Bot",
