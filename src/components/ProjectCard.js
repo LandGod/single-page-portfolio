@@ -95,6 +95,7 @@ function ProjectCard(props) {
             onBlur={handleBlur}
             tabIndex={props.highlight ? "0" : "-1"}
             ref={thisCard}
+            aria-hidden={props.highlight ? false : true}
             aria-label={`Project: ${props.title}`}
           >
             {/* Project description. Covered by project overlay image when not focused or hovered. Contains A title, description, and links.  */}
@@ -104,7 +105,8 @@ function ProjectCard(props) {
               }`}
             >
               {/* Project title is not shown (in the details) on mobile since it's sort of redundant to the overlay anyway and takes up a ton of space. */}
-              {smBreakPoint ? null : (
+              {/* However, it is neccessary to add for screen readers, since they may blow past the container name if navigating using reading controlls other than tab */}
+              {smBreakPoint ? <h3 className="sr-only">{props.title[0].toUpperCase() + props.title.slice(1)}</h3> : (
                 <h3>{props.title[0].toUpperCase() + props.title.slice(1)}</h3>
               )}
               <p>{props.summary}</p>
