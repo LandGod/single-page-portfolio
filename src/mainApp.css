@@ -384,8 +384,8 @@ a {
 
 .plus__inner {
   position: absolute;
-  top: 0;
-  left: 1.75em;
+  top: 18%;
+  left: 2.3em;
   background: none;
   border: none;
   border-radius: 100%;
@@ -402,17 +402,6 @@ a {
 
 .plus__button:hover .plus__icon {
   transform: rotate(45deg) !important;
-}
-
-.plus__background {
-  position: absolute;
-  top: calc(50% - 0.35em);
-  left: calc(50% - 0.35em);
-  width: 0.75em;
-  height: 0.75em;
-  background-color: white;
-  border-radius: 100%;
-  z-index: -1;
 }
 
 .drawer__inner {
