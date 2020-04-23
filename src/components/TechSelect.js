@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import ToolTip from "./ToolTip";
 import { MediaContext } from "../contexts/MediaContext";
 
@@ -14,6 +14,7 @@ function TechSelect(props) {
   */
 
   const [showTooltip, setShowTooltip] = useState(false);
+  const { cantHover } = useContext(MediaContext);
 
   const toolTipShow = () => {
     setShowTooltip(true);
@@ -25,45 +26,42 @@ function TechSelect(props) {
   return (
     // Note: This has to be a div, not a button, since the default styling from pseudo classes for buttons, such as :active and :hover
     // will interfer
-
-    <MediaContext.Consumer>
-      {(context) => {
-        const { cantHover } = context;
-        return (
-          // Begin main continer (basically a button)
-          <div
-            onMouseEnter={toolTipShow}
-            onMouseLeave={toolTipHide}
-            onClick={() => {
-              props.toggleTech(props.name);
-            }}
-            className={`tech col-2 col-md-1
+    // Begin main continer (basically a button)
+    <div
+      onMouseEnter={toolTipShow}
+      onMouseLeave={toolTipHide}
+      onClick={() => {
+        props.toggleTech(props.name);
+      }}
+      className={`tech col-2 col-md-1
               ${props.highlight === 2 ? "tech--highlight" : ""}
             `}
-          >
-            <ToolTip
-              suppressToolTip={cantHover}
-              content={props.caseSensitiveName}
-              showTooltip={showTooltip}
-              activationType="hover"
-            >
-              {/* Begin image */}
-              <div className="tech__centerer">
-                <img
-                  alt={props.caseSensitiveName}
-                  className={` img-fluid ${
-                    props.highlight ? "" : "tech__image--grey"
-                  } `}
-                  src={`${process.env.PUBLIC_URL}/techs/${props.image}`}
-                />
-              </div>
-              {/* End image */}
-            </ToolTip>
-          </div>
-          // End main container
-        );
-      }}
-    </MediaContext.Consumer>
+      tabIndex={props.open ? "0" : "-1"}
+      aria-hidden={!props.open}
+      role="switch"
+      aria-label={`Technology: ${props.caseSensitiveName}`}
+      aria-checked={props.highlight ? true : false}
+    >
+      <ToolTip
+        suppressToolTip={cantHover}
+        content={props.caseSensitiveName}
+        showTooltip={showTooltip}
+        activationType="hover"
+      >
+        {/* Begin image */}
+        <div className="tech__centerer">
+          <img
+            alt={props.caseSensitiveName}
+            className={` img-fluid ${
+              props.highlight ? "" : "tech__image--grey"
+            } `}
+            src={`${process.env.PUBLIC_URL}/techs/${props.image}`}
+          />
+        </div>
+        {/* End image */}
+      </ToolTip>
+    </div>
+    // End main container
   );
 }
 
