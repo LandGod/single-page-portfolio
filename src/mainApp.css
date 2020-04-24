@@ -245,6 +245,11 @@ a {
   transform-origin: center;
 }
 
+/* This doesn't work on IE/Edge, so we're doing it with JS as well, but the JS version creates a flicker, so we're doing both */
+.project__container:focus-within .project__overlay {
+  visibility: hidden;
+}
+
 .project__overlay--hidden {
   visibility: hidden;
 }
