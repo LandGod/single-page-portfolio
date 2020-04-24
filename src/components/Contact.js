@@ -71,7 +71,7 @@ class Contact extends React.Component {
                   <ContactCard
                     imageName="twitter.svg"
                     title="Daniel Gold on Twitter"
-                    link="https://twitter.com/DanGoldLandGod"
+                    link="https://twitter.com/DanJGold"
                   />
                 </div>
                 <div className="col-6 col-md-3 p-1 p-md-2">
