@@ -94,7 +94,7 @@ class Contact extends React.Component {
                     showTooltip={this.state.showEmailPopup}
                     flip={true}
                     activationType="click"
-                    responsive={true}
+                    width={240}
                     subModal={smBreakPoint || isIE ? true : false}
                   >
                     <ContactCard

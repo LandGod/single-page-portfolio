@@ -10,7 +10,7 @@ function ToolTip(props) {
         -flex: boolean = True sets container as a flexbox (useful for vertically centering children)
         -flip: boolean = If true, display tooltip above rather than below child component
         -activationType: 'hover' | 'click' = conditions under which tooltip should appear
-        -width?: number = Supply a number for the desired width (in pixels) that the tooltip should take up
+        -width?: number = Supply a number for the desired width (in pixels) that the tooltip should take up (cannot be used with responsive)
         -responsive?: boolean (default false) = Width will be set to fit content and centering offset willl be calculated dynamically on render
         -subModal: boolean = Set to true to activate component as modal instead of tooltip (ie: substitute modal for tooltip).
     */
