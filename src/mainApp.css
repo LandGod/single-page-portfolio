@@ -80,18 +80,19 @@ a {
 }
 
 /* Tooltip text large */
-.tooltip .tooltip__text--responsive {
+.tooltip .tooltip__text--large {
   visibility: hidden;
   background-color: rgb(75, 108, 193);
   color: #fff;
   text-align: center;
-  width: fit-content;
-  padding: 1em;
+  width: 240px;
+  padding: 10px 0;
   border-radius: 6px;
 
   /* Position the tooltip text */
   position: absolute;
   z-index: 1;
+  margin-left: -120px;
 }
 
 /* Bottom Postion Specific Styling */
