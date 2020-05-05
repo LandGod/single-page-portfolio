@@ -1,6 +1,6 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
-import "./mainApp.css";
+import "./mainAppCopy.css";
 import ToolTip from "../components/ToolTip";
 
 export default {
@@ -13,9 +13,11 @@ export default {
           display: "flex",
           justifyContent: "center",
           alignContent: "center",
+          height: "100%",
+          width: "100%",
         }}
       >
-        {story}
+        <div>{story}</div>
       </div>
     ),
   ],
@@ -31,32 +33,111 @@ export const ToolTipData = {
 // -----------------------------------------------------------------------------
 
 export const Default = () => (
-  <div style={{ flexDirection: "row", justifyContent:'space-around' }}>
-    <span style={{ flexDirection: "column", display: "inline-block", margin:'50px' }}>
+  <div style={{ flexDirection: "row", justifyContent: "space-around" }}>
+    <span
+      style={{
+        flexDirection: "column",
+        display: "inline-block",
+        margin: "50px",
+      }}
+    >
       <ToolTip
         showTooltip={true}
         activationType="hover"
         content={"Some Information (left)"}
       >
-        <p style={{ textAlign: "center" }}>Some Other Additional Hoverable Text</p>
+        <p style={{ textAlign: "center", border:'1px solid red', padding:'2px' }}>
+          Some Other Additional Hoverable Text
+        </p>
       </ToolTip>
     </span>
-    <span style={{ flexDirection: "column", display: "inline-block", margin:'50px' }}>
+    <span
+      style={{
+        flexDirection: "column",
+        display: "inline-block",
+        margin: "50px",
+      }}
+    >
       <ToolTip
         showTooltip={true}
         activationType="hover"
         content={"Additional Information (Center)"}
       >
-        <p style={{ textAlign: "center" }}>Hoverable Text 2</p>
+        <p style={{ textAlign: "center", border:'1px solid red', padding:'2px' }}>Hoverable Text 2</p>
       </ToolTip>
     </span>
-    <span style={{ flexDirection: "column", display: "inline-block", margin:'50px' }}>
+    <span
+      style={{
+        flexDirection: "column",
+        display: "inline-block",
+        margin: "50px",
+      }}
+    >
       <ToolTip
         showTooltip={true}
         activationType="hover"
-        content={"Still more information (Left) Lorem Ipsum dolor ahmet, blah blah, blah. And also blah."}
+        content={
+          "Still more information (Left) Lorem Ipsum dolor ahmet, blah blah, blah. And also blah."
+        }
       >
-        <p style={{ textAlign: "center" }}>Still More Hoeverable Text</p>
+        <p style={{ textAlign: "center", border:'1px solid red', padding:'2px' }}>Still More Hoeverable Text</p>
+      </ToolTip>
+    </span>
+  </div>
+);
+
+export const DefaultFlipped = () => (
+  <div style={{ flexDirection: "row", justifyContent: "space-around" }}>
+    <span
+      style={{
+        flexDirection: "column",
+        display: "inline-block",
+        margin: "50px",
+      }}
+    >
+      <ToolTip
+        showTooltip={true}
+        flip={true}
+        activationType="hover"
+        content={"Some Information (left)"}
+      >
+        <p style={{ textAlign: "center", border:'1px solid red', padding:'2px' }}>
+          Some Other Additional Hoverable Text
+        </p>
+      </ToolTip>
+    </span>
+    <span
+      style={{
+        flexDirection: "column",
+        display: "inline-block",
+        margin: "50px",
+      }}
+    >
+      <ToolTip
+        showTooltip={true}
+        flip={true}
+        activationType="hover"
+        content={"Additional Information (Center)"}
+      >
+        <p style={{ textAlign: "center", border:'1px solid red', padding:'2px' }}>Hoverable Text 2</p>
+      </ToolTip>
+    </span>
+    <span
+      style={{
+        flexDirection: "column",
+        display: "inline-block",
+        margin: "50px",
+      }}
+    >
+      <ToolTip
+        showTooltip={true}
+        flip={true}
+        activationType="hover"
+        content={
+          "Still more information (Left) Lorem Ipsum dolor ahmet, blah blah, blah. And also blah."
+        }
+      >
+        <p style={{ textAlign: "center", border:'1px solid red', padding:'2px' }}>Still More Hoeverable Text</p>
       </ToolTip>
     </span>
   </div>
