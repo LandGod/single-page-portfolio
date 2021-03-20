@@ -33,8 +33,9 @@ function TechSelect(props) {
       onClick={() => {
         props.toggleTech(props.name);
       }}
-      className={`tech col-2 col-md-1
+      className={`tech w-1/6 md:w-1/12
               ${props.highlight === 2 ? "tech--highlight" : ""}
+              inline-block
             `}
       tabIndex={props.open ? "0" : "-1"}
       aria-hidden={!props.open}

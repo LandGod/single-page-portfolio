@@ -33,6 +33,18 @@ body {
     text-decoration: none;
     color: inherit;
   }
+
+  .btn {
+      @apply bg-blue-500 text-white rounded-md p-2;
+  }
+
+  .btn-light {
+      @apply bg-white text-gray-900;
+  }
+
+  .btn-sm {
+      @apply text-sm p-1;
+  }
   
   /* ----------------------------------------------------- */
   /* ----------------------------------------------------- */

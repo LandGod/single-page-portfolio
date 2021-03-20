@@ -25,23 +25,23 @@ class Contact extends React.Component {
   emailTooltipInner = (bgWhite) => {
     return (
       <div className="container" tabIndex="-1">
-        <div className="row">
+        <div className="flex flex-row">
           <textarea
             id={`${bgWhite ? "contact__email--blue" : "contact__email"}`}
-            className="col-12 text-center p-0 m-0"
+            className="w-full text-center p-0 m-0"
             value="DanielJasonGold@gmail.com"
             readOnly
           />
         </div>
-        <div className="row">
+        <div className="flex-row">
           <button
-            className={`btn btn-sm btn-light mx-auto ${ bgWhite ? "modal__button--blue" : ''}`}
+            className={`btn btn-sm btn-light mx-auto ${ bgWhite ? "modal__button--blue" : ''} mr-1`}
             onClick={this.copyEmail}
           >
             Copy
           </button>
           <a
-            className={`btn btn-sm btn-light mx-auto ${ bgWhite ? "modal__button--blue" : ''}`}
+            className={`btn btn-sm btn-light mx-auto ${ bgWhite ? "modal__button--blue" : ''} ml-1`}
             href="mailto:DanielJasonGold@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -59,36 +59,36 @@ class Contact extends React.Component {
         {(context) => {
           const { smBreakPoint, isIE } = context;
           return (
-            <div className="container" id="contactSection">
-              <div className="row">
-                <div className="col-12 mt-5">
-                  <h1>Contact</h1>
-                  <hr className="contact__hr" />
+            <div className="container mx-auto" id="contactSection">
+              <div className="flex flex-row">
+                <div className="w-full mt-5">
+                  <h1 className="text-6xl font-bold text-center">Contact</h1>
+                  <hr className="contact__hr my-2" />
                 </div>
               </div>
-              <div className="row ">
-                <div className="col-6 col-md-3 p-1 p-md-2">
+              <div className="flex flex-row">
+                <div className="inline-block w-1/2 md:w-1/4 p-1 p-md-2">
                   <ContactCard
                     imageName="twitter.svg"
                     title="Daniel Gold on Twitter"
                     link="https://twitter.com/DanJGold"
                   />
                 </div>
-                <div className="col-6 col-md-3 p-1 p-md-2">
+                <div className="inline-block w-1/2 md:w-1/4 p-1 p-md-2">
                   <ContactCard
                     imageName="linkedin.svg"
                     title="Daniel Gold on LinkedIn"
                     link="https://www.linkedin.com/in/danjasongold/"
                   />
                 </div>
-                <div className="col-6 col-md-3 p-1 p-md-2">
+                <div className="inline-block w-1/2 md:w-1/4 p-1 p-md-2">
                   <ContactCard
                     imageName="github.svg"
                     title="LandGod on GitHub"
                     link="https://www.github.com/landgod"
                   />
                 </div>
-                <div className="col-6 col-md-3 p-1 p-md-2">
+                <div className="inline-block w-1/2 md:w-1/4 p-1 p-md-2">
                   <ToolTip
                     content={this.emailTooltipInner(smBreakPoint ? true : false)}
                     showTooltip={this.state.showEmailPopup}

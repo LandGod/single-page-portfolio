@@ -86,9 +86,9 @@ function ProjectCard(props) {
           // Container with sizing info for overall component. Has handlers for onFocus and Blur attached.
           // Can't do mouseover handling with css without using focus-within, but that isn't supported by IE/Edge
           <div
-            className={`col-${props.width === "double" ? "12" : "6"} col-md-${
-              props.width === "double" ? "6" : "4"
-            } p-1 p-md-2 project__container`}
+            className={`w-${props.width === "double" ? "full" : "1/2"} md:w-${
+              props.width === "double" ? "1/2" : "1/3"
+            } p-1 md:p-2 project__container inline-block`}
             onMouseEnter={mouseOnComponent}
             onMouseLeave={handleBlur}
             onFocus={mouseOnComponent}

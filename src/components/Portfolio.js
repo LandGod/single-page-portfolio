@@ -76,12 +76,12 @@ class Portfolio extends React.Component {
         {(context) => {
           const { cantHover, smBreakPoint } = context;
           return (
-            <div className="container" id="portfolioSection">
+            <div className="container flex flex-col mx-auto" id="portfolioSection">
               {" "}
               {/* Id used for linking to section, not for css. DO NOT DELETE. */}
-              <div className="row">
-                <div className="col-12">
-                  <h1>Portfolio</h1>
+              <div className="flex-row">
+                <div className="w-full text-center">
+                  <h1 className="text-6xl font-bold">Portfolio</h1>
                   <hr className="portfolio__hr" />
                 </div>
               </div>
@@ -90,7 +90,7 @@ class Portfolio extends React.Component {
                 toggle={this.toggleDawer}
                 currentTechs={this.state.selectedTechs}
               >
-                <div className="row justify-content-center">
+                <div className="flex flex-row justify-center content-center">
                   {Techs.map((tech, i) => {
                     return (
                       <TechSelect
@@ -105,9 +105,9 @@ class Portfolio extends React.Component {
                       />
                     );
                   })}
+                  <div className="self-center justify-self-center w-1/6 md:w-1/12 inline-block">
                   <div
-                    style={{ paddingTop: "6vh", paddingBottom: "6vh" }}
-                    className="col-2 col-md-1 btn btn-link"
+                    className="inline-block btn btn-link w-full h-full text-center"
                     onClick={() => this.toggleTech("reset")}
                     role="button"
                     aria-label={`Reset Filter: Show all projects`}
@@ -116,9 +116,10 @@ class Portfolio extends React.Component {
                   >
                     Reset
                   </div>
+                  </div>
                 </div>
               </ButtonDrawer>
-              <div className="row">
+              <div className="flex-row">
                 {projects.map((project, i) => {
                   return (
                     <ProjectCard
