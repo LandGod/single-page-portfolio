@@ -35,7 +35,7 @@ class Contact extends React.Component {
               </div>
               <div className="row">
                 <ul>
-                  <li className="mb-2">
+                  <li className="mb-4">
                     <h3>
                       <a
                         href="https://jaquishbiomedical.com"
@@ -51,7 +51,7 @@ class Contact extends React.Component {
                       AWS Lambda
                     </div>
                   </li>
-                  <li className="mb-2">
+                  <li className="mb-4">
                     <h3>
                       <a
                         href="https://www.upwork.com/o/profiles/users/~01b3a381f688771981/"

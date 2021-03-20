@@ -3,10 +3,10 @@ import React from "react";
 class About extends React.Component {
   render() {
     return (
-      <div className="container" id="aboutSection"> {/* Id used for intra-page linking. Not used for css. Do not remove!*/}
-        <div className="row justify-content-around">
+      <div className="container box-border" id="aboutSection"> {/* Id used for intra-page linking. Not used for css. Do not remove!*/}
+        <div className="flex flex-row justify-around">
           {/* Column containing text (with media query) */}
-          <div className="about__text-container col-12 col-md-8">
+          <div className="about__text-container w-full md:w-2/3">
             {/* Header and paragraph tag must be enclosed or flexbox will put them side-by-side when centering */}
             <div>
               <div className="about__header">Hi, I'm Dan!</div>
@@ -18,7 +18,7 @@ class About extends React.Component {
           </div>
 
           {/* Column containing profile picture */}
-          <div className="about__img-container col-12 col-md-4">
+          <div className="about__img-container w-full md:w-1/3">
             <figure>
               <img
                 src={
