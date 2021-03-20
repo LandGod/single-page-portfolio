@@ -23,7 +23,7 @@ class Contact extends React.Component {
     return (
       <div className="container mx-auto" id="currentWorkSection">
         <div className="w-full mt-5 text-5xl lg:text-6xl font-bold text-center mb-2">
-          <h1>Current Work</h1>
+          <h1 className="mb-2">Current Work</h1>
           <hr className="contact__hr" />
         </div>
         <div className="row px-6 lg:px-24">

@@ -9,11 +9,11 @@ class About extends React.Component {
           <div className="about__text-container w-full md:w-2/3">
             {/* Header and paragraph tag must be enclosed or flexbox will put them side-by-side when centering */}
             <div>
-              <div className="about__header">Hi, I'm Dan!</div>
-              <p className="about__text">
+              <h1 className="text-6xl md:text-7xl mb-4 text-center md:text-left">Hi, I'm Dan!</h1>
+              <h3 className="text-3xl md:text-4xl text-center md:text-left" role="doc-subtitle">
                 Web Developer with a background in the arts and theatre
                 technology
-              </p>
+              </h3>
             </div>
           </div>
 
