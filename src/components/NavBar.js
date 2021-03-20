@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 
 function NavBar() {
+  // Reveal navar
   const [open, setOpen] = useState(false);
+  // Track overflow for revealing further dropdowns (on mobile)
   const [overflow, setOverflow] = useState(false);
 
   const links = [
@@ -16,7 +18,7 @@ function NavBar() {
 
   useEffect(() => {
     // Trigger reveal navbar (via making height not 0) as soon as user scrolls page.
-    // Should never do anything after that inital scroll
+    // Should never do anything after that initial scroll
     let onScroll;
 
     if (!open) {
@@ -29,8 +31,6 @@ function NavBar() {
         }
         // Reveal navbar
         setOpen(true);
-        // After reveal is finished, allow overflow permanently so that hamburger menue works
-        setTimeout(() => setOverflow(true), 2000);
       };
 
       window.addEventListener("scroll", onscroll, { once: "true" });
@@ -64,9 +64,41 @@ function NavBar() {
             <button
               className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
               type="button"
-              onClick={() => setOpen(!open)}
+              onClick={() => (open ? setOverflow(!overflow) : null)}
             >
-              <i className="fas fa-bars"></i>
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="text-gray-900"
+              >
+                <path
+                  stroke-linejoin="round"
+                  stroke-linecap="round"
+                  stroke-miterlimit="10"
+                  stroke-width="1"
+                  stroke="currentColor"
+                  d="M3 18H21"
+                ></path>
+                <path
+                  stroke-linejoin="round"
+                  stroke-linecap="round"
+                  stroke-miterlimit="10"
+                  stroke-width="1"
+                  stroke="#221b38"
+                  d="M3 12H21"
+                ></path>
+                <path
+                  stroke-linejoin="round"
+                  stroke-linecap="round"
+                  stroke-miterlimit="10"
+                  stroke-width="1"
+                  stroke="#221b38"
+                  d="M3 6H21"
+                ></path>
+              </svg>
             </button>
           </div>
           <div
@@ -91,27 +123,6 @@ function NavBar() {
           </div>
         </div>
       </nav>
-
-      {/* <Navbar className="bg-light" expand="md" role="navigation">
-        <Brand href="#aboutSection" aria-label="">Dan Gold</Brand>
-        <Toggle
-          aria-controls="responsive-navbar-nav"
-          aria-label="Toggle navigation"
-        />
-        <Collapse id="responsive-navbar-nav" className="justify-content-end">
-          <Nav>
-            <Nav.Link href="#portfolioSection">Portfolio</Nav.Link>
-            <Nav.Link href="#contactSection">Contact</Nav.Link>
-            <Nav.Link
-              href={`${process.env.PUBLIC_URL}/DanielGold.pdf`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Resume
-            </Nav.Link>
-          </Nav>
-        </Collapse>
-      </Navbar> */}
     </div>
   );
 }
