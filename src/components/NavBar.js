@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Navbar, Nav } from "react-bootstrap";
-
-const { Brand, Toggle, Collapse } = Navbar;
 
 function NavBar() {
   const [open, setOpen] = useState(false);
