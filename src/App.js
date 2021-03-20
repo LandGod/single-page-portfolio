@@ -1,5 +1,6 @@
 import React from "react";
 import About from "./components/About";
+import CurrentWork from "./components/CurrentWork";
 import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
 import NavBar from "./components/NavBar";
@@ -16,6 +17,7 @@ function App() {
       <NavBar />
       <MediaContextProvider>
         <About/>
+        <CurrentWork/>
         <Portfolio/>
         <Contact />
       </MediaContextProvider>
