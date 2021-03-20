@@ -75,26 +75,26 @@ function NavBar() {
                 className="text-gray-900"
               >
                 <path
-                  stroke-linejoin="round"
-                  stroke-linecap="round"
-                  stroke-miterlimit="10"
-                  stroke-width="1"
+                  strokeLinejoin="round"
+                  strokeLinecap="round"
+                  strokeMiterlimit="10"
+                  strokeWidth="1"
                   stroke="currentColor"
                   d="M3 18H21"
                 ></path>
                 <path
-                  stroke-linejoin="round"
-                  stroke-linecap="round"
-                  stroke-miterlimit="10"
-                  stroke-width="1"
+                  strokeLinejoin="round"
+                  strokeLinecap="round"
+                  strokeMiterlimit="10"
+                  strokeWidth="1"
                   stroke="#221b38"
                   d="M3 12H21"
                 ></path>
                 <path
-                  stroke-linejoin="round"
-                  stroke-linecap="round"
-                  stroke-miterlimit="10"
-                  stroke-width="1"
+                  strokeLinejoin="round"
+                  strokeLinecap="round"
+                  strokeMiterlimit="10"
+                  strokeWidth="1"
                   stroke="#221b38"
                   d="M3 6H21"
                 ></path>
@@ -114,6 +114,7 @@ function NavBar() {
                     className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
                     href={item.link}
                     target={item.external ? "_blank" : "_self"}
+                    rel={item.external ? "noreferrer" : ""}
                   >
                     <span className="ml-2">{item.display}</span>
                   </a>

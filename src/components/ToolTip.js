@@ -54,7 +54,6 @@ function ToolTip(props) {
 
     return (
       <>
-        {console.log(show)}
         <div onClick={handleShow}>{props.children}</div>
         <Modal
           show={show}
