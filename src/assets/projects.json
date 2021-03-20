@@ -1,37 +1,27 @@
 [
     {
-        "title": "Parent Trap",
-        "imageName": "parenttrap.jpg",
-        "repoLink": "http://github.com/landgod/Parent-Trap",
-        "deployLink": "https://evening-chamber-98293.herokuapp.com/",
-        "width": "double",
-        "techStack": ["react", "express", "node", "html", "css", "javascript", "mongodb", "authentication"],
-        "summary": "A shared to-do list and errand tracking app to help parents keep track of the needs of their kids."
+        "title": "BCult Landing Page",
+        "imageName": "bcult.jpg",
+        "repoLink": "http://github.com/landgod/BCULT",
+        "deployLink": "http://landgod.github.io/BCULT",
+        "techStack": ["javascript", "html", "css"],
+        "summary": "A website to help professional shoppers keep track of the best places to buy thrift and niche items offline."
     },
     {
         "title": "ThriftBuyer",
         "imageName": "thrift.jpg",
         "repoLink": "http://github.com/landgod/ThriftBuyer",
         "deployLink": "http://thriftbuyer.net",
-        "width": "double",
         "techStack": ["javascript", "jquery", "html", "css", "bootstrap", "mysql", "express", "node", "handlebars", "authentication"],
         "summary": "A website to help professional shoppers keep track of the best places to buy thrift and niche items offline."
     },
     {
-        "title": "Hacking Simulator",
+        "title": "'Super Realistic' Hacking Simulator",
         "imageName": "futureRetroLandscape.jpg",
         "repoLink": "http://github.com/landgod/Word-Guess-Game",
         "deployLink": "http://landgod.github.io/Word-Guess-Game",
         "techStack": ["javascript", "css", "html"],
         "summary": "A futuristic take on the classic Hangman created with vanilla JS."
-    },
-    {
-        "title": "Don't Match the Socks",
-        "imageName": "sock.png",
-        "repoLink": "https://github.com/LandGod/Dont-Match-the-Socks",
-        "deployLink": "https://landgod.github.io/Dont-Match-the-Socks/",
-        "techStack": ["javascript", "bootstrap", "react", "html", "css"],
-        "summary": "A game built with React in which you avoid matching your socks."
     },
     {
         "title": "Pocket Skirmish",
@@ -42,35 +32,11 @@
         "summary": "A deconstructed RPG, focusing purely on a few rounds of combat, made with jQuery."
     },
     {
-        "title": "Overwatch Trivia",
-        "imageName": "owlogo.jpeg",
-        "repoLink": "http://github.com/landgod/TriviaGame",
-        "deployLink": "http://landgod.github.io/TriviaGame",
-        "techStack": ["html", "css", "javascript", "jquery", "bootstrap"],
-        "summary": "A timed trivia game, which quizzes users about the popular game Overwatch."
-    },
-    {
-        "title": "Multiplayer Rock Paper Scissors",
-        "imageName": "rock_hand.png",
-        "repoLink": "http://github.com/landgod/Multiplayer-RPS",
-        "deployLink": "http://landgod.github.io/Multiplayer-RPS",
-        "techStack": ["html", "css", "javascript", "jquery", "bootstrap", "express", "node", "firebase"],
-        "summary": "A multiplayer Rock/Paper/Scissors game with real time chat."
-    },
-    {
         "title": "Multiplayer Othello in Python",
         "imageName": "reversi.jpg",
         "repoLink": "https://github.com/LandGod/Two-Player-Othello-with-Python",
         "techStack": ["python"],
         "summary": "A re-creation of the popular game Othello (aka: reversi) implemented in Python."
-    },
-    {
-        "title": "Clue Hunt: QR",
-        "imageName": "cluehunt.jpg",
-        "repoLink": "http://github.com/landgod/ClueHunt-QR",
-        "deployLink": "http://landgod.github.io/ClueHunt-QR",
-        "techStack": ["javascript", "html","css", "jquery", "firebase", "bootstrap"],
-        "summary": "Create and manage real life clue hunt games with this interactive platform."
     },
     {
         "title": "Media API Bot",
@@ -80,7 +46,7 @@
         "summary": "Interfaces with Spotify, BandsInTown, and the Open Movie Database in order to give users info about songs, concerts, and movies."
     },
     {
-        "title": "Contracted Automation Script",
+        "title": "Business Task Automation Script",
         "imageName": "terminal.jpg",
         "repoLink": "https://github.com/LandGod/afsParse",
         "techStack": ["python"],

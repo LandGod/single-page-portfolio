@@ -166,7 +166,7 @@ function ProjectCard(props) {
                     aria-hidden="true"
                   >
                     {/* Inner text container only exists to handle media query for font size */}
-                    <div className="project__title-inner" aria-label="none">
+                    <div className="project__title-inner px-2 md:px-8" aria-label="none">
                       {/* Capitalized Title */}
                       {props.title[0].toUpperCase() + props.title.slice(1)}
                     </div>
