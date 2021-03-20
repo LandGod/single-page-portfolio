@@ -81,7 +81,7 @@ class Portfolio extends React.Component {
               {/* Id used for linking to section, not for css. DO NOT DELETE. */}
               <div className="flex-row">
                 <div className="w-full text-center">
-                  <h1 className="text-6xl font-bold">Portfolio</h1>
+                  <h1 className="text-5xl lg:text-6xl font-bold mb-2">Portfolio</h1>
                   <hr className="portfolio__hr" />
                 </div>
               </div>
@@ -105,9 +105,9 @@ class Portfolio extends React.Component {
                       />
                     );
                   })}
-                  <div className="self-center justify-self-center w-1/6 md:w-1/12 inline-block">
+                  <div className="self-center justify-self-center w-1/6 md:w-1/12 flex">
                   <div
-                    className="inline-block btn btn-link w-full h-full text-center"
+                    className="rounded-sm md:rounded-md text-xs md:text-sm px-1 py-0 md:p-2 md:text-md mx-auto self-center justify-self-center bg-gray-400 text-white"
                     onClick={() => this.toggleTech("reset")}
                     role="button"
                     aria-label={`Reset Filter: Show all projects`}

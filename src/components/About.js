@@ -3,8 +3,8 @@ import React from "react";
 class About extends React.Component {
   render() {
     return (
-      <div className="container box-border mx-auto px-24" id="aboutSection"> {/* Id used for intra-page linking. Not used for css. Do not remove!*/}
-        <div className="flex flex-row justify-around">
+      <div className="container box-border mx-auto px-6 lg:px-24" id="aboutSection"> {/* Id used for intra-page linking. Not used for css. Do not remove!*/}
+        <div className="flex flex-row flex-wrap justify-around">
           {/* Column containing text (with media query) */}
           <div className="about__text-container w-full md:w-2/3">
             {/* Header and paragraph tag must be enclosed or flexbox will put them side-by-side when centering */}

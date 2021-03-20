@@ -12,7 +12,7 @@ class Contact extends React.Component {
 
   copyEmail = () => {
     // Get the text field
-    const copyText = document.getElementById("contact__email");
+    const copyText = document.getElementById("contact__email") || document.getElementById("contact__email--blue");
 
     // Select the text field
     copyText.select();
@@ -28,7 +28,7 @@ class Contact extends React.Component {
         <div className="flex flex-row">
           <textarea
             id={`${bgWhite ? "contact__email--blue" : "contact__email"}`}
-            className="w-full text-center p-0 m-0"
+            className="w-full text-center p-0 m-0 underline dotted"
             value="DanielJasonGold@gmail.com"
             readOnly
           />

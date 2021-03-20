@@ -86,7 +86,7 @@ function ButtonDrawer(props) {
         className="drawer__inner container"
         style={{
           height: `${
-            props.open ? (mediaState.smBreakPoint ? "36vh" : "18vh") : "0"
+            props.open ? (mediaState.smBreakPoint ? "2rem" : "10rem") : "0"
           }`,
           overflow: `${allowOverflow && props.open ? "visible" : "hidden"}`,
         }}

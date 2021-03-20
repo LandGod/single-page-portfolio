@@ -25,8 +25,8 @@ function TechSelect(props) {
 
   return (
     // Note: This has to be a div, not a button, since the default styling from pseudo classes for buttons, such as :active and :hover
-    // will interfer
-    // Begin main continer (basically a button)
+    // will interfere
+    // Begin main container (basically a button)
     <div
       onMouseEnter={toolTipShow}
       onMouseLeave={toolTipHide}

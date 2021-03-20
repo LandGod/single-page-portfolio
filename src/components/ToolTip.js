@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Modal } from "react-bootstrap";
+import Modal from "./Modal";
 
 function ToolTip(props) {
   /* 
@@ -54,16 +54,13 @@ function ToolTip(props) {
 
     return (
       <>
+        {console.log(show)}
         <div onClick={handleShow}>{props.children}</div>
         <Modal
           show={show}
           onHide={handleClose}
-          aria-labelledby="contained-modal-title-vcenter"
-          dialogClassName="tooltip__modal"
-          centered
         >
-          <Modal.Header closeButton></Modal.Header>
-          <Modal.Body>{props.content}</Modal.Body>
+        {props.content}
         </Modal>
       </>
     );
@@ -77,7 +74,7 @@ function ToolTip(props) {
           : props.activationType === "click"
           ? "tooltip--clickable"
           : ""
-      } ${props.flex ? "display-flex" : ""}`}
+      } ${props.flex ? "flex" : ""}`}
       onKeyDown={handleEscapePress}
     >
       {props.children}
