@@ -4,6 +4,7 @@ import CurrentWork from "./components/CurrentWork";
 import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
 import NavBar from "./components/NavBar";
+import CodeSample from "./components/CodeSample";
 import MediaContextProvider from "./contexts/MediaContext";
 
 import "./index.css";
@@ -17,6 +18,7 @@ function App() {
         <CurrentWork/>
         <Portfolio/>
         <Contact />
+        <CodeSample />
       </MediaContextProvider>
     </div>
   );

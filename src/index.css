@@ -544,6 +544,7 @@ a {
   border: none;
 }
 
+/* SVG backlight effect on hover */
 .contact__link:hover > img,
 .contact__link:focus > img {
   -webkit-filter: drop-shadow(0 0 10px rgba(75, 108, 193, 0.9));
@@ -653,4 +654,9 @@ a {
 
 .modal__button:focus {
   background-color: darkgray;
+}
+
+/* Code Block */
+code {
+  white-space: pre;
 }
