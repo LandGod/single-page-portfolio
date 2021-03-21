@@ -35,19 +35,19 @@ a {
 }
 
 .dotted {
-    text-decoration-style: dotted;
+  text-decoration-style: dotted;
 }
 
 .btn {
-  @apply rounded-md p-2;
+  @apply p-2 rounded-md;
 }
 
 .btn-light {
-  @apply bg-white text-gray-900;
+  @apply text-gray-900 bg-white;
 }
 
 .btn-sm {
-  @apply text-sm p-1;
+  @apply p-1 text-sm;
 }
 
 /* ----------------------------------------------------- */
@@ -542,6 +542,12 @@ a {
   height: 100%;
   background: none;
   border: none;
+}
+
+.contact__link:hover > img,
+.contact__link:focus > img {
+  -webkit-filter: drop-shadow(0 0 10px rgba(75, 108, 193, 0.9));
+  filter: drop-shadow(0 0 10px rgba(75, 108, 193, 0.7));
 }
 
 /* Styling for modal buttons for email modal (only shows up on mobile) */

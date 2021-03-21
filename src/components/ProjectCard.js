@@ -116,7 +116,7 @@ function ProjectCard(props) {
                 {props.deployLink ? (
                   <a
                     tabIndex={props.highlight ? "0" : "-1"}
-                    className="btn btn-light project__button"
+                    className="btn btn-light focus:bg-gray-300 hover:bg-gray-300 focus:outline-white hover:outline-white"
                     href={props.deployLink}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -128,7 +128,7 @@ function ProjectCard(props) {
                 {props.repoLink ? (
                   <a
                     tabIndex={props.highlight ? "0" : "-1"}
-                    className="btn btn-light project__button"
+                    className="btn btn-light focus:bg-gray-300 hover:bg-gray-300 focus:outline-white hover:outline-white"
                     href={props.repoLink}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -166,7 +166,7 @@ function ProjectCard(props) {
                     aria-hidden="true"
                   >
                     {/* Inner text container only exists to handle media query for font size */}
-                    <div className="project__title-inner px-2 md:px-8" aria-label="none">
+                    <div className="px-2 project__title-inner md:px-8" aria-label="none">
                       {/* Capitalized Title */}
                       {props.title[0].toUpperCase() + props.title.slice(1)}
                     </div>

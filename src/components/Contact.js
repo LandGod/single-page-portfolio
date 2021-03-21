@@ -28,20 +28,20 @@ class Contact extends React.Component {
         <div className="flex flex-row">
           <textarea
             id={`${bgWhite ? "contact__email--blue" : "contact__email"}`}
-            className="w-full text-center p-0 m-0 underline dotted"
+            className="w-full p-0 m-0 text-center underline dotted"
             value="DanielJasonGold@gmail.com"
             readOnly
           />
         </div>
         <div className="flex-row">
           <button
-            className={`btn btn-sm btn-light mx-auto ${ bgWhite ? "modal__button--blue" : ''} mr-1`}
+            className={`btn btn-sm btn-light mx-auto ${ bgWhite ? "modal__button--blue" : ''} focus:bg-gray-300 hover:bg-gray-300 focus:outline-white hover:outline-white focus:text-black hover:text-black mr-1`}
             onClick={this.copyEmail}
           >
             Copy
           </button>
           <a
-            className={`btn btn-sm btn-light mx-auto ${ bgWhite ? "modal__button--blue" : ''} ml-1`}
+            className={`btn btn-sm btn-light mx-auto ${ bgWhite ? "modal__button--blue" : ''} focus:bg-gray-300 hover:bg-gray-300 focus:outline-white hover:outline-white focus:text-black hover:text-black ml-1`}
             href="mailto:DanielJasonGold@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -63,32 +63,32 @@ class Contact extends React.Component {
               <div className="flex flex-row">
                 <div className="w-full mt-5">
                   <h1 className="text-6xl font-bold text-center">Contact</h1>
-                  <hr className="contact__hr my-2" />
+                  <hr className="my-2 contact__hr" />
                 </div>
               </div>
               <div className="flex flex-row">
-                <div className="inline-block w-1/2 md:w-1/4 p-1 p-md-2">
+                <div className="inline-block w-1/2 p-1 md:w-1/4 p-md-2">
                   <ContactCard
                     imageName="twitter.svg"
                     title="Daniel Gold on Twitter"
                     link="https://twitter.com/DanJGold"
                   />
                 </div>
-                <div className="inline-block w-1/2 md:w-1/4 p-1 p-md-2">
+                <div className="inline-block w-1/2 p-1 md:w-1/4 p-md-2">
                   <ContactCard
                     imageName="linkedin.svg"
                     title="Daniel Gold on LinkedIn"
                     link="https://www.linkedin.com/in/danjasongold/"
                   />
                 </div>
-                <div className="inline-block w-1/2 md:w-1/4 p-1 p-md-2">
+                <div className="inline-block w-1/2 p-1 md:w-1/4 p-md-2">
                   <ContactCard
                     imageName="github.svg"
                     title="LandGod on GitHub"
                     link="https://www.github.com/landgod"
                   />
                 </div>
-                <div className="inline-block w-1/2 md:w-1/4 p-1 p-md-2">
+                <div className="inline-block w-1/2 p-1 md:w-1/4 p-md-2">
                   <ToolTip
                     content={this.emailTooltipInner(smBreakPoint ? true : false)}
                     showTooltip={this.state.showEmailPopup}

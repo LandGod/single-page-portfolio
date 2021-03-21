@@ -38,7 +38,7 @@ class ContactCard extends React.Component {
               className="contact__link"
             >
               <img
-                className="contact__image img-fluid"
+                className="contact__image"
                 src={`${process.env.PUBLIC_URL}/social_images/${this.props.imageName}`}
                 alt={this.props.title}
               />
